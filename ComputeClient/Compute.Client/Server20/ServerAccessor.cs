@@ -378,11 +378,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// </summary>
         /// <param name="antiAffinityRule"> The request model</param>
         /// <returns></returns>
-        public async Task<ResponseType> CreateAntiAffinityRule(NewAntiAffinityRule antiAffinityRule)
+        public async Task<ResponseType> CreateAntiAffinityRule(createAntiAffinityRule antiAffinityRule)
         {
             return
                 await
-                    _apiClient.PostAsync<NewAntiAffinityRule, ResponseType>(
+                    _apiClient.PostAsync<createAntiAffinityRule, ResponseType>(
                         ApiUris.CreateMcp2AntiAffinityRule(_apiClient.OrganizationId), antiAffinityRule);
         }
 
@@ -396,7 +396,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return
                 await
                     _apiClient.PostAsync<IdType, ResponseType>(
-                        ApiUris.CreateMcp2AntiAffinityRule(_apiClient.OrganizationId), id);
+                        ApiUris.DeleteMcp2AntiAffinityRule(_apiClient.OrganizationId), id);
         }
     }
 }

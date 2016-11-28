@@ -172,7 +172,7 @@
         /// </summary>
         /// <param name="antiAffinityRule"> The request model</param>
         /// <returns></returns>
-        Task<ResponseType> CreateAntiAffinityRule(NewAntiAffinityRule antiAffinityRule);
+        Task<ResponseType> CreateAntiAffinityRule(createAntiAffinityRule antiAffinityRule);
 
         /// <summary>
         /// Delete Anti-Affinity rule

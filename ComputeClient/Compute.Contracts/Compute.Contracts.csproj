@@ -260,6 +260,7 @@
     <Compile Include="Server\Artifact.cs" />
     <Compile Include="Server\ClientStatusType.cs" />
     <Compile Include="Server\CloneServerType.cs" />
+    <Compile Include="Server\CreateAntiAffinityRule.cs" />
     <Compile Include="Server\DeployedServers.cs" />
     <Compile Include="Server\DeployedServersWithDisks.cs" />
     <Compile Include="Server\DeployedServersWithSoftwareLabels.cs" />
