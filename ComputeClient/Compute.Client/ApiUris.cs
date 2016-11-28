@@ -2347,5 +2347,21 @@
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }
+
+        /// <summary>Returns the relative URI of the REST request for create Anti-Affinity rule.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri CreateMcp2AntiAffinityRule(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/createAntiAffinityRule", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for delete Anti-Affinity rule.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DeleteMcp2AntiAffinityRule(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deleteAntiAffinityRule", orgId), UriKind.Relative);
+        }
     }
 }

@@ -166,5 +166,19 @@
         /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
         /// <returns>	A standard CaaS response </returns>
         Task<ResponseType> ChangeNicNetworkAdapter(changeNetworkAdapterType changeNetworkAdapter);
+
+        /// <summary>
+        /// Create Anti-Affinity rule
+        /// </summary>
+        /// <param name="antiAffinityRule"> The request model</param>
+        /// <returns></returns>
+        Task<ResponseType> CreateAntiAffinityRule(NewAntiAffinityRule antiAffinityRule);
+
+        /// <summary>
+        /// Delete Anti-Affinity rule
+        /// </summary>
+        /// <param name="id">Id of the rule to be deleted</param>
+        /// <returns></returns>
+        Task<ResponseType> DeleteAntiAffinityRule(IdType id);
     }
 }

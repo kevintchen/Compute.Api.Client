@@ -372,5 +372,31 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<changeNetworkAdapterType, ResponseType>(ApiUris.ChangeNicNetworkAdapter(_apiClient.OrganizationId), changeNetworkAdapter);
         }
+
+        /// <summary>
+        /// Create Anti Affinity rule
+        /// </summary>
+        /// <param name="antiAffinityRule"> The request model</param>
+        /// <returns></returns>
+        public async Task<ResponseType> CreateAntiAffinityRule(NewAntiAffinityRule antiAffinityRule)
+        {
+            return
+                await
+                    _apiClient.PostAsync<NewAntiAffinityRule, ResponseType>(
+                        ApiUris.CreateMcp2AntiAffinityRule(_apiClient.OrganizationId), antiAffinityRule);
+        }
+
+        /// <summary>
+        /// Delete Anti-Affinity rule
+        /// </summary>
+        /// <param name="id">Id of the rule to be deleted</param>
+        /// <returns></returns>
+        public async Task<ResponseType> DeleteAntiAffinityRule(IdType id)
+        {
+            return
+                await
+                    _apiClient.PostAsync<IdType, ResponseType>(
+                        ApiUris.CreateMcp2AntiAffinityRule(_apiClient.OrganizationId), id);
+        }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Drs\ConsistencyGroup.cs" />
     <Compile Include="Drs\ExpandJournalType.cs" />
     <Compile Include="EntityStatus.cs" />
+    <Compile Include="General\IdType.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
     <Compile Include="Image20\ExportImageType.cs" />
     <Compile Include="Image20\HistoricalImageExports.cs" />
