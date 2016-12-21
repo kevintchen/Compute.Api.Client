@@ -61,6 +61,16 @@
         }
 
         /// <summary>
+        /// The Get Consistency Group method.
+        /// </summary>
+        /// <param name="id">The Consistency group id.</param>
+        /// <returns>The selected <see cref="ConsistencyGroupType"/></returns>
+        public async Task<ConsistencyGroupType> GetConsistencyGroup(System.Guid id)
+        {
+            return await _apiClient.GetAsync<ConsistencyGroupType>(ApiUris.GetConsistencyGroup(_apiClient.OrganizationId, id));
+        }
+
+        /// <summary>
         /// The Create Consistency Group
         /// </summary>
         /// <param name="createConsistencyGroup">The create consistency group type.</param>

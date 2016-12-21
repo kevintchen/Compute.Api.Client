@@ -30,6 +30,13 @@
         Task<PagedResponse<ConsistencyGroupType>> GetConsistencyGroupsPaginated(ConsistencyGroupListOptions filteringOptions = null, PageableRequest pagingOptions = null);
 
         /// <summary>
+        /// The Get Consistency Group method.
+        /// </summary>
+        /// <param name="id">The Consistency group id.</param>
+        /// <returns>The selected <see cref="ConsistencyGroupType"/></returns>
+        Task<ConsistencyGroupType> GetConsistencyGroup(System.Guid id);
+
+        /// <summary>
         /// The Create Consistency Group
         /// </summary>
         /// <param name="createConsistencyGroup">The create consistency group type.</param>
