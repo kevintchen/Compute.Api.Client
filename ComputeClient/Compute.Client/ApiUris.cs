@@ -1,4 +1,7 @@
-﻿namespace DD.CBU.Compute.Api.Client
+﻿using System.Data;
+using System.Text;
+
+namespace DD.CBU.Compute.Api.Client
 {
     using System;
     using System.Collections.Generic;
@@ -1956,10 +1959,28 @@
                         dataCenterId), UriKind.Relative);
         }
 
-        /// <summary>	Create security group</summary>
-        /// <param name="orgId">	The organization Id. </param>
-        /// <returns>	Url endpoint </returns>
-        public static Uri CreateSecurityGroup(Guid orgId)
+		/// <summary>	Get MCP 2 operating systems</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <param name="dataCenterIds">	The data center Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri GetMcp2OperatingSystems(Guid orgId, string[] dataCenterIds)
+		{
+			StringBuilder uri = new StringBuilder();
+			foreach (var dc in dataCenterIds)
+			{
+				uri.Append($"datacenterId={dc}&");
+			}
+
+			return
+				new Uri(
+					string.Format(MCP2_4_PREFIX + "{0}/infrastructure/operatingSystem?{1}", orgId,
+						uri), UriKind.Relative);
+		}
+
+		/// <summary>	Create security group</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri CreateSecurityGroup(Guid orgId)
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/createSecurityGroup", orgId), UriKind.Relative);
         }

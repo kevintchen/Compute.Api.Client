@@ -98,5 +98,29 @@
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
-    }
+
+		/// <summary>
+		/// Get Operating systems supported at the data center level
+		/// </summary>
+		/// <param name="dataCenterIds">Data center id</param>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <param name="filterOptions">Filtering options</param>
+		/// <returns>Operating Systems</returns>
+		public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+		{
+			var response = await _apiClient.GetAsync<operatingSystems>(
+			  ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId, dataCenterIds),
+			  pagingOptions,
+			  filterOptions);
+
+			return new PagedResponse<OperatingSystemDetailType>
+			{
+				items = response.operatingSystem,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
+	}
 }
