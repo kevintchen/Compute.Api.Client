@@ -2289,6 +2289,15 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/consistencyGroup/consistencyGroup", orgId), UriKind.Relative);
         }
 
+        /// <summary>Returns the relative URI of the REST request for get consistency group.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <param name="id">The Consistency Group id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri GetConsistencyGroup(Guid orgId, Guid id)
+        {
+            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/consistencyGroup/consistencyGroup/{1}", orgId, id), UriKind.Relative);
+        }
+
         /// <summary>Returns the relative URI of the REST request for create consistency groups.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <returns>The <see cref="Uri"/>.</returns>
