@@ -530,6 +530,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool supportsBackup;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()] 
+		public bool supportsOvfImport;
+
+	    /// <remarks/>
+	    [System.Xml.Serialization.XmlIgnoreAttribute()] 
+		public bool supportsOvfImportSpecified;
     }
 
     /// <remarks/>
