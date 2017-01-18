@@ -147,13 +147,30 @@ namespace DD.CBU.Compute.Api.Client.Server20
                         ApiUris.ExportMcp2CustomerImage(_apiClient.OrganizationId), exportImage);
         }
 
-        /// <summary>
-        /// This API call lists all OVF packages in the FTPS account of the calling organization.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        public async Task<ovfPackages> GetOvfPackage()
+		/// <summary>
+		/// The copy MCP 2.0 customer image.
+		/// </summary>
+		/// <param name="copyImage">
+		/// The copy image model.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> CopyCustomerImage(CopyImageType copyImage)
+		{
+			return
+				await
+					_apiClient.PostAsync<CopyImageType, ResponseType>(
+						ApiUris.CopyCustomerImage(_apiClient.OrganizationId), copyImage);
+		}
+
+		/// <summary>
+		/// This API call lists all OVF packages in the FTPS account of the calling organization.
+		/// </summary>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ovfPackages> GetOvfPackage()
         {
             return
                 await

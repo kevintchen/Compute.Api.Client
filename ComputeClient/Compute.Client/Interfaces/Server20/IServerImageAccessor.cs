@@ -127,5 +127,17 @@
         /// <param name="moveCustomerImage">The move customer image.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<ResponseType> MoveCustomerImage(MoveCustomerImageType moveCustomerImage);
+
+	    /// <summary>
+	    /// The copy MCP 2.0 customer image.
+	    /// </summary>
+	    /// <param name="copyImage">
+	    /// The copy image model.
+	    /// </param>
+	    /// <returns>
+	    /// The <see cref="Task"/>.
+	    /// </returns>
+	    Task<ResponseType> CopyCustomerImage(CopyImageType copyImage);
+
     }
 }

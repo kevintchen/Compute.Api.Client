@@ -95,6 +95,7 @@
     <Compile Include="EntityStatus.cs" />
     <Compile Include="General\IdType.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
+    <Compile Include="Image20\CopyImageType.cs" />
     <Compile Include="Image20\ExportImageType.cs" />
     <Compile Include="Image20\HistoricalImageExports.cs" />
     <Compile Include="Image20\ImageExportsInProgress.cs" />
