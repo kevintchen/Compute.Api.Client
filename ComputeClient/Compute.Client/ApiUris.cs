@@ -2393,5 +2393,29 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/deleteAntiAffinityRule", orgId), UriKind.Relative);
         }
+
+        /// <summary>
+        /// Returns the account details of the current user.
+        /// </summary>
+        public static Uri GetMyUser()
+        {
+            return new Uri($"{MCP2_4_PREFIX}/user/myUser", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the account details of the given user name.
+        /// </summary>
+        public static Uri GetUser(Guid orgId, string userName)
+        {
+            return new Uri($"{MCP2_4_PREFIX}/{orgId}/user/user/{userName}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Lists all of the Accounts owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ListUsers(Guid orgId)
+        {
+            return new Uri($"{MCP2_4_PREFIX}/{orgId}/user/user", UriKind.Relative);
+        }
     }
 }
