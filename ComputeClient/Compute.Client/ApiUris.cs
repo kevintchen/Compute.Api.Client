@@ -334,10 +334,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/copyCustomerImage", orgId), UriKind.Relative);
         }
 
-        /// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
-        /// <param name="orgId">The organization id</param>
-        /// <returns>A list of deployed servers</returns>
-        public static Uri DeployedServers(Guid orgId)
+		/// <summary>Gets the relative URI for the CaaS API action that copies customer source image.</summary>
+		/// <param name="orgId">The organization id</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri CopyCustomerImage(Guid orgId)
+		{
+			return new Uri(string.Format(MCP1_0_PREFIX + "{0}/copyImage", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
+		/// <param name="orgId">The organization id</param>
+		/// <returns>A list of deployed servers</returns>
+		public static Uri DeployedServers(Guid orgId)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/serverWithBackup", orgId), UriKind.Relative);
         }
