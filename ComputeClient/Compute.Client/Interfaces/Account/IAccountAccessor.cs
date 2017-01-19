@@ -165,7 +165,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
         Task<Status> SetTwoFactorAuthenticationStatus(TwoFactorAuthentication status);
 
         /// <summary>
-        /// Get the list of accounts for current org.
+        /// Get the list of accounts for current org using 2.x API.
         /// </summary>
         /// <returns>
         /// The <see cref="Task"/>.
@@ -173,7 +173,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
         Task<PagedResponse<UserType>> GetUsersPaginated(UserListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
 
         /// <summary>
-        /// Get the account details for given user name.
+        /// Get the account details for given user name using 2.x API.
         /// </summary>
         /// <returns>
         /// The <see cref="Task"/>.
@@ -181,7 +181,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
         Task<UserType> GetUser(string userName);
 
         /// <summary>
-        /// Get the account details for current user.
+        /// Get the account details for current user using 2.x API.
         /// </summary>
         /// <returns>
         /// The <see cref="Task"/>.
