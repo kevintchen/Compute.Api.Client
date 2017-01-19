@@ -339,7 +339,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// <returns>The <see cref="Uri"/>.</returns>
 		public static Uri CopyCustomerImage(Guid orgId)
 		{
-			return new Uri(string.Format(MCP1_0_PREFIX + "{0}/copyImage", orgId), UriKind.Relative);
+			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/copyImage", orgId), UriKind.Relative);
 		}
 
 		/// <summary>Gets the relative URI for the CaaS API action that retrieves a filtered list of deployed servers.</summary>
