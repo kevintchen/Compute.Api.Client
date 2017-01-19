@@ -1,4 +1,6 @@
-﻿namespace DD.CBU.Compute.Api.Client.Interfaces.Account
+﻿using DD.CBU.Compute.Api.Contracts.Requests.Account20;
+
+namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 {
     using System;
     using System.Collections.Generic;
@@ -16,13 +18,14 @@
 	/// </summary>
 	public interface IAccountAccessor
 	{
-		/// <summary>
-		/// The get accounts.
-		/// </summary>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		Task<IEnumerable<Account>> GetAccounts();
+        /// <summary>
+        /// The get accounts.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        [Obsolete("This method is obsolete; use 'GetUsersPaginated' instead")]
+        Task<IEnumerable<Account>> GetAccounts();
 
         /// <summary>
 		/// The get accounts with phone number.
@@ -30,7 +33,8 @@
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<IEnumerable<AccountWithPhoneNumber>> GetAccountsWithPhoneNumber();
+		[Obsolete("This method is obsolete; use 'GetUsersPaginated' instead")]
+        Task<IEnumerable<AccountWithPhoneNumber>> GetAccountsWithPhoneNumber();
 
         /// <summary>
         /// The get administrator account.
@@ -41,6 +45,7 @@
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
+        [Obsolete("This method is obsolete; use 'GetUser' instead")]
         Task<AccountWithPhoneNumber> GetAdministratorAccount(string username);
 
 		/// <summary>
@@ -158,5 +163,29 @@
         /// <param name="status">The status.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<Status> SetTwoFactorAuthenticationStatus(TwoFactorAuthentication status);
+
+        /// <summary>
+        /// Get the list of accounts for current org.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<PagedResponse<UserType>> GetUsersPaginated(UserListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+
+        /// <summary>
+        /// Get the account details for given user name.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<UserType> GetUser(string userName);
+
+        /// <summary>
+        /// Get the account details for current user.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<UserType> GetMyUser();
     }
 }
