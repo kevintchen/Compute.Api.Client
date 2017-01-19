@@ -296,7 +296,7 @@ namespace DD.CBU.Compute.Api.Client.Account
         }
 
         /// <summary>
-        /// Get the account details for current user.
+        /// Get the account details for current user using 2.x API.
         /// </summary>
         /// <returns></returns>
         public async Task<UserType> GetMyUser()
@@ -305,7 +305,7 @@ namespace DD.CBU.Compute.Api.Client.Account
         }
 
         /// <summary>
-        /// Get the account details for given user name.
+        /// Get the account details for given user name using 2.x API.
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
@@ -315,7 +315,7 @@ namespace DD.CBU.Compute.Api.Client.Account
         }
 
         /// <summary>
-        /// Get the paginated list of accounts for current org.
+        /// Get the paginated list of accounts for current org using 2.x API.
         /// </summary>
         /// <returns></returns>
         public async Task<PagedResponse<UserType>> GetUsersPaginated(UserListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
