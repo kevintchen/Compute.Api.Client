@@ -43,7 +43,6 @@ namespace DD.CBU.Compute.Api.Client.Account
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        [Obsolete("This method is obsolete; use 'GetUsersPaginated' instead")]
         public async Task<IEnumerable<Account>> GetAccounts()
 		{
 			Accounts accounts = await _apiClient.GetAsync<Accounts>(ApiUris.Account(_apiClient.OrganizationId));
@@ -56,7 +55,6 @@ namespace DD.CBU.Compute.Api.Client.Account
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        [Obsolete("This method is obsolete; use 'GetUsersPaginated' instead")]
         public async Task<IEnumerable<AccountWithPhoneNumber>> GetAccountsWithPhoneNumber()
         {
             AccountsWithPhoneNumber accounts = await _apiClient.GetAsync<AccountsWithPhoneNumber>(ApiUris.AccountWithPhoneNumber(_apiClient.OrganizationId));
@@ -72,7 +70,6 @@ namespace DD.CBU.Compute.Api.Client.Account
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        [Obsolete("This method is obsolete; use 'GetUser' instead")]
         public async Task<AccountWithPhoneNumber> GetAdministratorAccount(string username)
 		{
 			AccountWithPhoneNumber account =
