@@ -1,4 +1,6 @@
-﻿namespace DD.CBU.Compute.Api.Client.Account
+﻿using DD.CBU.Compute.Api.Contracts.Requests.Account20;
+
+namespace DD.CBU.Compute.Api.Client.Account
 {
     using System;
     using System.Collections.Generic;
@@ -35,13 +37,13 @@
 			this._apiClient = apiClient;
 		}
 
-		/// <summary>
-		/// The get accounts.
-		/// </summary>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		public async Task<IEnumerable<Account>> GetAccounts()
+        /// <summary>
+        /// The get accounts.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<IEnumerable<Account>> GetAccounts()
 		{
 			Accounts accounts = await _apiClient.GetAsync<Accounts>(ApiUris.Account(_apiClient.OrganizationId));
 			return accounts.Items;
@@ -60,15 +62,15 @@
         }
 
         /// <summary>
-		/// The get administrator account.
-		/// </summary>
-		/// <param name="username">
-		/// The username.
-		/// </param>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		public async Task<AccountWithPhoneNumber> GetAdministratorAccount(string username)
+        /// The get administrator account.
+        /// </summary>
+        /// <param name="username">
+        /// The username.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<AccountWithPhoneNumber> GetAdministratorAccount(string username)
 		{
 			AccountWithPhoneNumber account =
 				await
@@ -289,5 +291,45 @@
         {
             return await _apiClient.PostAsync<TwoFactorAuthentication, Status>(ApiUris.TwoFactorAuthenicationStatus(_apiClient.OrganizationId), status);
         }
-	}
+
+        /// <summary>
+        /// Get the account details for current user using 2.x API.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<UserType> GetMyUser()
+        {
+            return await _apiClient.GetAsync<UserType>(ApiUris.GetMyUser());
+        }
+
+        /// <summary>
+        /// Get the account details for given user name using 2.x API.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public async Task<UserType> GetUser(string userName)
+        {
+            return await _apiClient.GetAsync<UserType>(ApiUris.GetUser(_apiClient.OrganizationId, userName));
+        }
+
+        /// <summary>
+        /// Get the paginated list of accounts for current org using 2.x API.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<PagedResponse<UserType>> GetUsersPaginated(UserListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        {
+            var response = await _apiClient.GetAsync<UsersResponseCollection>(
+                ApiUris.ListUsers(_apiClient.OrganizationId),
+                pagingOptions,
+                filteringOptions);
+
+            return new PagedResponse<UserType>
+            {
+                items = response.user,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
+    }
 }

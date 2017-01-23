@@ -96,7 +96,6 @@
     <Compile Include="..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Account20\UserAccessor.cs" />
     <Compile Include="Account\AccountAccessor.cs" />
     <Compile Include="Backup\BackupAccessor.cs" />
     <Compile Include="Drs\ConsistencyGroupAccessor.cs" />
@@ -115,7 +114,6 @@
     <Compile Include="Exceptions\CaaSOrganizationNotSetException.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Infrastructure\InfrastructureAccessor.cs" />
-    <Compile Include="Interfaces\Account20\IUserAccessor.cs" />
     <Compile Include="Interfaces\Account\IAccountAccessor.cs" />
     <Compile Include="Interfaces\Drs\IConsistencyGroupAccessor.cs" />
     <Compile Include="Interfaces\Infrastructure\IInfrastructureAccessor.cs" />
