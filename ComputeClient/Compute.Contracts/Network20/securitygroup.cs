@@ -135,95 +135,399 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute("securityGroup", Namespace = "urn:didata.com:api:cloud:types",
-        IsNullable = false)]
-    public partial class SecurityGroupType
-    {
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute("securityGroup", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class SecurityGroupType
+	{
 
-        private string nameField;
+		private string nameField;
 
-        private string descriptionField;
+		private string descriptionField;
 
-        private string stateField;
+		private string stateField;
 
-        private SecurityGroupTypeNic[] nicField;
+		private object itemField;
 
-        private string vlanIdField;
+		private System.DateTime createTimeField;
 
-        private System.DateTime createTimeField;
+		private string idField;
 
-        private string idField;
+		private string datacenterIdField;
 
-        private string datacenterIdField;
+		private string typeField;
 
-        /// <remarks/>
-        public string name
-        {
-            get { return this.nameField; }
-            set { this.nameField = value; }
-        }
+		/// <remarks/>
+		public string name
+		{
+			get
+			{
+				return this.nameField;
+			}
+			set
+			{
+				this.nameField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string description
-        {
-            get { return this.descriptionField; }
-            set { this.descriptionField = value; }
-        }
+		/// <remarks/>
+		public string description
+		{
+			get
+			{
+				return this.descriptionField;
+			}
+			set
+			{
+				this.descriptionField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string state
-        {
-            get { return this.stateField; }
-            set { this.stateField = value; }
-        }
+		/// <remarks/>
+		public string state
+		{
+			get
+			{
+				return this.stateField;
+			}
+			set
+			{
+				this.stateField = value;
+			}
+		}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("nic")]
-        public SecurityGroupTypeNic[] nic
-        {
-            get { return this.nicField; }
-            set { this.nicField = value; }
-        }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("nics", typeof(SecurityGroupNicsType))]
+		[System.Xml.Serialization.XmlElementAttribute("servers", typeof(SecurityGroupServersType))]
+		public object Item
+		{
+			get
+			{
+				return this.itemField;
+			}
+			set
+			{
+				this.itemField = value;
+			}
+		}
 
-        /// <remarks/>
-        public string vlanId
-        {
-            get { return this.vlanIdField; }
-            set { this.vlanIdField = value; }
-        }
+		/// <remarks/>
+		public System.DateTime createTime
+		{
+			get
+			{
+				return this.createTimeField;
+			}
+			set
+			{
+				this.createTimeField = value;
+			}
+		}
 
-        /// <remarks/>
-        public System.DateTime createTime
-        {
-            get { return this.createTimeField; }
-            set { this.createTimeField = value; }
-        }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string id
+		{
+			get
+			{
+				return this.idField;
+			}
+			set
+			{
+				this.idField = value;
+			}
+		}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
-        {
-            get { return this.idField; }
-            set { this.idField = value; }
-        }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string datacenterId
+		{
+			get
+			{
+				return this.datacenterIdField;
+			}
+			set
+			{
+				this.datacenterIdField = value;
+			}
+		}
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string datacenterId
-        {
-            get { return this.datacenterIdField; }
-            set { this.datacenterIdField = value; }
-        }
-    }
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string type
+		{
+			get
+			{
+				return this.typeField;
+			}
+			set
+			{
+				this.typeField = value;
+			}
+		}
+	}
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class SecurityGroupNicsType
+	{
+
+		private SecurityGroupNicsTypeNic[] nicField;
+
+		private string vlanIdField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("nic")]
+		public SecurityGroupNicsTypeNic[] nic
+		{
+			get
+			{
+				return this.nicField;
+			}
+			set
+			{
+				this.nicField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string vlanId
+		{
+			get
+			{
+				return this.vlanIdField;
+			}
+			set
+			{
+				this.vlanIdField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class SecurityGroupServersType
+	{
+
+		private SecurityGroupServersTypeServer[] serverField;
+
+		private string networkDomainIdField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("server")]
+		public SecurityGroupServersTypeServer[] server
+		{
+			get
+			{
+				return this.serverField;
+			}
+			set
+			{
+				this.serverField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string networkDomainId
+		{
+			get
+			{
+				return this.networkDomainIdField;
+			}
+			set
+			{
+				this.networkDomainIdField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class SecurityGroupServersTypeServer
+	{
+
+		private string nameField;
+
+		private string idField;
+
+		/// <remarks/>
+		public string name
+		{
+			get
+			{
+				return this.nameField;
+			}
+			set
+			{
+				this.nameField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string id
+		{
+			get
+			{
+				return this.idField;
+			}
+			set
+			{
+				this.idField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class SecurityGroupNicsTypeNic
+	{
+
+		private SecurityGroupNicsTypeNicServer serverField;
+
+		private string idField;
+
+		private string ipv4AddressField;
+
+		private string ipv6AddressField;
+
+		private bool primaryField;
+
+		/// <remarks/>
+		public SecurityGroupNicsTypeNicServer server
+		{
+			get
+			{
+				return this.serverField;
+			}
+			set
+			{
+				this.serverField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string id
+		{
+			get
+			{
+				return this.idField;
+			}
+			set
+			{
+				this.idField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string ipv4Address
+		{
+			get
+			{
+				return this.ipv4AddressField;
+			}
+			set
+			{
+				this.ipv4AddressField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string ipv6Address
+		{
+			get
+			{
+				return this.ipv6AddressField;
+			}
+			set
+			{
+				this.ipv6AddressField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public bool primary
+		{
+			get
+			{
+				return this.primaryField;
+			}
+			set
+			{
+				this.primaryField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	public partial class SecurityGroupNicsTypeNicServer
+	{
+
+		private string nameField;
+
+		private string idField;
+
+		/// <remarks/>
+		public string name
+		{
+			get
+			{
+				return this.nameField;
+			}
+			set
+			{
+				this.nameField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string id
+		{
+			get
+			{
+				return this.idField;
+			}
+			set
+			{
+				this.idField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
