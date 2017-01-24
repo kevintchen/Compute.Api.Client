@@ -2047,10 +2047,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/securityGroup?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
-        /// <summary>Returns the relative URI of the REST request for reconfiguring the server.</summary>
-        /// <param name="orgId">The organization id.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri ReconfigureServer(Guid orgId)
+		/// <summary>	Get security group</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri GetSecurityGroup(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/securityGroup", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Returns the relative URI of the REST request for reconfiguring the server.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri ReconfigureServer(Guid orgId)
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/reconfigureServer", orgId), UriKind.Relative);
         }

@@ -43,21 +43,36 @@
             set { SetFilter(NameField, value); }
         }
 
-        /// <summary>	Identifies VLANs by their state.
-        /// Case insensitive. The initial possible
-        /// set of values for vlan.state are:
-        /// "NORMAL",
-        /// "PENDING_ADD",
-        /// "PENDING_CHANGE",
-        /// "PENDING_DELETE",
-        /// "FAILED_ADD",
-        /// "FAILED_CHANGE",
-        /// "FAILED_DELETE",
-        /// "REQUIRES_SUPPORT"
-        /// This set of values should not be
-        /// assumed to be static and can
-        /// increase at any time. </summary>
-        public string State
+		/// <summary>
+		/// The "networkDomainId" field name.
+		/// </summary>
+		public const string NetworkDomainIdField = "networkDomainId";
+
+		/// <summary>
+		/// The "vlanId" field name.
+		/// </summary>
+		public const string VlanIdField = "vlanId";
+
+		/// <summary>
+		/// The "serverId" field name.
+		/// </summary>
+		public const string ServerIdField = "serverId";
+
+		/// <summary>	Identifies VLANs by their state.
+		/// Case insensitive. The initial possible
+		/// set of values for vlan.state are:
+		/// "NORMAL",
+		/// "PENDING_ADD",
+		/// "PENDING_CHANGE",
+		/// "PENDING_DELETE",
+		/// "FAILED_ADD",
+		/// "FAILED_CHANGE",
+		/// "FAILED_DELETE",
+		/// "REQUIRES_SUPPORT"
+		/// This set of values should not be
+		/// assumed to be static and can
+		/// increase at any time. </summary>
+		public string State
         {
             get { return GetFilter<string>(StateField); }
             set { SetFilter(StateField, value); }
@@ -98,5 +113,32 @@
             get { return GetFilter<DateTimeOffset?>(CreateTimeField, FilterOperator.GreaterOrEqual); }
             set { SetFilter(CreateTimeField, FilterOperator.GreaterOrEqual, value); }
         }
-    }
+
+		/// <summary>	
+		/// Identifies an individual Network Domain.
+		/// </summary>
+		public Guid? NetworkDomainId
+		{
+			get { return GetFilter<Guid?>(NetworkDomainIdField); }
+			set { SetFilter(NetworkDomainIdField, value); }
+		}
+
+		/// <summary>	
+		/// Identifies an Vlan.
+		/// </summary>
+		public Guid? VlanId
+		{
+			get { return GetFilter<Guid?>(VlanIdField); }
+			set { SetFilter(VlanIdField, value); }
+		}
+
+		/// <summary>	
+		/// Identifies an individual server.
+		/// </summary>
+		public Guid? ServerId
+		{
+			get { return GetFilter<Guid?>(ServerIdField); }
+			set { SetFilter(ServerIdField, value); }
+		}
+	}
 }

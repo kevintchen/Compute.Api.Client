@@ -60,15 +60,16 @@
             return await _api.PostAsync<DeleteSecurityGroup, ResponseType>(ApiUris.DeleteSecurityGroup(_api.OrganizationId), securityGroup);
         }
 
-        /// <summary>
-        /// List Security groups associated with server nics or the vlan
-        /// </summary>
-        /// <param name="vlanId">Vlan Id</param>
-        /// <param name="serverId">Server Id</param>
-        /// <param name="pagingOptions">Paging options</param>
-        /// <param name="filterOptions">Filter options</param>
-        /// <returns>List of Security groups</returns>
-        public async Task<PagedResponse<SecurityGroupType>> GetSecurityGroupsPaged(Guid? vlanId, Guid? serverId, PageableRequest pagingOptions = null,
+		/// <summary>
+		/// List Security groups associated with server nics or the vlan
+		/// </summary>
+		/// <param name="vlanId">Vlan Id</param>
+		/// <param name="serverId">Server Id</param>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <param name="filterOptions">Filter options</param>
+		/// <returns>List of Security groups</returns>
+		[Obsolete("This method is obsolete; use 'GetSecurityGroupsPaginated' instead")]
+		public async Task<PagedResponse<SecurityGroupType>> GetSecurityGroupsPaged(Guid? vlanId, Guid? serverId, PageableRequest pagingOptions = null,
             SecurityGroupListOptions filterOptions = null)
         {
             if(vlanId == null && serverId == null)
@@ -85,12 +86,32 @@
             };
         }
 
-        /// <summary>
-        /// Add nic to the security group
-        /// </summary>
-        /// <param name="nicSecurityGroup">Security group and nic details</param>
-        /// <returns>Response Data</returns>
-        public async Task<ResponseType> AddNicToSecurityGroup(addNicToSecurityGroup nicSecurityGroup)
+		/// <summary>
+		/// List Security groups.
+		/// </summary>
+		/// <param name="pagingOptions">Paging options</param>
+		/// <param name="filterOptions">Filter options</param>
+		/// <returns>List of Security groups</returns>
+		public async Task<PagedResponse<SecurityGroupType>> GetSecurityGroupsPaginated(PageableRequest pagingOptions = null, SecurityGroupListOptions filterOptions = null)
+		{
+
+			var response = await _api.GetAsync<securityGroups>(ApiUris.GetSecurityGroup(_api.OrganizationId), pagingOptions, filterOptions);
+			return new PagedResponse<SecurityGroupType>
+			{
+				items = response.securityGroup,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
+
+		/// <summary>
+		/// Add nic to the security group
+		/// </summary>
+		/// <param name="nicSecurityGroup">Security group and nic details</param>
+		/// <returns>Response Data</returns>
+		public async Task<ResponseType> AddNicToSecurityGroup(addNicToSecurityGroup nicSecurityGroup)
         {
             return await _api.PostAsync<addNicToSecurityGroup, ResponseType>(ApiUris.AddNicToSecurityGroup(_api.OrganizationId), nicSecurityGroup);
         }
