@@ -81,6 +81,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string datacenterIdField;
 
+        private bool smallField;
+
         /// <remarks/>
         public VlanTypeNetworkDomain networkDomain
         {
@@ -172,6 +174,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.datacenterIdField; }
             set { this.datacenterIdField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool small
+        {
+            get { return this.smallField; }
+            set { this.smallField = value; }
         }
     }
 
