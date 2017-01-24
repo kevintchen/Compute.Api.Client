@@ -2034,7 +2034,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetSecurityGroupForVlan(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/securityGroup?vlanId={1}", orgId, vlanId), 
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/securityGroup?vlanId={1}", orgId, vlanId), 
                 UriKind.Relative);
         }
 
@@ -2044,7 +2044,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri GetSecurityGroupForServer(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/securityGroup?serverId={1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/securityGroup?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
 		/// <summary>	Get security group</summary>
