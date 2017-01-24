@@ -18,6 +18,9 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.4 prefix. </summary>
         public const string MCP2_4_PREFIX = "caas/2.4/";
 
+        /// <summary>	The MCP 2.5 prefix. </summary>
+        public const string MCP2_5_PREFIX = "caas/2.5/";
+
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
         /// </summary>
@@ -741,7 +744,7 @@ namespace DD.CBU.Compute.Api.Client
                 queryParameters.Add(string.Format("networkDomainId={0}", networkDomainId));
             }
 
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/network/vlan?{1}", orgId, String.Join("&", queryParameters)), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/network/vlan?{1}", orgId, String.Join("&", queryParameters)), UriKind.Relative);
         }
 
         /// <summary>	The get Virtual LAN. </summary>
@@ -750,7 +753,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri GetVlan(Guid orgId, Guid vlanId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/network/vlan/{1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/network/vlan/{1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>	Gets vlan by organisation identifier. </summary>
@@ -758,7 +761,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The vlan by organisation identifier. </returns>
         public static Uri GetVlanByOrgId(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/network/vlan", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/network/vlan", orgId), UriKind.Relative);
         }
 
         /// <summary>	The relative URI for the CaaS API for deploying the VLan. </summary>
