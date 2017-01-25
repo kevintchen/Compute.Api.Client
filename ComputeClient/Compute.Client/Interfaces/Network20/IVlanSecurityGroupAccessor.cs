@@ -46,7 +46,16 @@
         /// <returns></returns>
         Task<PagedResponse<SecurityGroupType>> GetSecurityGroupsPaged(Guid? vlanId, Guid? serverId, PageableRequest pagingOptions = null, SecurityGroupListOptions filterOptions = null);
 
-        /// <summary>
+	    /// <summary>
+	    /// List Security groups.
+	    /// </summary>
+	    /// <param name="pagingOptions">Paging options</param>
+	    /// <param name="filterOptions">Filter options</param>
+	    /// <returns>List of Security groups</returns>
+	    Task<PagedResponse<SecurityGroupType>> GetSecurityGroupsPaginated(PageableRequest pagingOptions = null,
+		    SecurityGroupListOptions filterOptions = null);
+
+		/// <summary>
 		/// Add Nic to Security Group
 		/// </summary>
 		/// <param name="nicSecurityGroup">Details regarding the security group and the nic</param>
