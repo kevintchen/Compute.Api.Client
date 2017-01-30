@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<user xmlns="urn:didata.com:api:cloud:types">
+  <userName>staylor</userName>
+  <fullName>Steve Taylor</fullName>
+  <firstName>Steve</firstName>
+  <lastName>Taylor</lastName>
+  <emailAddress>staylor@example.com</emailAddress>
+  <role>primary administrator</role>
+  <phone countryCode="61" number="121234347845"/>
+  <department>Cloud</department>
+  <customDefined1>Test Field 3</customDefined1>
+  <customDefined2>Test Field 5</customDefined2>
+  <organization id="A3D9AACC-A273-45A5-919D-0F4C41C0763B">
+    <name>R&amp;D - Platform-CaaS Project</name>
+    <homeGeoName>Australia</homeGeoName>
+    <homeGeoApiHost>api-au.dimensiondata.com</homeGeoApiHost>
+    <homeGeoId>australia</homeGeoId>
+  </organization>
+  <state>NORMAL</state>
+</user>

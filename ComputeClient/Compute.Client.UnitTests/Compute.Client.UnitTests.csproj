@@ -113,6 +113,9 @@
     <Content Include="SampleOutputs\CreatePoolResponse.xml" />
     <Content Include="SampleOutputs\DeleteFirewallRuleResponse.xml" />
     <Content Include="SampleOutputs\DeployServerResponse.xml" />
+    <Content Include="SampleOutputs\GetMyUserDetails.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="SampleOutputs\NotifyNicIpChangeResponse.xml" />
     <Content Include="SampleOutputs\PowerOffServerResponse.xml" />
     <Content Include="SampleOutputs\RemoveNicResponse.xml" />
