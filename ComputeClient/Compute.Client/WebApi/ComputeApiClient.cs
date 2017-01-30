@@ -387,6 +387,17 @@ namespace DD.CBU.Compute.Api.Client
 			return await WebApi.LoginAsync();
 		}
 
+        /// <summary>
+		/// The login async.
+		/// </summary>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<IUser> LoginAsync()
+		{
+			return await WebApi.LoginUserAsync();
+		}
+
 		#endregion // Public methods
 
 		#region Static Utility Methods
@@ -1378,7 +1389,7 @@ namespace DD.CBU.Compute.Api.Client
 		[Obsolete("Use GetComputeApiClient Factory passing accountCredentials and Login() method")]
 		public async Task<IAccount> LoginAsync(ICredentials accountCredentials)
 		{
-			IAccount mcp1Account = await WebApi.LoginAsync();
+			var mcp1Account = await WebApi.LoginAsync();
 			if (_httpClientHandler != null)
 			{
 				_httpClientHandler.Credentials = accountCredentials;

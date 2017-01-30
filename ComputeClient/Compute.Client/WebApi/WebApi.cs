@@ -102,8 +102,21 @@ namespace DD.CBU.Compute.Api.Client.WebApi
 		/// </returns>
 		public async Task<IAccount> LoginAsync()
 		{
-			Account account = await GetAsync<Account>(ApiUris.MyAccount);
+			Account account = await GetAsync<Account>(ApiUris.GetMyUser());
 			_organizationId = account.OrganizationId;
+			return account;
+		}
+
+        /// <summary>
+		/// Asynchronously log into the CaaS API.
+		/// </summary>
+		/// <returns>
+		/// An <see cref="IAccount"/> implementation representing the CaaS account that the client is logged into.
+		/// </returns>
+		public async Task<IUser> LoginUserAsync()
+		{
+			UserType account = await GetAsync<UserType>(ApiUris.GetMyUser());
+			_organizationId = Guid.Parse(account.Organization.id);
 			return account;
 		}
 

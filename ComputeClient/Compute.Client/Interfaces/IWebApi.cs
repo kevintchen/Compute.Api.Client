@@ -16,13 +16,22 @@
 	    /// </summary>
 	    Guid OrganizationId { get; }
 
-	    /// <summary>
-	    /// The login async.
-	    /// </summary>
-	    /// <returns>
-	    /// The <see cref="Task"/>.
-	    /// </returns>
-	    Task<IAccount> LoginAsync();
+        /// <summary>
+        /// The login async.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        [Obsolete("This method is obsolete; use 'LoginUserAsync' instead")]
+        Task<IAccount> LoginAsync();
+
+        /// <summary>
+        /// The user login async.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="IUser"/>.
+        /// </returns>
+        Task<IUser> LoginUserAsync();
 
         /// <summary>
         /// Invoke a CaaS API operation using a HTTP GET request.

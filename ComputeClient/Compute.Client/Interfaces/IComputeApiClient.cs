@@ -31,7 +31,16 @@ namespace DD.CBU.Compute.Api.Client.Interfaces
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
+        [Obsolete("This method is obsolete; use 'LoginAsync' instead")]
         Task<IAccount> Login();
+
+        /// <summary>
+        /// The login async.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<IUser> LoginAsync();
 
         /// <summary>
         /// Gets the account accessor

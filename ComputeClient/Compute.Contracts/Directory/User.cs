@@ -1,12 +1,16 @@
 ﻿namespace DD.CBU.Compute.Api.Contracts.Directory
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Xml.Serialization;
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute("users", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
     public partial class UsersResponseCollection
     {
 
@@ -54,52 +58,68 @@
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     [System.Xml.Serialization.XmlRootAttribute("user", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-    public partial class UserType
+    public partial class UserType : IUser
     {
 
         /// <remarks/>
-        public string userName;
+        [XmlElementAttribute("userName")]
+        public string UserName { get; set; }
 
         /// <remarks/>
-        public string fullName;
+        [XmlElementAttribute("fullName")]
+        public string FullName { get; set; }
 
         /// <remarks/>
-        public string firstName;
+        [XmlElementAttribute("firstName")]
+        public string FirstName { get; set; }
 
         /// <remarks/>
-        public string lastName;
+        [XmlElementAttribute("lastName")]
+        public string LastName { get; set; }
 
         /// <remarks/>
-        public string emailAddress;
+        [XmlElementAttribute("emailAddress")]
+        public string EmailAddress { get; set; }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("role")]
-        public string[] role;
+        public string[] Roles { get; set; }
 
         /// <remarks/>
-        public PhoneType phone;
+        [XmlElementAttribute("phone")]
+        public PhoneType Phone { get; set; }
 
         /// <remarks/>
-        public string department;
+        [XmlElementAttribute("department")]
+        public string Department { get; set; }
 
         /// <remarks/>
-        public string customDefined1;
+        [XmlElementAttribute("customDefined1")]
+        public string CustomDefined1 { get; set; }
 
         /// <remarks/>
-        public string customDefined2;
+        [XmlElementAttribute("customDefined2")]
+        public string CustomDefined2 { get; set; }
 
         /// <remarks/>
-        public UserTypeOrganization organization;
+        [XmlElementAttribute("organization")]
+        public UserTypeOrganization Organization { get; set; }
 
         /// <remarks/>
-        public string state;
+        [XmlElementAttribute("state")]
+        public string State { get; set; }
 
         /// <remarks/>
-        public System.DateTime createTime;
+        [XmlElementAttribute("createTime")]
+        public System.DateTime CreateTime { get; set; }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool createTimeSpecified;
+        public bool createTimeSpecified { get; set; }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public Guid OrganizationId { get { return Guid.Parse(Organization.id); } }
     }
 
     /// <remarks/>

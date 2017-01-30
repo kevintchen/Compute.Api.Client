@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DD.CBU.Compute.Api.Contracts.Requests.Account20
+﻿namespace DD.CBU.Compute.Api.Contracts.Requests.Account20
 {
     /// <summary>
     /// Filtering options for the user request.
@@ -110,6 +104,7 @@ namespace DD.CBU.Compute.Api.Contracts.Requests.Account20
             get { return GetFilter<string>(EmailAddressField); }
             set { SetFilter(EmailAddressField, value); }
         }
+
         /// <summary>	
         /// Identifies an individual Phone Country Code.
         /// </summary>
