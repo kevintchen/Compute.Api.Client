@@ -28,11 +28,11 @@ namespace Compute.Client.UnitTests.Backup
 		[TestMethod]
 		public async Task RestoreBackupTest()
 		{
-			requestsAndResponses.Add(ApiUris.MyAccount, RequestFileResponseType.AsGoodResponse("GetMyAccountDetails.xml"));
+			requestsAndResponses.Add(ApiUris.GetMyUser(), RequestFileResponseType.AsGoodResponse("GetMyUserDetails.xml"));
 			requestsAndResponses.Add(ApiUris.RestoreBackup(accountId, ServerId, BackupClientId), RequestFileResponseType.AsGoodResponse("RestoreBackupResponse.xml"));
 
 			var client = GetApiClient();
-			await client.LoginAsync(new NetworkCredential(string.Empty, string.Empty));
+			await client.LoginAsync();
 			Status response =
 				await client.Backup.InPlaceRestore(ServerId, new BackupClientDetailsType {id = BackupClientId}, DateTime.Now);
 
@@ -46,11 +46,11 @@ namespace Compute.Client.UnitTests.Backup
 		[TestMethod]
 		public async Task RestoreBackupOutOfPlaceTest()
 		{
-			requestsAndResponses.Add(ApiUris.MyAccount, RequestFileResponseType.AsGoodResponse("GetMyAccountDetails.xml"));
+			requestsAndResponses.Add(ApiUris.GetMyUser(), RequestFileResponseType.AsGoodResponse("GetMyUserDetails.xml"));
 			requestsAndResponses.Add(ApiUris.RestoreBackup(accountId, ServerId, BackupClientId), RequestFileResponseType.AsGoodResponse("RestoreBackupOutOfPlaceResponse.xml"));
 
 			var client = GetApiClient();
-			await client.LoginAsync(new NetworkCredential(string.Empty, string.Empty));
+			await client.LoginAsync();
 
 			const string targetBackupClientId = "d577a691-e116-4913-a440-022d2729ff99";
 			Status response =
