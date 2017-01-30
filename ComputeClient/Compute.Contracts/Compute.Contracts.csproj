@@ -88,6 +88,7 @@
     <Compile Include="..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Directory\IUser.cs" />
     <Compile Include="Directory\User.cs" />
     <Compile Include="Drs\ConsistencyGroupOverride.cs" />
     <Compile Include="Drs\ConsistencyGroupSnapshot.cs" />
