@@ -25,24 +25,6 @@
         /// </summary>
         public const string StateField = "state";
 
-        /// <summary>
-        /// Gets or sets the id filter.
-        /// </summary>
-        public Guid? Id
-        {
-            get { return GetFilter<Guid?>(IdField); }
-            set { SetFilter(IdField, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the Name filter.
-        /// </summary>
-        public string Name
-        {
-            get { return GetFilter<string>(NameField); }
-            set { SetFilter(NameField, value); }
-        }
-
 		/// <summary>
 		/// The "networkDomainId" field name.
 		/// </summary>
@@ -57,6 +39,30 @@
 		/// The "serverId" field name.
 		/// </summary>
 		public const string ServerIdField = "serverId";
+
+		/// <summary>
+		/// The "type" field name.
+		/// </summary>
+		public const string TypeField = "type";
+
+		/// <summary>
+		/// Gets or sets the id filter.
+		/// </summary>
+		public Guid? Id
+        {
+            get { return GetFilter<Guid?>(IdField); }
+            set { SetFilter(IdField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the Name filter.
+        /// </summary>
+        public string Name
+        {
+            get { return GetFilter<string>(NameField); }
+            set { SetFilter(NameField, value); }
+        }
+
 
 		/// <summary>	Identifies VLANs by their state.
 		/// Case insensitive. The initial possible
@@ -139,6 +145,15 @@
 		{
 			get { return GetFilter<Guid?>(ServerIdField); }
 			set { SetFilter(ServerIdField, value); }
+		}
+
+		/// <summary>	
+		/// Identifies an type.
+		/// </summary>
+		public string Type
+		{
+			get { return GetFilter<string>(TypeField); }
+			set { SetFilter(TypeField, value); }
 		}
 	}
 }
