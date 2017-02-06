@@ -33,7 +33,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		private string itemField;
 
-		private ItemChoiceType itemElementNameField;
+		private SGItemChoiceType itemElementNameField;
 
 		private string nameField;
 
@@ -57,7 +57,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		/// <remarks/>
 		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		public ItemChoiceType ItemElementName
+		public SGItemChoiceType ItemElementName
 		{
 			get
 			{
@@ -100,7 +100,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
-	public enum ItemChoiceType
+	public enum SGItemChoiceType
 	{
 
 		/// <remarks/>
@@ -109,7 +109,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 		/// <remarks/>
 		vlanId,
 	}
-
 
 	/// <remarks/>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
