@@ -68,5 +68,12 @@
         /// <param name="nicSecurityGroup">Details regarding the security group and the nic</param>
         /// <returns>Response Data</returns>
         Task<ResponseType> RemoveNicFromSecurityGroup(removeNicFromSecurityGroup nicSecurityGroup);
+
+	    /// <summary>
+	    /// Add server to the security group
+	    /// </summary>
+	    /// <param name="serverSecurityGroup">Security group and server details</param>
+	    /// <returns>Response Data</returns>
+	    Task<ResponseType> AddServerToSecurityGroup(addServerToSecurityGroup serverSecurityGroup);
     }
 }

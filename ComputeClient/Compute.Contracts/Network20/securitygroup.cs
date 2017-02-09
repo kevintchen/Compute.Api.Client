@@ -162,8 +162,50 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class addServerToSecurityGroup
+	{
+
+		private string serverIdField;
+
+		private string securityGroupIdField;
+
+		/// <remarks/>
+		public string serverId
+		{
+			get
+			{
+				return this.serverIdField;
+			}
+			set
+			{
+				this.serverIdField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public string securityGroupId
+		{
+			get
+			{
+				return this.securityGroupIdField;
+			}
+			set
+			{
+				this.securityGroupIdField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
