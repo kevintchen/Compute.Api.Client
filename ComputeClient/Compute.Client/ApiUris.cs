@@ -2025,7 +2025,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// <returns>	Url endpoint </returns>
 		public static Uri AddServerToSecurityGroup(Guid orgId)
 		{
-			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
 		}
 
 		/// <summary>	Remove Nic from security group</summary>
