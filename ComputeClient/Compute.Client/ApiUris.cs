@@ -2020,10 +2020,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/addNicToSecurityGroup", orgId), UriKind.Relative);
         }
 
-        /// <summary>	Remove Nic from security group</summary>
-        /// <param name="orgId">	The organization Id. </param>
-        /// <returns>	Url endpoint </returns>
-        public static Uri RemoveNicFromSecurityGroup(Guid orgId)
+		/// <summary>	Add server to security group</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri AddServerToSecurityGroup(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Remove Nic from security group</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri RemoveNicFromSecurityGroup(Guid orgId)
         {
             return new Uri(string.Format(MCP2_4_PREFIX + "{0}/securityGroup/removeNicFromSecurityGroup", orgId), UriKind.Relative);
         }
