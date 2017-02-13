@@ -36,6 +36,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         
         private string[] softwareLabelField;
 
+        private ImageTypeDisk[] diskField;
+
         private System.DateTime createTimeField;
 
         private string idField;
@@ -80,6 +82,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.memoryGbField; }
             set { this.memoryGbField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("disk")]
+        public ImageTypeDisk[] disk
+        {
+            get { return this.diskField; }
+            set { this.diskField = value; }
         }
 
         /// <remarks/>
@@ -392,6 +402,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private TagWithIdAndNameType[] tagField;
 
+        private VmwareToolsType vmwareToolsField;
+
         /// <remarks/>
         public CustomerImageTypeSource source
         {
@@ -433,6 +445,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.tagField; }
             set { this.tagField = value; }
+        }
+
+        /// <remarks/>
+        public VmwareToolsType vmwareTools
+        {
+            get { return this.vmwareToolsField; }
+            set { this.vmwareToolsField = value; }
         }
     }
 
