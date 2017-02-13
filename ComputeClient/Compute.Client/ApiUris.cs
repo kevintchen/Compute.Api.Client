@@ -1913,7 +1913,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2OsImages(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/osImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/image/osImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 os images. </summary>
@@ -1922,7 +1922,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2OsImage(Guid orgId, Guid imageId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/osImage/{1}", orgId, imageId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/image/osImage/{1}", orgId, imageId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 customer images. </summary>
@@ -1930,7 +1930,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImages(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/image/customerImage", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 customer image. </summary>
@@ -1939,7 +1939,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 images. </returns>
         public static Uri GetMcp2CustomerImage(Guid orgId, Guid imageId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/image/customerImage/{1}", orgId, imageId), UriKind.Relative);
         }
 
         /// <summary>	Edit MCP 2 customer image metadata </summary>

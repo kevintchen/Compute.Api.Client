@@ -33,9 +33,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private CpuType cpuField;
 
         private uint memoryGbField;
-
-        private ImageTypeDisk[] diskField;
-
+        
         private string[] softwareLabelField;
 
         private System.DateTime createTimeField;
@@ -47,6 +45,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private ClusterType clusterField;
 
         private ImageTypeNic[] nicField;
+
+        private ImageScsiControllerType[] scsiControllerField;
+
+        private ImageSataControllerType[] sataControllerField;
+
+        private ImageIdeControllerType ideControllerField;
+
+        private ImageFloppyControllerType floppyControllerField;
 
         /// <remarks/>
         public string name
@@ -77,11 +83,33 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("disk")]
-        public ImageTypeDisk[] disk
+        [System.Xml.Serialization.XmlElementAttribute("scsiController")]
+        public ImageScsiControllerType[] scsiController
         {
-            get { return this.diskField; }
-            set { this.diskField = value; }
+            get { return this.scsiControllerField; }
+            set { this.scsiControllerField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("sataController")]
+        public ImageSataControllerType[] sataController
+        {
+            get { return this.sataControllerField; }
+            set { this.sataControllerField = value; }
+        }
+
+        /// <remarks/>
+        public ImageIdeControllerType ideController
+        {
+            get { return this.ideControllerField; }
+            set { this.ideControllerField = value; }
+        }
+
+        /// <remarks/>
+        public ImageFloppyControllerType floppyController
+        {
+            get { return this.floppyControllerField; }
+            set { this.floppyControllerField = value; }
         }
 
         /// <remarks/>
@@ -360,9 +388,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ProgressType progressField;
 
-        private VmwareToolsType vmwareToolsField;
-
         private VirtualHardwareType virtualHardwareField;
+
+        private TagWithIdAndNameType[] tagField;
 
         /// <remarks/>
         public CustomerImageTypeSource source
@@ -386,13 +414,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public VmwareToolsType vmwareTools
-        {
-            get { return this.vmwareToolsField; }
-            set { this.vmwareToolsField = value; }
-        }
-
-        /// <remarks/>
         public VirtualHardwareType virtualHardware
         {
             get { return this.virtualHardwareField; }
@@ -404,6 +425,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.guestField; }
             set { this.guestField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("tag")]
+        public TagWithIdAndNameType[] tag
+        {
+            get { return this.tagField; }
+            set { this.tagField = value; }
         }
     }
 
