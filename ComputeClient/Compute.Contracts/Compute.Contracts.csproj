@@ -104,6 +104,7 @@
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
+    <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
     <Compile Include="Image20\OvfPackages.cs" />
     <Compile Include="Network20\PortList.cs" />
