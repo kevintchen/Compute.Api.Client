@@ -126,6 +126,15 @@
 			return await _api.PostAsync<addServerToSecurityGroup, ResponseType>(ApiUris.AddServerToSecurityGroup(_api.OrganizationId), serverSecurityGroup);
 		}
 
+		/// <summary>
+		/// Remove server from security group
+		/// </summary>
+		/// <param name="serverSecurityGroup">Security group and server details</param>
+		/// <returns>Response Data</returns>
+		public async Task<ResponseType> RemoveServerFromSecurityGroup(removeServerFromSecurityGroup serverSecurityGroup)
+		{
+			return await _api.PostAsync<removeServerFromSecurityGroup, ResponseType>(ApiUris.RemoveServerFromSecurityGroup(_api.OrganizationId), serverSecurityGroup);
+		}
 
 		/// <summary>
 		/// Remove nic from the security group
