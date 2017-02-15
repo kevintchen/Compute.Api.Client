@@ -2028,6 +2028,14 @@ namespace DD.CBU.Compute.Api.Client
 			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/addServerToSecurityGroup", orgId), UriKind.Relative);
 		}
 
+		/// <summary>	Add server to security group</summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	Url endpoint </returns>
+		public static Uri RemoveServerFromSecurityGroup(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/securityGroup/removeServerFromSecurityGroup", orgId), UriKind.Relative);
+		}
+
 		/// <summary>	Remove Nic from security group</summary>
 		/// <param name="orgId">	The organization Id. </param>
 		/// <returns>	Url endpoint </returns>
