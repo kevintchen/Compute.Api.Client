@@ -223,6 +223,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ServerTypeDisk[] diskField;
 
+        private ServerScsiControllerType[] scsiControllerField;
+
+        private ServerSataControllerType[] sataControllerField;
+
+        private ServerIdeControllerType ideControllerField;
+
+        private ServerFloppyControllerType floppyControllerField;
+
         private object itemField;
 
         private ServerTypeBackup backupField;
@@ -285,6 +293,36 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.memoryGbField; }
             set { this.memoryGbField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("scsiController")]
+        public ServerScsiControllerType[] scsiController
+        {
+            get { return this.scsiControllerField; }
+            set { this.scsiControllerField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("sataController")]
+        public ServerSataControllerType[] sataController
+        {
+            get { return this.sataControllerField; }
+            set { this.sataControllerField = value; }
+        }
+
+        /// <remarks/>
+        public ServerIdeControllerType ideController
+        {
+            get { return this.ideControllerField; }
+            set { this.ideControllerField = value; }
+        }
+
+        /// <remarks/>
+        public ServerFloppyControllerType floppyController
+        {
+            get { return this.floppyControllerField; }
+            set { this.floppyControllerField = value; }
         }
 
         /// <remarks/>
