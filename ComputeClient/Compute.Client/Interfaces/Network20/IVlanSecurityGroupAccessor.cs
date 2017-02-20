@@ -75,5 +75,12 @@
 	    /// <param name="serverSecurityGroup">Security group and server details</param>
 	    /// <returns>Response Data</returns>
 	    Task<ResponseType> AddServerToSecurityGroup(addServerToSecurityGroup serverSecurityGroup);
+
+	    /// <summary>
+	    /// Remove server from security group
+	    /// </summary>
+	    /// <param name="serverSecurityGroup">Security group and server details</param>
+	    /// <returns>Response Data</returns>
+	    Task<ResponseType> RemoveServerFromSecurityGroup(removeServerFromSecurityGroup serverSecurityGroup);
     }
 }
