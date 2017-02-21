@@ -227,36 +227,36 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
 
-		/// <summary>Exchange Nic Vlans.</summary>
-		/// <param name="nicId1">nicId1</param>
-		/// <param name="nicId2">nicId2</param>
-		/// <returns>The <see cref="Task"/>.</returns>
-		public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
-		{
-			if (string.IsNullOrWhiteSpace(nicId1))
-			{
-				throw new ArgumentNullException("nicId1");
-			}
+        /// <summary>Exchange Nic Vlans.</summary>
+        /// <param name="nicId1">nicId1</param>
+        /// <param name="nicId2">nicId2</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
+        {
+            if (string.IsNullOrWhiteSpace(nicId1))
+            {
+                throw new ArgumentNullException("nicId1");
+            }
 
-			if (string.IsNullOrWhiteSpace(nicId2))
-			{
-				throw new ArgumentNullException("nicId2");
-			}
+            if (string.IsNullOrWhiteSpace(nicId2))
+            {
+                throw new ArgumentNullException("nicId2");
+            }
 
 
-			ExchangeNicVlansType exchangeNicVlansType = new ExchangeNicVlansType
-			{
-				nicId1 = nicId1,
-				nicId2 = nicId2
-			};
+            ExchangeNicVlansType exchangeNicVlansType = new ExchangeNicVlansType
+            {
+                nicId1 = nicId1,
+                nicId2 = nicId2
+            };
 
-			return await _apiClient.PostAsync<ExchangeNicVlansType, ResponseType>(ApiUris.ExchangeNicVlans(_apiClient.OrganizationId), exchangeNicVlansType);
-		}
+            return await _apiClient.PostAsync<ExchangeNicVlansType, ResponseType>(ApiUris.ExchangeNicVlans(_apiClient.OrganizationId), exchangeNicVlansType);
+        }
 
-		/// <summary>Removes an additional NIC from a server.</summary>
-		/// <param name="nicId">The NIC id.</param>
-		/// <returns>The <see cref="Task"/>.</returns>
-		public async Task<ResponseType> RemoveNic(Guid nicId)
+        /// <summary>Removes an additional NIC from a server.</summary>
+        /// <param name="nicId">The NIC id.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> RemoveNic(Guid nicId)
         {
             if (nicId == Guid.Empty)
             {
@@ -355,15 +355,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 serverDetails);
         }
 
-		/// <summary>
-		/// Clone journal
-		/// </summary>
-		/// <param name="cloneServerType">Clone Server type.</param>
-		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> CloneServer(CloneServerType cloneServerType)
-		{
-			return await _apiClient.PostAsync<CloneServerType, ResponseType>(ApiUris.CloneServer(_apiClient.OrganizationId), cloneServerType);
-		}
+        /// <summary>
+        /// Clone journal
+        /// </summary>
+        /// <param name="cloneServerType">Clone Server type.</param>
+        /// <returns>The <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> CloneServer(CloneServerType cloneServerType)
+        {
+            return await _apiClient.PostAsync<CloneServerType, ResponseType>(ApiUris.CloneServer(_apiClient.OrganizationId), cloneServerType);
+        }
 
         /// <summary>Change the Network Adaptor of a NIC on a Cloud Server </summary>
         /// <param name="changeNetworkAdapter">Details of the nic's network adapter to be updated</param>
@@ -397,6 +397,22 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 await
                     _apiClient.PostAsync<IdType, ResponseType>(
                         ApiUris.DeleteMcp2AntiAffinityRule(_apiClient.OrganizationId), id);
+        }
+
+        /// <summary>The add scsi controller.</summary>
+        /// <param name="addScsiController">The add scsi controller.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> AddScsiController(AddScsiControllerType addScsiController)
+        {
+            return await _apiClient.PostAsync<AddScsiControllerType, ResponseType>(ApiUris.AddScsiController(_apiClient.OrganizationId), addScsiController);
+        }
+
+        /// <summary>The remove scsi controller.</summary>
+        /// <param name="removeScsiControllerId">The remove scsi controller id.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> RemoveScsiController(RemoveScsiControllerIdType removeScsiControllerId)
+        {
+            return await _apiClient.PostAsync<RemoveScsiControllerIdType, ResponseType>(ApiUris.AddScsiController(_apiClient.OrganizationId), removeScsiControllerId);
         }
     }
 }
