@@ -268,4 +268,43 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int busNumber;
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("addScsiController", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class AddScsiControllerType
+    {
+
+        /// <remarks/>
+        public string serverId;
+
+        /// <remarks/>
+        public string adapterType;
+
+        /// <remarks/>
+        public int busNumber;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool busNumberSpecified;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("removeScsiController", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class RemoveScsiControllerIdType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+    }
 }
