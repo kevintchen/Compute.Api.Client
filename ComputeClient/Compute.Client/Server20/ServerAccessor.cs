@@ -412,7 +412,7 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<ResponseType> RemoveScsiController(RemoveScsiControllerIdType removeScsiControllerId)
         {
-            return await _apiClient.PostAsync<RemoveScsiControllerIdType, ResponseType>(ApiUris.AddScsiController(_apiClient.OrganizationId), removeScsiControllerId);
+            return await _apiClient.PostAsync<RemoveScsiControllerIdType, ResponseType>(ApiUris.RemoveScsiController(_apiClient.OrganizationId), removeScsiControllerId);
         }
     }
 }
