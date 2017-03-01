@@ -972,4 +972,51 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.pageSizeFieldSpecified = value; }
         }
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("editImageMetadata", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class EditImageMetadataType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+        public string description;
+
+        /// <remarks/>
+        public string cpuSpeed;
+
+        /// <remarks/>
+        public string operatingSystemId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("disk")]
+        public EditImageMetadataTypeDisk[] disk;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class EditImageMetadataTypeDisk
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string speed;
+    }
 }

@@ -105,12 +105,12 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <summary>
         /// Edit Customer Image Metadata
         /// </summary>
-        /// <param name="imageMetadata">Image Metadata</param>
+        /// <param name="editImageMetadata">Edit Image Metadata</param>
         /// <returns>Response Data</returns>
-        public async Task<ResponseType> EditCustomerImageMetadata(ImageMetadataType imageMetadata)
+        public async Task<ResponseType> EditCustomerImageMetadata(EditImageMetadataType editImageMetadata)
         {
-            return await _apiClient.PostAsync<ImageMetadataType, ResponseType>(
-            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), imageMetadata);  
+            return await _apiClient.PostAsync<EditImageMetadataType, ResponseType>(
+            ApiUris.EditMcp2CustomerImageMetadata(_apiClient.OrganizationId), editImageMetadata);  
         }
 
         /// <summary>
