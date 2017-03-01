@@ -67,13 +67,13 @@
         /// <summary>
         /// Edit the customer image metadata
         /// </summary>
-        /// <param name="imageMetadata">
-        /// The image metadata
+        /// <param name="editImageMetadata">
+        /// The edit image metadata
         /// </param>
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>	
-        Task<ResponseType> EditCustomerImageMetadata(ImageMetadataType imageMetadata);
+        Task<ResponseType> EditCustomerImageMetadata(EditImageMetadataType editImageMetadata);
 
         /// <summary>
 		/// The import MCP 2.0 customer image to a user-manageable Cluster in a Data Center location.

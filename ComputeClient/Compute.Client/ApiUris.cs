@@ -1947,7 +1947,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	Url endpoint </returns>
         public static Uri EditMcp2CustomerImageMetadata(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/image/editImageMetadata", orgId), UriKind.Relative);
         }
 
         /// <summary>Move Customer Image to Cluster </summary>
