@@ -479,65 +479,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.familyField; }
             set { this.familyField = value; }
         }
-    }    
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class NetworkAdapterType
-    {
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("default")]
-        public bool isDefault;
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-    public partial class OperatingSystemDetailType
-    {
-
-        /// <remarks/>
-        public string displayName;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("networkAdapter")]
-        public NetworkAdapterType[] networkAdapter;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string family;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool supportsGuestOsCustomization;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool supportsBackup;
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()] 
-		public bool supportsOvfImport;
-
-	    /// <remarks/>
-	    [System.Xml.Serialization.XmlIgnoreAttribute()] 
-		public bool supportsOvfImportSpecified;
     }
 
     /// <remarks/>
@@ -547,12 +488,12 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-    public partial class OperatingSystemsDetails
+    public partial class operatingSystems
     {
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("operatingSystemDetail")]
-        public OperatingSystemDetailType[] operatingSystemDetail;
+        [System.Xml.Serialization.XmlElementAttribute("operatingSystem")]
+        public OperatingSystemDetailType[] operatingSystem;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -585,6 +526,87 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool pageSizeSpecified;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class OperatingSystemDetailType
+    {
+
+        /// <remarks/>
+        public string displayName;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("networkAdapter")]
+        public NetworkAdapterType[] networkAdapter;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("scsiAdapterType")]
+        public StorageControllerAdapterType[] scsiAdapterType;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string family;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool supportsGuestOsCustomization;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool supportsBackup;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool supportsOvfImport;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool supportsOvfImportSpecified;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class NetworkAdapterType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("default")]
+        public bool isDefault;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class StorageControllerAdapterType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string adapterType;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("default")]
+        public bool isDefault;
     }
 
 
