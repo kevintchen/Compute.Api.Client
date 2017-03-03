@@ -23,7 +23,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// Optional message format arguments.
 		/// </param>
 		protected ApiClientException(string messageOrFormat, params object[] formatArguments)
-			: base(string.Format(messageOrFormat, formatArguments))
+			: base(SafeFormat(messageOrFormat, formatArguments))
 		{		
 		}
 
@@ -41,7 +41,7 @@ namespace DD.CBU.Compute.Api.Client
 		/// Optional message format arguments.
 		/// </param>
 		protected ApiClientException(string messageOrFormat, Exception innerException, params object[] formatArguments)
-			: base(string.Format(messageOrFormat, formatArguments), innerException)
+			: base(SafeFormat(messageOrFormat, formatArguments), innerException)
 		{		
 		}
 
@@ -65,5 +65,32 @@ namespace DD.CBU.Compute.Api.Client
 			: base(info, context)
 		{
 		}
+
+        /// <summary>
+        /// Safely format the specified message.
+        /// </summary>
+        /// <param name="messageOrFormat">
+        /// The message or message-format specifier.
+        /// </param>
+        /// <param name="formatArguments">
+        /// Optional message format arguments.
+        /// </param>
+        /// <returns>
+        /// The formatted message, unless there are no format arguments (in which case <paramref name="messageOrFormat"/> is returned).
+        /// </returns>
+        protected static string SafeFormat(string messageOrFormat, object[] formatArguments)
+        {
+            if (formatArguments == null || formatArguments.Length == 0)
+                return messageOrFormat;
+
+            try
+            {
+                return string.Format(messageOrFormat, formatArguments);
+            }
+            catch (FormatException)
+            {
+                return messageOrFormat;
+            }
+        }
 	}
 }
