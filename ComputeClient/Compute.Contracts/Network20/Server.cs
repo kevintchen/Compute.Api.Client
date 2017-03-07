@@ -1052,13 +1052,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DeployServerTypeDisk
     {
 
-        private ushort idField;
+        private string idField;
 
         private string speedField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort id
+        public string id
         {
             get { return this.idField; }
             set { this.idField = value; }
