@@ -2067,21 +2067,15 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     {
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("scsiController", typeof(ScsiControllerType))]
+        [System.Xml.Serialization.XmlElementAttribute("serverId", typeof(string))]
+        public object Item;
+
+        /// <remarks/>
         public int sizeGb;
 
         /// <remarks/>
         public string speed;
-
-        /// <remarks/>
-        public int scsiId;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool scsiIdSpecified;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id;
     }
 
     /// <remarks/>
@@ -2317,5 +2311,25 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string nicId;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ScsiControllerType
+    {
+
+        /// <remarks/>
+        public string controllerId;
+
+        /// <remarks/>
+        public int scsiId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool scsiIdSpecified;
     }
 }
