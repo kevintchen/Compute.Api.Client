@@ -2190,7 +2190,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri AddDisk(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_4_PREFIX + "{0}/server/addDisk", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/addDisk", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for removing disk from server.</summary>
