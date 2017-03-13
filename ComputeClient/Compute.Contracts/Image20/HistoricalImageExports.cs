@@ -335,7 +335,13 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 
 		private uint memoryGbField;
 
-		private HistoricalImageExportTypeImageSummaryDisk[] diskField;
+        private HistoricalImageExportScsiControllerType[] scsiControllerField;
+
+        private HistoricalImageExportSataControllerType[] sataControllerField;
+
+        private HistoricalImageExportIdeControllerType ideControllerField;
+
+        private HistoricalImageExportFloppyType[] floppyField;
 
 		private HistoricalImageExportTypeImageSummaryNic[] nicField;
 
@@ -417,22 +423,63 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 			}
 		}
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("disk")]
-		public HistoricalImageExportTypeImageSummaryDisk[] disk
-		{
-			get
-			{
-				return this.diskField;
-			}
-			set
-			{
-				this.diskField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("scsiController")]
+        public HistoricalImageExportScsiControllerType[] scsiController
+        {
+            get
+            {
+                return this.scsiControllerField;
+            }
+            set
+            {
+                this.scsiControllerField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("nic")]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("sataController")]
+        public HistoricalImageExportSataControllerType[] sataController
+        {
+            get
+            {
+                return this.sataControllerField;
+            }
+            set
+            {
+                this.sataControllerField = value;
+            }
+        }
+
+        /// <remarks/>
+        public HistoricalImageExportIdeControllerType ideController
+        {
+            get
+            {
+                return this.ideControllerField;
+            }
+            set
+            {
+                this.ideControllerField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("floppy")]
+        public HistoricalImageExportFloppyType[] floppy
+        {
+            get
+            {
+                return this.floppyField;
+            }
+            set
+            {
+                this.floppyField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("nic")]
 		public HistoricalImageExportTypeImageSummaryNic[] nic
 		{
 			get
@@ -583,64 +630,6 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class HistoricalImageExportTypeImageSummaryDisk
-	{
-
-		private int scsiIdField;
-
-		private int sizeGbField;
-
-		private string speedField;
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public int scsiId
-		{
-			get
-			{
-				return this.scsiIdField;
-			}
-			set
-			{
-				this.scsiIdField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public int sizeGb
-		{
-			get
-			{
-				return this.sizeGbField;
-			}
-			set
-			{
-				this.sizeGbField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string speed
-		{
-			get
-			{
-				return this.speedField;
-			}
-			set
-			{
-				this.speedField = value;
-			}
-		}
-	}
-
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
 	public partial class HistoricalImageExportTypeImageSummaryNic
 	{
 
@@ -744,4 +733,270 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 		}
 	}
 
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportFileType
+    {
+
+        /// <remarks/>
+        public string name;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public long sizeBytes;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime lastModifiedTime;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime expiryTime;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportFloppyType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int driveNumber;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int key;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int sizeGb;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sizeGbSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string speed;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string fileName;
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportIdeDeviceType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportSataDeviceType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportDeviceType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int sizeGb;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sizeGbSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string speed;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string fileName;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportIdeDeviceType : HistoricalImageExportDeviceType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int channel;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int slot;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportSataDeviceType : HistoricalImageExportDeviceType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int sataId;
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportIdeDiskType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportSataDiskType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportScsiDiskType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportDiskType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int sizeGb;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string speed;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportIdeDiskType : HistoricalImageExportDiskType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int channel;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int slot;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportSataDiskType : HistoricalImageExportDiskType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int sataId;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportScsiDiskType : HistoricalImageExportDiskType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int scsiId;
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportIdeControllerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportSataControllerType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoricalImageExportScsiControllerType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportControllerType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string adapterType;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int key;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportIdeControllerType : HistoricalImageExportControllerType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("device", typeof(HistoricalImageExportIdeDeviceType))]
+        [System.Xml.Serialization.XmlElementAttribute("disk", typeof(HistoricalImageExportIdeDiskType))]
+        public object[] Items;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportSataControllerType : HistoricalImageExportControllerType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("device", typeof(HistoricalImageExportSataDeviceType))]
+        [System.Xml.Serialization.XmlElementAttribute("disk", typeof(HistoricalImageExportSataDiskType))]
+        public object[] Items;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int busNumber;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportScsiControllerType : HistoricalImageExportControllerType
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("disk")]
+        public HistoricalImageExportScsiDiskType[] disk;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int busNumber;
+    }
 }
