@@ -256,10 +256,10 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 			}
 		}
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("failed", typeof(HistoricalImageExportTypeFailure))]
-		[System.Xml.Serialization.XmlElementAttribute("succeeded", typeof(HistoricalImageExportTypeSuccess))]
-		public object Item
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("failure", typeof(HistoricalImageExportTypeFailure))]
+        [System.Xml.Serialization.XmlElementAttribute("success", typeof(HistoricalImageExportTypeSuccess))]
+        public object Item
 		{
 			get
 			{
@@ -540,95 +540,6 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class ImageExportFileType
-	{
-
-		private string nameField;
-
-		private string typeField;
-
-		private long sizeBytesField;
-
-		private System.DateTime lastModifiedTimeField;
-
-		private System.DateTime expiryTimeField;
-
-		/// <remarks/>
-		public string name
-		{
-			get
-			{
-				return this.nameField;
-			}
-			set
-			{
-				this.nameField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string type
-		{
-			get
-			{
-				return this.typeField;
-			}
-			set
-			{
-				this.typeField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public long sizeBytes
-		{
-			get
-			{
-				return this.sizeBytesField;
-			}
-			set
-			{
-				this.sizeBytesField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public System.DateTime lastModifiedTime
-		{
-			get
-			{
-				return this.lastModifiedTimeField;
-			}
-			set
-			{
-				this.lastModifiedTimeField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public System.DateTime expiryTime
-		{
-			get
-			{
-				return this.expiryTimeField;
-			}
-			set
-			{
-				this.expiryTimeField = value;
-			}
-		}
-	}
-
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
 	public partial class HistoricalImageExportTypeImageSummaryNic
 	{
@@ -691,18 +602,18 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 	public partial class HistoricalImageExportTypeFailure
 	{
 
-		private string failureReasonField;
+		private string messageField;
 
 		/// <remarks/>
-		public string failureReason
-		{
+		public string message
+        {
 			get
 			{
-				return this.failureReasonField;
+				return this.messageField;
 			}
 			set
 			{
-				this.failureReasonField = value;
+				this.messageField = value;
 			}
 		}
 	}
@@ -715,12 +626,11 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
 	public partial class HistoricalImageExportTypeSuccess
 	{
+		private HistoricalImageExportFileType[] outputFileField;
 
-		private ImageExportFileType[] outputFileField;
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("outputFile")]
-		public ImageExportFileType[] outputFile
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("outputFile")]
+        public HistoricalImageExportFileType[] outputFile
 		{
 			get
 			{
