@@ -229,7 +229,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ServerIdeControllerType ideControllerField;
 
-        private ServerFloppyControllerType floppyControllerField;
+        private ServerFloppyType[] floppyField;
 
         private object itemField;
 
@@ -319,10 +319,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public ServerFloppyControllerType floppyController
+        [System.Xml.Serialization.XmlElementAttribute("floppy")]
+        public ServerFloppyType[] floppy
         {
-            get { return this.floppyControllerField; }
-            set { this.floppyControllerField = value; }
+            get { return this.floppyField; }
+            set { this.floppyField = value; }
         }
 
         /// <remarks/>
