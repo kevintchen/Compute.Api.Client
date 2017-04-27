@@ -179,143 +179,46 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 		}
 	}
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class HistoricalImageExportType
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class HistoricalImageExportType
+    {
+        /// <remarks/>
+        public string ovfPackagePrefix;
 
-		private string ovfPackagePrefixField;
+        /// <remarks/>
+        public string userName;
 
-		private string userNameField;
+        /// <remarks/>
+        public HistoricalImageExportTypeImageSummary imageSummary;
 
-		private HistoricalImageExportTypeImageSummary imageSummaryField;
-
-		private string responseCodeField;
-
-		private object itemField;
-
-		private string imageExportIdField;
-
-		private System.DateTime startTimeField;
-
-		private System.DateTime endTimeField;
-
-		/// <remarks/>
-		public string ovfPackagePrefix
-		{
-			get
-			{
-				return this.ovfPackagePrefixField;
-			}
-			set
-			{
-				this.ovfPackagePrefixField = value;
-			}
-		}
-
-		/// <remarks/>
-		public string userName
-		{
-			get
-			{
-				return this.userNameField;
-			}
-			set
-			{
-				this.userNameField = value;
-			}
-		}
-
-		/// <remarks/>
-		public HistoricalImageExportTypeImageSummary imageSummary
-		{
-			get
-			{
-				return this.imageSummaryField;
-			}
-			set
-			{
-				this.imageSummaryField = value;
-			}
-		}
-
-		/// <remarks/>
-		public string responseCode
-		{
-			get
-			{
-				return this.responseCodeField;
-			}
-			set
-			{
-				this.responseCodeField = value;
-			}
-		}
+        /// <remarks/>
+        public string responseCode;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("failure", typeof(HistoricalImageExportTypeFailure))]
         [System.Xml.Serialization.XmlElementAttribute("success", typeof(HistoricalImageExportTypeSuccess))]
-        public object Item
-		{
-			get
-			{
-				return this.itemField;
-			}
-			set
-			{
-				this.itemField = value;
-			}
-		}
+        public object Item;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string imageExportId
-		{
-			get
-			{
-				return this.imageExportIdField;
-			}
-			set
-			{
-				this.imageExportIdField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string imageExportId;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public System.DateTime startTime
-		{
-			get
-			{
-				return this.startTimeField;
-			}
-			set
-			{
-				this.startTimeField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime startTime;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public System.DateTime endTime
-		{
-			get
-			{
-				return this.endTimeField;
-			}
-			set
-			{
-				this.endTimeField = value;
-			}
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime endTime;
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -339,7 +242,7 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 
         private HistoricalImageExportSataControllerType[] sataControllerField;
 
-        private HistoricalImageExportIdeControllerType ideControllerField;
+        private HistoricalImageExportIdeControllerType[] ideControllerField;
 
         private HistoricalImageExportFloppyType[] floppyField;
 
@@ -452,7 +355,8 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
         }
 
         /// <remarks/>
-        public HistoricalImageExportIdeControllerType ideController
+        [System.Xml.Serialization.XmlElementAttribute("ideController")]
+        public HistoricalImageExportIdeControllerType[] ideController
         {
             get
             {
@@ -802,10 +706,6 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int channel;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public int slot;
     }
 
@@ -871,6 +771,10 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
         [System.Xml.Serialization.XmlElementAttribute("device", typeof(HistoricalImageExportIdeDeviceType))]
         [System.Xml.Serialization.XmlElementAttribute("disk", typeof(HistoricalImageExportIdeDiskType))]
         public object[] Items;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int channel;
     }
 
     /// <remarks/>
@@ -909,4 +813,6 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int busNumber;
     }
+
+
 }
