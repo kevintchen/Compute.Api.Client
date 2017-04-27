@@ -650,11 +650,6 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     public partial class HistoricalImageExportIdeDeviceType : HistoricalImageExportDeviceType
     {
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int channel;
-
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int slot;
