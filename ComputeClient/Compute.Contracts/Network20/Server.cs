@@ -227,7 +227,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ServerSataControllerType[] sataControllerField;
 
-        private ServerIdeControllerType ideControllerField;
+        private ServerIdeControllerType[] ideControllerField;
 
         private ServerFloppyType[] floppyField;
 
@@ -312,7 +312,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public ServerIdeControllerType ideController
+        [System.Xml.Serialization.XmlElementAttribute("ideController")]
+        public ServerIdeControllerType[] ideController
         {
             get { return this.ideControllerField; }
             set { this.ideControllerField = value; }

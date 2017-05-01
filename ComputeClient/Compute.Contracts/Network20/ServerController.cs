@@ -47,9 +47,6 @@
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     public partial class ServerIdeDeviceType : ServerDeviceType
     {
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int channel;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -105,9 +102,6 @@
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     public partial class ServerIdeDiskType : ServerDiskType
     {
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int channel;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -226,10 +220,15 @@
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     public partial class ServerIdeControllerType : ServerControllerType
     {
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("device", typeof(ServerIdeDeviceType))]
         [System.Xml.Serialization.XmlElementAttribute("disk", typeof(ServerIdeDiskType))]
         public object[] Items;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int channel;
     }
 
     /// <remarks/>
