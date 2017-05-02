@@ -97,6 +97,96 @@ namespace DD.CBU.Compute.Api.Client.Account
 		}
 
 		/// <summary>
+		/// Create User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<Status> CreateUser(CreateUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<CreateUserType, Status>(
+					ApiUris.CreateUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Edit User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<Status> EditUser(EditUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<EditUserType, Status>(
+					ApiUris.EditUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Delete User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<Status> DeleteUser(DeleteUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<DeleteUserType, Status>(
+					ApiUris.EditUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Set User Roles.
+		/// </summary>
+		/// <param name="userRoles">
+		/// user roles.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<Status> SetUserRoles(SetUserRolesType userRoles)
+		{
+			return
+				await
+				_apiClient.PostAsync<SetUserRolesType, Status>(
+					ApiUris.SetUserRoles(_apiClient.OrganizationId),
+					userRoles);
+		}
+
+		/// <summary>
+		/// Change Password.
+		/// </summary>
+		/// <param name="userPassword">
+		/// user password.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<Status> ChangeUserPassword(ChangeUserPasswordType userPassword)
+		{
+			return
+				await
+				_apiClient.PostAsync<ChangeUserPasswordType, Status>(
+					ApiUris.ChangeUserPassword(_apiClient.OrganizationId),
+					userPassword);
+		}
+
+		/// <summary>
 		/// The delete sub administrator account.
 		/// </summary>
 		/// <param name="username">

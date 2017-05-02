@@ -39,11 +39,51 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/accountWithPhoneNumber", orgId), UriKind.Relative);
         }
 
-        /// <summary>The path (relative to the base API URL) to update My Account action.</summary>
-        /// <param name="orgId">The org Id.</param>
-        /// <param name="username">The username.</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri UpdateAdministrator(Guid orgId, string username)
+		/// <summary>	Create user action.</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	The <see cref="Uri"/>. </returns>
+		public static Uri CreateUser(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/createUser", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Edit user action.</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	The <see cref="Uri"/>. </returns>
+		public static Uri EditUser(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/editUser", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Set user roles action.</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	The <see cref="Uri"/>. </returns>
+		public static Uri SetUserRoles(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/setUserRoles", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Change password action.</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	The <see cref="Uri"/>. </returns>
+		public static Uri ChangeUserPassword(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/changeUserPassword", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Delete user action.</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	The <see cref="Uri"/>. </returns>
+		public static Uri DeleteUser(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/deleteUser", orgId), UriKind.Relative);
+		}
+
+		/// <summary>The path (relative to the base API URL) to update My Account action.</summary>
+		/// <param name="orgId">The org Id.</param>
+		/// <param name="username">The username.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri UpdateAdministrator(Guid orgId, string username)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/account/{1}", orgId, username), UriKind.Relative);
         }

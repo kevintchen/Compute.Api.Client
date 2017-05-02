@@ -88,7 +88,12 @@
     <Compile Include="..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Directory\ChangeUserPassword.cs" />
+    <Compile Include="Directory\CreateUser.cs" />
+    <Compile Include="Directory\DeleteUser.cs" />
+    <Compile Include="Directory\EditUser.cs" />
     <Compile Include="Directory\IUser.cs" />
+    <Compile Include="Directory\SetUserRoles.cs" />
     <Compile Include="Directory\User.cs" />
     <Compile Include="Drs\ConsistencyGroupOverride.cs" />
     <Compile Include="Drs\ConsistencyGroupSnapshot.cs" />
