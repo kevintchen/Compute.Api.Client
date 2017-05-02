@@ -100,6 +100,7 @@
     <Compile Include="Image20\CopyImageType.cs" />
     <Compile Include="Image20\ExportImageType.cs" />
     <Compile Include="Image20\HistoricalImageExports.cs" />
+    <Compile Include="Image20\HistoricalImageExportsOverride.cs" />
     <Compile Include="Image20\ImageExportsInProgress.cs" />
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
