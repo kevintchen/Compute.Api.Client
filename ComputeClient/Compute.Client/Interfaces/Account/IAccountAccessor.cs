@@ -1,4 +1,5 @@
-﻿using DD.CBU.Compute.Api.Contracts.Requests.Account20;
+﻿using DD.CBU.Compute.Api.Contracts.Network20;
+using DD.CBU.Compute.Api.Contracts.Requests.Account20;
 
 namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 {
@@ -198,7 +199,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<Status> CreateUser(CreateUserType user);
+		Task<ResponseType> CreateUser(CreateUserType user);
 
 		/// <summary>
 		/// Edit User.
@@ -209,7 +210,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<Status> EditUser(EditUserType user);
+		Task<ResponseType> EditUser(EditUserType user);
 
 		/// <summary>
 		/// Delete User.
@@ -220,7 +221,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<Status> DeleteUser(DeleteUserType user);
+		Task<ResponseType> DeleteUser(DeleteUserType user);
 
 		/// <summary>
 		/// Set User Roles.
@@ -231,7 +232,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<Status> SetUserRoles(SetUserRolesType userRoles);
+		Task<ResponseType> SetUserRoles(SetUserRolesType userRoles);
 
 		/// <summary>
 		/// Change Password.
@@ -242,7 +243,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<Status> ChangeUserPassword(ChangeUserPasswordType userPassword);
+		Task<ResponseType> ChangeUserPassword(ChangeUserPasswordType userPassword);
 
 	}
 }
