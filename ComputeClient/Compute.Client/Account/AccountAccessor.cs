@@ -147,7 +147,7 @@ namespace DD.CBU.Compute.Api.Client.Account
 			return
 				await
 				_apiClient.PostAsync<DeleteUserType, ResponseType>(
-					ApiUris.EditUser(_apiClient.OrganizationId),
+					ApiUris.DeleteUser(_apiClient.OrganizationId),
 					user);
 		}
 
