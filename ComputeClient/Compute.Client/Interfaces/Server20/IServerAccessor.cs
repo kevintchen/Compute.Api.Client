@@ -190,5 +190,15 @@
         /// <param name="removeScsiControllerId">The remove scsi controller id.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<ResponseType> RemoveScsiController(RemoveScsiControllerIdType removeScsiControllerId);
+
+        /// <summary>The remove ISO file.</summary>
+        /// <param name="removeIsoFile">The remove ISO file.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<ResponseType> RemoveIsoFile(RemoveIsoFile removeIsoFile);
+
+        /// <summary>The remove FLP file.</summary>
+        /// <param name="removeFlpFile">The remove FLP file.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<ResponseType> RemoveFlpFile(RemoveFlpFile removeFlpFile);
     }
 }

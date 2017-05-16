@@ -2505,5 +2505,21 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/removeScsiController", orgId), UriKind.Relative);
         }
+
+        /// <summary>Returns the relative URI of the REST request for removing ISO file.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RemoveIsoFile(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/removeIsoFile", orgId), UriKind.Relative);
+        }
+        
+        /// <summary>Returns the relative URI of the REST request for removing Flp file.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri RemoveFlpFile(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/removeFlpFile", orgId), UriKind.Relative);
+        }
     }
 }
