@@ -192,13 +192,13 @@
         Task<ResponseType> RemoveScsiController(RemoveScsiControllerIdType removeScsiControllerId);
 
         /// <summary>The remove ISO file.</summary>
-        /// <param name="removeIsoFile">The remove ISO file.</param>
+        /// <param name="id">The id of device.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        Task<ResponseType> RemoveIsoFile(RemoveIsoFile removeIsoFile);
+        Task<ResponseType> RemoveIsoFile(IdType id);
 
         /// <summary>The remove FLP file.</summary>
-        /// <param name="removeFlpFile">The remove FLP file.</param>
+        /// <param name="id">The id of floppy.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        Task<ResponseType> RemoveFlpFile(RemoveFlpFile removeFlpFile);
+        Task<ResponseType> RemoveFlpFile(IdType id);
     }
 }

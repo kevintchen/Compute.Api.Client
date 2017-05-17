@@ -416,19 +416,19 @@ namespace DD.CBU.Compute.Api.Client.Server20
         }
 
         /// <summary>The remove ISO file.</summary>
-        /// <param name="removeIsoFile">The remove ISO file.</param>
+        /// <param name="id">The Id of device.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> RemoveIsoFile(RemoveIsoFile removeIsoFile)
+        public async Task<ResponseType> RemoveIsoFile(IdType id)
         {
-            return await _apiClient.PostAsync<RemoveIsoFile, ResponseType>(ApiUris.RemoveIsoFile(_apiClient.OrganizationId), removeIsoFile);
+            return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveIsoFile(_apiClient.OrganizationId), id);
         }
         
         /// <summary>The remove Flp file.</summary>
-        /// <param name="removeFlpFile">The remove Flp file.</param>
+        /// <param name="id">The id of floppy.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> RemoveFlpFile(RemoveFlpFile removeFlpFile)
+        public async Task<ResponseType> RemoveFlpFile(IdType id)
         {
-            return await _apiClient.PostAsync<RemoveFlpFile, ResponseType>(ApiUris.RemoveFlpFile(_apiClient.OrganizationId), removeFlpFile);
+            return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveFlpFile(_apiClient.OrganizationId), id);
         }
     }
 }
