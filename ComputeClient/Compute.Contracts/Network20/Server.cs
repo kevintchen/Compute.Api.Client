@@ -2074,7 +2074,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         [System.Xml.Serialization.XmlElementAttribute("scsiController", typeof(ScsiControllerType))]
         [System.Xml.Serialization.XmlElementAttribute("serverId", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
-        public string Item;
+        public object Item;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
