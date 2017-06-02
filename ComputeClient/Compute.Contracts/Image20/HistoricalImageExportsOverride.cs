@@ -6,11 +6,11 @@ namespace DD.CBU.Compute.Api.Contracts.Image20
     public partial class HistoricalImageExportIdeControllerType
     {
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ImageIdeDeviceType[] device => Items?.OfType<ImageIdeDeviceType>().ToArray();
+        public HistoricalImageExportIdeDeviceType[] device => Items?.OfType<HistoricalImageExportIdeDeviceType>().ToArray();
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ImageIdeDiskType[] disk => Items?.OfType<ImageIdeDiskType>().ToArray();
+        public HistoricalImageExportIdeDiskType[] disk => Items?.OfType<HistoricalImageExportIdeDiskType>().ToArray();
     }
 
     public partial class HistoricalImageExportSataControllerType
