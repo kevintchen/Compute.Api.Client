@@ -414,5 +414,21 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<RemoveScsiControllerIdType, ResponseType>(ApiUris.RemoveScsiController(_apiClient.OrganizationId), removeScsiControllerId);
         }
+
+        /// <summary>The remove ISO file.</summary>
+        /// <param name="id">The Id of device.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> RemoveIsoFile(IdType id)
+        {
+            return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveIsoFile(_apiClient.OrganizationId), id);
+        }
+        
+        /// <summary>The remove Flp file.</summary>
+        /// <param name="id">The id of floppy.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> RemoveFlpFile(IdType id)
+        {
+            return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveFlpFile(_apiClient.OrganizationId), id);
+        }
     }
 }

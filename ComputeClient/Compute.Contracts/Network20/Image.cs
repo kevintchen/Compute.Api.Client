@@ -50,9 +50,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ImageSataControllerType[] sataControllerField;
 
-        private ImageIdeControllerType ideControllerField;
+        private ImageIdeControllerType[] ideControllerField;
 
-        private ImageFloppyControllerType floppyControllerField;
+        private ImageFloppyType[] floppyField;
 
         /// <remarks/>
         public string name
@@ -99,17 +99,19 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public ImageIdeControllerType ideController
+        [System.Xml.Serialization.XmlElementAttribute("ideController")]
+        public ImageIdeControllerType[] ideController
         {
             get { return this.ideControllerField; }
             set { this.ideControllerField = value; }
         }
 
         /// <remarks/>
-        public ImageFloppyControllerType floppyController
+        [System.Xml.Serialization.XmlElementAttribute("floppy")]
+        public ImageFloppyType[] floppy
         {
-            get { return this.floppyControllerField; }
-            set { this.floppyControllerField = value; }
+            get { return this.floppyField; }
+            set { this.floppyField = value; }
         }
 
         /// <remarks/>

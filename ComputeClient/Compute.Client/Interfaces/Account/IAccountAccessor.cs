@@ -1,4 +1,5 @@
-﻿using DD.CBU.Compute.Api.Contracts.Requests.Account20;
+﻿using DD.CBU.Compute.Api.Contracts.Network20;
+using DD.CBU.Compute.Api.Contracts.Requests.Account20;
 
 namespace DD.CBU.Compute.Api.Client.Interfaces.Account
 {
@@ -187,5 +188,62 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
         /// The <see cref="Task"/>.
         /// </returns>
         Task<UserType> GetMyUser();
-    }
+
+
+		/// <summary>
+		/// Create User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> CreateUser(CreateUserType user);
+
+		/// <summary>
+		/// Edit User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> EditUser(EditUserType user);
+
+		/// <summary>
+		/// Delete User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> DeleteUser(DeleteUserType user);
+
+		/// <summary>
+		/// Set User Roles.
+		/// </summary>
+		/// <param name="userRoles">
+		/// user roles.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> SetUserRoles(SetUserRolesType userRoles);
+
+		/// <summary>
+		/// Change Password.
+		/// </summary>
+		/// <param name="userPassword">
+		/// user password.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> ChangeUserPassword(ChangeUserPasswordType userPassword);
+
+	}
 }

@@ -1,4 +1,5 @@
-﻿using DD.CBU.Compute.Api.Contracts.Requests.Account20;
+﻿using DD.CBU.Compute.Api.Contracts.Network20;
+using DD.CBU.Compute.Api.Contracts.Requests.Account20;
 
 namespace DD.CBU.Compute.Api.Client.Account
 {
@@ -94,6 +95,96 @@ namespace DD.CBU.Compute.Api.Client.Account
 				_apiClient.PostAsync<AccountWithPhoneNumber, Status>(
 					ApiUris.AccountWithPhoneNumber(_apiClient.OrganizationId),
 					account);
+		}
+
+		/// <summary>
+		/// Create User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> CreateUser(CreateUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<CreateUserType, ResponseType>(
+					ApiUris.CreateUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Edit User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> EditUser(EditUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<EditUserType, ResponseType>(
+					ApiUris.EditUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Delete User.
+		/// </summary>
+		/// <param name="user">
+		/// user details.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> DeleteUser(DeleteUserType user)
+		{
+			return
+				await
+				_apiClient.PostAsync<DeleteUserType, ResponseType>(
+					ApiUris.DeleteUser(_apiClient.OrganizationId),
+					user);
+		}
+
+		/// <summary>
+		/// Set User Roles.
+		/// </summary>
+		/// <param name="userRoles">
+		/// user roles.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> SetUserRoles(SetUserRolesType userRoles)
+		{
+			return
+				await
+				_apiClient.PostAsync<SetUserRolesType, ResponseType>(
+					ApiUris.SetUserRoles(_apiClient.OrganizationId),
+					userRoles);
+		}
+
+		/// <summary>
+		/// Change Password.
+		/// </summary>
+		/// <param name="userPassword">
+		/// user password.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> ChangeUserPassword(ChangeUserPasswordType userPassword)
+		{
+			return
+				await
+				_apiClient.PostAsync<ChangeUserPasswordType, ResponseType>(
+					ApiUris.ChangeUserPassword(_apiClient.OrganizationId),
+					userPassword);
 		}
 
 		/// <summary>

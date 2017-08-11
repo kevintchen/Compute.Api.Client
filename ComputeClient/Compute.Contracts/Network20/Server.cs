@@ -227,9 +227,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ServerSataControllerType[] sataControllerField;
 
-        private ServerIdeControllerType ideControllerField;
+        private ServerIdeControllerType[] ideControllerField;
 
-        private ServerFloppyControllerType floppyControllerField;
+        private ServerFloppyType[] floppyField;
 
         private object itemField;
 
@@ -312,17 +312,19 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public ServerIdeControllerType ideController
+        [System.Xml.Serialization.XmlElementAttribute("ideController")]
+        public ServerIdeControllerType[] ideController
         {
             get { return this.ideControllerField; }
             set { this.ideControllerField = value; }
         }
 
         /// <remarks/>
-        public ServerFloppyControllerType floppyController
+        [System.Xml.Serialization.XmlElementAttribute("floppy")]
+        public ServerFloppyType[] floppy
         {
-            get { return this.floppyControllerField; }
-            set { this.floppyControllerField = value; }
+            get { return this.floppyField; }
+            set { this.floppyField = value; }
         }
 
         /// <remarks/>
@@ -2067,15 +2069,42 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     {
 
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ideController", typeof(IdeControllerType))]
+        [System.Xml.Serialization.XmlElementAttribute("sataController", typeof(SataControllerType))]
         [System.Xml.Serialization.XmlElementAttribute("scsiController", typeof(ScsiControllerType))]
         [System.Xml.Serialization.XmlElementAttribute("serverId", typeof(string))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public object Item;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public AddDiskItemChoiceType ItemElementName;
 
         /// <remarks/>
         public int sizeGb;
 
         /// <remarks/>
         public string speed;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
+    public enum AddDiskItemChoiceType
+    {
+
+        /// <remarks/>
+        ideController,
+
+        /// <remarks/>
+        sataController,
+
+        /// <remarks/>
+        scsiController,
+
+        /// <remarks/>
+        serverId,
     }
 
     /// <remarks/>
@@ -2331,5 +2360,38 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool scsiIdSpecified;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class IdeControllerType
+    {
+
+        /// <remarks/>
+        public string controllerId;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class SataControllerType
+    {
+
+        /// <remarks/>
+        public string controllerId;
+
+        /// <remarks/>
+        public int sataId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool sataIdSpecified;
     }
 }

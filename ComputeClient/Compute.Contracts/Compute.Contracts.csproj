@@ -88,7 +88,12 @@
     <Compile Include="..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Directory\ChangeUserPassword.cs" />
+    <Compile Include="Directory\CreateUser.cs" />
+    <Compile Include="Directory\DeleteUser.cs" />
+    <Compile Include="Directory\EditUser.cs" />
     <Compile Include="Directory\IUser.cs" />
+    <Compile Include="Directory\SetUserRoles.cs" />
     <Compile Include="Directory\User.cs" />
     <Compile Include="Drs\ConsistencyGroupOverride.cs" />
     <Compile Include="Drs\ConsistencyGroupSnapshot.cs" />
@@ -100,6 +105,7 @@
     <Compile Include="Image20\CopyImageType.cs" />
     <Compile Include="Image20\ExportImageType.cs" />
     <Compile Include="Image20\HistoricalImageExports.cs" />
+    <Compile Include="Image20\HistoricalImageExportsOverride.cs" />
     <Compile Include="Image20\ImageExportsInProgress.cs" />
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
@@ -109,6 +115,8 @@
     <Compile Include="Image20\OvfPackages.cs" />
     <Compile Include="Network20\PortList.cs" />
     <Compile Include="Network20\ServerController.cs" />
+    <Compile Include="Network20\ImageControllerOverride.cs" />
+    <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\Tag.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
