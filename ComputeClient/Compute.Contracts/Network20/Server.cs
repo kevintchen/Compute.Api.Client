@@ -129,8 +129,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string networkAdapterField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+		private bool connectedField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
         public string id
         {
             get { return this.idField; }
@@ -200,7 +202,15 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.networkAdapterField; }
             set { this.networkAdapterField = value; }
         }
-    }
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public bool connected
+		{
+			get { return this.connectedField; }
+			set { this.connectedField = value; }
+		}
+	}
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]

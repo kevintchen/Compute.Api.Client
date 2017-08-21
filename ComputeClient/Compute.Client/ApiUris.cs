@@ -18,10 +18,13 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.5 prefix. </summary>
         public const string MCP2_5_PREFIX = "caas/2.5/";
 
-        /// <summary>
-        /// The path (relative to the base API URL) of the My Account action.
-        /// </summary>
-        public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
+		/// <summary>	The MCP 2.6 prefix. </summary>
+		public const string MCP2_6_PREFIX = "caas/2.6/";
+
+		/// <summary>
+		/// The path (relative to the base API URL) of the My Account action.
+		/// </summary>
+		public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
 
         /// <summary>	Accounts the given organisation identifier. </summary>
         /// <param name="orgId">	The org Id. </param>
@@ -664,7 +667,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Servers(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
         /// <summary>	Gets MCP 2 server. </summary>
@@ -674,7 +677,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The MCP 2 servers. </returns>
         public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
-            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
 
         /// <summary>Gets the list anti affinity rule URL.</summary>
