@@ -1553,7 +1553,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The reserved public addresses. </returns>
         public static Uri GetReservedPrivateAddresses(Guid orgId, string vlanId)
         {
-            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/network/reservedPrivateIpv4Address?vlanId={1}", orgId, vlanId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/network/reservedPrivateIpv4Address?vlanId={1}", orgId, vlanId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the server. </summary>
@@ -2286,7 +2286,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri GetReservedPrivateIpv4Addresses(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/network/reservedPrivateIpv4Address", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/network/reservedPrivateIpv4Address", orgId), UriKind.Relative);
         }
 
         /// <summary>Returns the relative URI of the REST request for create tag key.</summary>

@@ -76,20 +76,42 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     {
 
         /// <remarks/>
+        public string ipAddress;
+
+        /// <remarks/>
+        public string description;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("networkId", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public NetworkVlanChoiceType ItemElementName;
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string datacenterId;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string networkId;
+        public bool exclusive;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
+    public enum NetworkVlanChoiceType
+    {
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string vlanId;
+        networkId,
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value;
+        vlanId,
     }
 
     /// <remarks/>
