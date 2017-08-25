@@ -54,6 +54,12 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     {
 
         /// <remarks/>
+        public string ipAddress;
+
+        /// <remarks/>
+        public string description;
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string datacenterId;
 
@@ -62,8 +68,55 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public string vlanId;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value;
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool exclusive;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class reservedIpv6Addresses
+    {
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("reservedIpv6Address")]
+        public ReservedIpv6AddressType[] reservedIpv6Address;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int pageNumber;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pageNumberSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int pageCount;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pageCountSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int totalCount;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool totalCountSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int pageSize;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool pageSizeSpecified;
     }
 
     /// <remarks/>
@@ -127,53 +180,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ipv4")]
         public ReservedPrivateIpv4AddressType[] ipv4;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int pageNumber;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pageNumberSpecified;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int pageCount;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pageCountSpecified;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int totalCount;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool totalCountSpecified;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int pageSize;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pageSizeSpecified;
-    }
-
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-    public partial class reservedIpv6Addresses
-    {
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("reservedIpv6Address")]
-        public ReservedIpv6AddressType[] reservedIpv6Address;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
