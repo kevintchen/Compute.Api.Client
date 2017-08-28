@@ -2445,10 +2445,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
         }
 
-        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
-        /// <param name="orgId">	The org Id. </param>
-        /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
-        public static Uri ChangeNicNetworkAdapter(Guid orgId)
+		/// <summary>Returns the relative URI of the REST request for set nic connectivity.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri SetNicConnectivity(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
+		public static Uri ChangeNicNetworkAdapter(Guid orgId)
         {
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }

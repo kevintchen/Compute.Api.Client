@@ -430,5 +430,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveFlpFile(_apiClient.OrganizationId), id);
         }
-    }
+
+		/// <summary>
+		/// Set Nic Connectivity
+		/// </summary>
+		/// <param name="setNicConnectivityType">Nic Connectivity Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> SetNicConnectivity(SetNicConnectivityType setNicConnectivityType)
+		{
+			return await _apiClient.PostAsync<SetNicConnectivityType, ResponseType>(ApiUris.SetNicConnectivity(_apiClient.OrganizationId), setNicConnectivityType);
+		}
+	}
 }

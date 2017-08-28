@@ -338,6 +338,7 @@
     <Compile Include="Server\ServerType.cs" />
     <Compile Include="Server\ServerWithBackupType.cs" />
     <Compile Include="Server\ServerWithStateType.cs" />
+    <Compile Include="Server\SetNicConnectivityType.cs" />
     <Compile Include="Server\SoftwareLabelType.cs" />
     <Compile Include="Software\SoftwareLabels.cs" />
     <Compile Include="Network20\HealthMonitor.cs" />
