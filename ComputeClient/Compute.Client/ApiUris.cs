@@ -2532,5 +2532,53 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/removeFlpFile", orgId), UriKind.Relative);
         }
+
+        /// <summary>
+        /// Returns the Ssl Domain Certificate of the given organization for given id.
+        /// </summary>
+        public static Uri GetSslDomainCertificate(Guid orgId, Guid sslDomainCertificateId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate/{sslDomainCertificateId}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Lists all of the SSL Domain Certificates owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ListSslDomainCertificates(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslDomainCertificate", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the SSL Certificate chain of the given organization for given id.
+        /// </summary>
+        public static Uri GetSslCertificateChain(Guid orgId, Guid sslCertificateChainId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain/{sslCertificateChainId}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Lists all of the SSL Certificates chain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ListSslCertificateChains(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslCertificateChain", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the SSL offload profile of the given organization for given id.
+        /// </summary>
+        public static Uri GetSslSslOffloadProfile(Guid orgId, Guid sslOffloadProfileId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile/{sslOffloadProfileId}", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Lists all of the SSL offload profiles chain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ListSslOffloadProfile(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile", UriKind.Relative);
+        }
     }
 }
