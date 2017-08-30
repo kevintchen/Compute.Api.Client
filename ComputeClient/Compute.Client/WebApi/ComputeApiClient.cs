@@ -209,6 +209,8 @@ namespace DD.CBU.Compute.Api.Client
             Reports = new ReportAccessor(WebApi);
             Tagging = new TaggingAccessor(WebApi);
             ConsistencyGroups = new ConsistencyGroupAccessor(WebApi);
+            ConsistencyGroups = new ConsistencyGroupAccessor(WebApi);
+		    Ssl = new SslAccessor(WebApi);
 		}
 
 		#endregion
@@ -372,17 +374,22 @@ namespace DD.CBU.Compute.Api.Client
         /// </summary>
         public IConsistencyGroupAccessor ConsistencyGroups { get; private set; }
 
+        /// <summary>
+        /// Gets the SSL.
+        /// </summary>
+        public ISslAccessor Ssl { get; private set; }
+
         #endregion Instance data
 
-		#region Public Methods
+        #region Public Methods
 
-		/// <summary>
-		/// The login async.
-		/// </summary>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		public async Task<IAccount> Login()
+        /// <summary>
+        /// The login async.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<IAccount> Login()
 		{
 			return await WebApi.LoginAsync();
 		}
