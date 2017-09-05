@@ -670,12 +670,21 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
-        /// <summary>	Gets MCP 2 server. </summary>
-        /// <remarks>	Anthony, 6/17/2015. </remarks>
-        /// <param name="orgId">	The organization Id. </param>
-        /// <param name="serverId">	The server Id. </param>
-        /// <returns>	The MCP 2 servers. </returns>
-        public static Uri GetMcp2Server(Guid orgId, Guid serverId)
+		/// <summary>	Gets server snapshots windows. </summary>
+		/// <remarks>	Anthony, 6/17/2015. </remarks>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>	The MCP 2 servers. </returns>
+		public static Uri GetSnapshotWindow(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/infrastructure/snapshotWindow", orgId), UriKind.Relative);
+		}
+
+		/// <summary>	Gets MCP 2 server. </summary>
+		/// <remarks>	Anthony, 6/17/2015. </remarks>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <param name="serverId">	The server Id. </param>
+		/// <returns>	The MCP 2 servers. </returns>
+		public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
@@ -2451,6 +2460,14 @@ namespace DD.CBU.Compute.Api.Client
 		public static Uri SetNicConnectivity(Guid orgId)
 		{
 			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Returns the relative URI of the REST request for enable snapshot service.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri EnableSnapshotService(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
 		}
 
 		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>

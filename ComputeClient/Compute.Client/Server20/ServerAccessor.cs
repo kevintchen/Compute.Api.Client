@@ -440,5 +440,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<SetNicConnectivityType, ResponseType>(ApiUris.SetNicConnectivity(_apiClient.OrganizationId), setNicConnectivityType);
 		}
+
+		/// <summary>
+		/// Enable snapshot service
+		/// </summary>
+		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> SetNicConnectivity(EnableSnapshotServiceType enableSnapshotServiceType)
+		{
+			return await _apiClient.PostAsync<EnableSnapshotServiceType, ResponseType>(ApiUris.EnableSnapshotService(_apiClient.OrganizationId), enableSnapshotServiceType);
+		}
 	}
 }

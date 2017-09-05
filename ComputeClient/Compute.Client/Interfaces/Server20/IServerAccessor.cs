@@ -206,5 +206,12 @@
 		/// </summary>
 		/// <param name="setNicConnectivityType">Nic Connectivity Type.</param>
 		Task<ResponseType> SetNicConnectivity(SetNicConnectivityType setNicConnectivityType);
+
+		/// <summary>
+		/// Enable snapshot service
+		/// </summary>
+		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> SetNicConnectivity(EnableSnapshotServiceType enableSnapshotServiceType);
 	}
 }
