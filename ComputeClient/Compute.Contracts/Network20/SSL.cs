@@ -299,4 +299,82 @@
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool pageSizeSpecified;
     }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class importSslDomainCertificate
+    {
+
+        /// <remarks/>
+        public string networkDomainId;
+
+        /// <remarks/>
+        public string name;
+
+        /// <remarks/>
+        public string description;
+
+        /// <remarks/>
+        public string key;
+
+        /// <remarks/>
+        public string certificate;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class importSslCertificateChain
+    {
+
+        /// <remarks/>
+        public string networkDomainId;
+
+        /// <remarks/>
+        public string name;
+
+        /// <remarks/>
+        public string description;
+
+        /// <remarks/>
+        public string certificateChain;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class createSslOffloadProfile
+    {
+
+        /// <remarks/>
+        public string networkDomainId;
+
+        /// <remarks/>
+        public string name;
+
+        /// <remarks/>
+        public string description;
+
+        /// <remarks/>
+        public string ciphers;
+
+        /// <remarks/>
+        public string sslDomainCertificateId;
+
+        /// <remarks/>
+        public string sslCertificateChainId;
+    }
 }

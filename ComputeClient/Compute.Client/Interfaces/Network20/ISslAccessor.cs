@@ -57,5 +57,26 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Network20
         /// <param name="pagingOptions">options for controlling the paging</param> 
         /// <returns>The async task of collection of <see cref="sslOffloadProfiles"/></returns>
         Task<PagedResponse<SslOffloadProfileType>> GetSslOffloadProfilesPaginated(SslOffloadProfileListOptions options = null, PageableRequest pagingOptions = null);
+
+        /// <summary>
+        /// Add a SSL Domain Certificate and Key to a Network Domain
+        /// </summary>
+        /// <param name="sslDomainCertificate">Details regarding the SSL Domain Certificate</param>
+        /// <returns>Response Data</returns>
+        Task<ResponseType> AddSslDomainCertificate(importSslDomainCertificate sslDomainCertificate);
+        
+        /// <summary>
+        /// Add a SSL Domain Certificate Chain to a Network Domain
+        /// </summary>
+        /// <param name="sslCertificateChain">Details regarding the SSL Certificate Chain</param>
+        /// <returns>Response Data</returns>
+        Task<ResponseType> AddSslCertificateChain(importSslCertificateChain sslCertificateChain);
+
+        /// <summary>
+        /// Create an SSL Offload Profile on a Network Domain
+        /// </summary>
+        /// <param name="sslOffloadProfile">Details regarding the SSL Offload Profile</param>
+        /// <returns>Response Data</returns>
+        Task<ResponseType> CreateSslOffloadProfile(createSslOffloadProfile sslOffloadProfile);
     }
 }

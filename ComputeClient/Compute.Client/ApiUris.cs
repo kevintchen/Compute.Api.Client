@@ -2580,5 +2580,29 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/sslOffloadProfile", UriKind.Relative);
         }
+
+        /// <summary>
+        /// Add a SSL Domain Certificate and Key to a Network Domain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ImportSslDomainCertificate(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/importSslDomainCertificate", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Add a SSL Certificate Chain to a Network Domain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri ImportSslCertificateChain(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/importSslCertificateChain", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Create SSL Offload Profile on a Network Domain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri CreateSslOffloadProfile(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/createSslOffloadProfile", UriKind.Relative);
+        }
     }
 }

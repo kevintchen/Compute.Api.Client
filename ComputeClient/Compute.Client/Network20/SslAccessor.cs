@@ -132,5 +132,44 @@ namespace DD.CBU.Compute.Api.Client.Network20
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
         }
+
+        /// <summary>
+        /// Add a SSL Domain Certificate and Key to a Network Domain
+        /// </summary>
+        /// <param name="sslDomainCertificate">Details regarding the SSL Domain Certificate</param>
+        /// <returns>Response Data</returns>
+        public async Task<ResponseType> AddSslDomainCertificate(importSslDomainCertificate sslDomainCertificate)
+        {
+            return
+                await
+                    _apiClient.PostAsync<importSslDomainCertificate, ResponseType>(
+                        ApiUris.ImportSslDomainCertificate(_apiClient.OrganizationId), sslDomainCertificate);
+        }
+
+        /// <summary>
+        /// Add a SSL Domain Certificate Chain to a Network Domain
+        /// </summary>
+        /// <param name="sslCertificateChain">Details regarding the SSL Certificate Chain</param>
+        /// <returns>Response Data</returns>
+        public async Task<ResponseType> AddSslCertificateChain(importSslCertificateChain sslCertificateChain)
+        {
+            return
+                await
+                    _apiClient.PostAsync<importSslCertificateChain, ResponseType>(
+                        ApiUris.ImportSslCertificateChain(_apiClient.OrganizationId), sslCertificateChain);
+        }
+
+        /// <summary>
+        /// Create an SSL Offload Profile on a Network Domain
+        /// </summary>
+        /// <param name="sslOffloadProfile">Details regarding the SSL Offload Profile</param>
+        /// <returns>Response Data</returns>
+        public async Task<ResponseType> CreateSslOffloadProfile(createSslOffloadProfile sslOffloadProfile)
+        {
+            return
+                await
+                    _apiClient.PostAsync<createSslOffloadProfile, ResponseType>(
+                        ApiUris.CreateSslOffloadProfile(_apiClient.OrganizationId), sslOffloadProfile);
+        }
     }
 }
