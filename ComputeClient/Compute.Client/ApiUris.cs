@@ -1565,6 +1565,15 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/network/reservedPrivateIpv4Address?vlanId={1}", orgId, vlanId), UriKind.Relative);
         }
 
+        /// <summary>	Gets reserved private addresses. </summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <param name="networkId">	The Network Id. </param>
+        /// <returns>	The reserved public addresses. </returns>
+        public static Uri GetReservedPrivateAddressesForNetwork(Guid orgId, string networkId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/network/reservedPrivateIpv4Address?networkId={1}", orgId, networkId), UriKind.Relative);
+        }
+
         /// <summary>	Deletes the server. </summary>
         /// <param name="orgId">	The organization id. </param>
         /// <returns>	Returns the relative URI of the REST request for a deletion of the server. </returns>
