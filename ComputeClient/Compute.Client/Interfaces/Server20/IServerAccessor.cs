@@ -213,6 +213,13 @@
 		/// </summary>
 		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> SetNicConnectivity(EnableSnapshotServiceType enableSnapshotServiceType);
+		Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType);
+
+		/// <summary>
+		/// Disable snapshot service
+		/// </summary>
+		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType);
 	}
 }

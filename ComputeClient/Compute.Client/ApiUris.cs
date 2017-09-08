@@ -2479,6 +2479,14 @@ namespace DD.CBU.Compute.Api.Client
 			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
 		}
 
+		/// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri DisableSnapshotService(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
+		}
+
 		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
 		/// <param name="orgId">	The org Id. </param>
 		/// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
