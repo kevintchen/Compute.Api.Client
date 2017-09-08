@@ -94,13 +94,14 @@
 		/// <returns>	A standard CaaS response </returns>
 		Task<ResponseType> CleanServer(Guid serverId);
 
-		/// <summary>Adds an additional NIC to a server.</summary>
-		/// <param name="serverId">The server id.</param>
-		/// <param name="vlanId">The VLAN id</param>
-		/// <param name="privateIpv4">The Private IP v4 address</param>
-		/// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
-		/// <returns>	A standard CaaS response </returns>
-		Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null);
+	    /// <summary>Adds an additional NIC to a server.</summary>
+	    /// <param name="serverId">The server id.</param>
+	    /// <param name="vlanId">The VLAN id</param>
+	    /// <param name="privateIpv4">The Private IP v4 address</param>
+	    /// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
+	    /// <param name="connected">The NIC Connection state</param>
+	    /// <returns>	A standard CaaS response </returns>
+	    Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null);
 
 		/// <summary>Exchange Nic Vlans.</summary>
 		/// <param name="nicId1">nicId1</param>

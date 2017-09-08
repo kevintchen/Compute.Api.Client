@@ -194,15 +194,16 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <param name="vlanId">The VLAN id</param>
         /// <param name="privateIpv4">The Private IP v4 address</param>
         /// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
+        /// <param name="connected">The NIC connection state</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null)
+        public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null)
         {
             if (vlanId == null && string.IsNullOrEmpty(privateIpv4))
             {
                 throw new ArgumentNullException("vlanId");
             }
 
-            var nic = new VlanIdOrPrivateIpType
+            var nic = new NewNicType
             {
                 networkAdapter = networkAdapter
             };
@@ -216,6 +217,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
             else
             {
                 nic.vlanId = vlanId.ToString();
+            }
+
+            if (connected != null)
+            {
+                nic.connected = connected.Value;
             }
 
             AddNicType addNicType = new AddNicType

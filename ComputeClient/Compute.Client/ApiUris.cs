@@ -189,7 +189,7 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri AddNic(Guid orgId)
         {
             return new Uri(
-                String.Format(MCP2_5_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
+                String.Format(MCP2_6_PREFIX + "{0}/server/addNic", orgId), UriKind.Relative);
         }
 
         /// <summary>	Exchange Nic Vlans </summary>

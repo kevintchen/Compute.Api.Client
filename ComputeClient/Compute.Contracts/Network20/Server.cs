@@ -60,6 +60,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string networkAdapterField;
 
+        private bool connectedField;
+
         private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
         /// <remarks/>
@@ -85,6 +87,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.networkAdapterField; }
             set { this.networkAdapterField = value; }
+        }
+
+        /// <remarks/>
+        public bool connected
+        {
+            get { return this.connectedField; }
+            set { this.connectedField = value; }
         }
     }
 
@@ -1139,7 +1148,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string serverIdField;
 
-        private VlanIdOrPrivateIpType nicField;
+        private NewNicType nicField;
 
         /// <remarks/>
         public string serverId
@@ -1149,7 +1158,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public VlanIdOrPrivateIpType nic
+        public NewNicType nic
         {
             get { return this.nicField; }
             set { this.nicField = value; }
