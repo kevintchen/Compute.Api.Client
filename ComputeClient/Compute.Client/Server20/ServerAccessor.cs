@@ -446,9 +446,19 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		/// </summary>
 		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> SetNicConnectivity(EnableSnapshotServiceType enableSnapshotServiceType)
+		public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
 		{
 			return await _apiClient.PostAsync<EnableSnapshotServiceType, ResponseType>(ApiUris.EnableSnapshotService(_apiClient.OrganizationId), enableSnapshotServiceType);
+		}
+
+		/// <summary>
+		/// Disable snapshot service
+		/// </summary>
+		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType)
+		{
+			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), serverIdType);
 		}
 	}
 }
