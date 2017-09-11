@@ -225,7 +225,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri NotifyNicIpChange(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/notifyNicIpChange", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/notifyNicIpChange", orgId), UriKind.Relative);
         }
 
         /// <summary>	Get the URI for creating a network domain. </summary>
