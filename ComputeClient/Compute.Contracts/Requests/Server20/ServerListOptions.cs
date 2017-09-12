@@ -82,10 +82,15 @@
         /// </summary>
         public const string DrsEligibleField = "drsEligible";
 
-        /// <summary>	
-        /// Identifies an individual Virtual Listener.
-        /// </summary>
-        public Guid? Id
+		/// <summary>
+		/// The "deploymentMode" field name.
+		/// </summary>
+		public const string DeploymentModeField = "deploymentMode";
+
+		/// <summary>	
+		/// Identifies an individual Virtual Listener.
+		/// </summary>
+		public Guid? Id
         {
             get { return GetFilter<Guid?>(IdField); }
             set { SetFilter(IdField, value); }
@@ -225,5 +230,14 @@
             get { return GetFilter<bool>(DrsEligibleField); }
             set { SetFilter(DrsEligibleField, value); }
         }
-    }
+
+		/// <summary>
+		/// Gets or sets the deploymentMode filter.
+		/// </summary>
+		public string DeploymentMode
+		{
+			get { return GetFilter<string>(DeploymentModeField); }
+			set { SetFilter(DeploymentModeField, value); }
+		}
+	}
 }
