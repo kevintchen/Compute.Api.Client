@@ -60,7 +60,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string networkAdapterField;
 
-        private bool connectedField;
+        // private bool connectedField;
 
         private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
@@ -90,11 +90,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        public bool connected
-        {
-            get { return this.connectedField; }
-            set { this.connectedField = value; }
-        }
+        //public bool connected
+        //{
+        //    get { return this.connectedField; }
+        //    set { this.connectedField = value; }
+        //}
     }
 
     /// <remarks/>

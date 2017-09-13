@@ -219,10 +219,10 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 nic.vlanId = vlanId.ToString();
             }
 
-            if (connected != null)
-            {
-                nic.connected = connected.Value;
-            }
+            //if (connected != null)
+            //{
+            //    nic.connected = connected.Value;
+            //}
 
             AddNicType addNicType = new AddNicType
             {
