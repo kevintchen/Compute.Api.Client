@@ -2638,5 +2638,29 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/createSslOffloadProfile", UriKind.Relative);
         }
+
+        /// <summary>
+        /// Deletes SSL Domain Certificate.
+        /// </summary>
+        public static Uri DeleteSslDomainCertificate(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/deleteSslDomainCertificate", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Deletes SSL Certificate Chain.
+        /// </summary>
+        public static Uri DeleteSslCertificateChain(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/deleteSslCertificateChain", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Deletes SSL Offload Profile.
+        /// </summary>
+        public static Uri DeleteSslOffloadProfile(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/deleteSslOffloadProfile", UriKind.Relative);
+        }
     }
 }

@@ -78,5 +78,26 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Network20
         /// <param name="sslOffloadProfile">Details regarding the SSL Offload Profile</param>
         /// <returns>Response Data</returns>
         Task<ResponseType> CreateSslOffloadProfile(createSslOffloadProfile sslOffloadProfile);
+
+        /// <summary>
+        /// Deletes SSL Domain Certificate.
+        /// </summary>
+        /// <param name="sslDomainCertificateId">The SSL Domain Certificate id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        Task<ResponseType> DeleteSslDomainCertificate(Guid sslDomainCertificateId);
+
+        /// <summary>
+        /// Deletes SSL Certificate Chain.
+        /// </summary>
+        /// <param name="sslCertificateChainId">The SSL Certificate Chain id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        Task<ResponseType> DeleteSslCertificateChain(Guid sslCertificateChainId);
+        
+        /// <summary>
+        /// Deletes SSL Offload Profile.
+        /// </summary>
+        /// <param name="sslOffloadProfileId">The SSL Offload Profile id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        Task<ResponseType> DeleteSslOffloadProfile(Guid sslOffloadProfileId);
     }
 }

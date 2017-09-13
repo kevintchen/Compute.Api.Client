@@ -171,5 +171,48 @@ namespace DD.CBU.Compute.Api.Client.Network20
                     _apiClient.PostAsync<createSslOffloadProfile, ResponseType>(
                         ApiUris.CreateSslOffloadProfile(_apiClient.OrganizationId), sslOffloadProfile);
         }
+
+        /// <summary>
+        /// Deletes SSL Domain Certificate.
+        /// </summary>
+        /// <param name="sslDomainCertificateId">The SSL Domain Certificate id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> DeleteSslDomainCertificate(Guid sslDomainCertificateId)
+        {
+            return
+                await
+                    _apiClient.PostAsync<IdType, ResponseType>(
+                        ApiUris.DeleteSslDomainCertificate(_apiClient.OrganizationId),
+                        new IdType {id = sslDomainCertificateId.ToString()});
+        }
+
+        /// <summary>
+        /// Deletes SSL Certificate Chain.
+        /// </summary>
+        /// <param name="sslCertificateChainId">The SSL Certificate Chain id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> DeleteSslCertificateChain(Guid sslCertificateChainId)
+        {
+            return
+                await
+                    _apiClient.PostAsync<IdType, ResponseType>(
+                        ApiUris.DeleteSslCertificateChain(_apiClient.OrganizationId),
+                        new IdType {id = sslCertificateChainId.ToString()});
+
+        }
+
+        /// <summary>
+        /// Deletes SSL Offload Profile.
+        /// </summary>
+        /// <param name="sslOffloadProfileId">The SSL Offload Profile id.</param>
+        /// <returns>The async task of <see cref="ResponseType"/></returns>
+        public async Task<ResponseType> DeleteSslOffloadProfile(Guid sslOffloadProfileId)
+        {
+            return
+                await
+                    _apiClient.PostAsync<IdType, ResponseType>(
+                        ApiUris.DeleteSslOffloadProfile(_apiClient.OrganizationId),
+                        new IdType {id = sslOffloadProfileId.ToString()});
+        }
     }
 }
