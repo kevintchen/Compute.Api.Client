@@ -221,5 +221,12 @@
 		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType);
+
+		/// <summary>
+		/// Initiate manual snapshot
+		/// </summary>
+		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType);
 	}
 }

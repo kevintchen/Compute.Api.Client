@@ -466,5 +466,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), serverIdType);
 		}
+
+		/// <summary>
+		/// Initiate manual snapshot
+		/// </summary>
+		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType)
+	    {
+			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.InitiateManualSnapshot(_apiClient.OrganizationId), serverIdType);
+		}
 	}
 }
