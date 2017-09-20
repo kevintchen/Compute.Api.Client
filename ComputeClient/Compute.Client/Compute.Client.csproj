@@ -144,6 +144,7 @@
     <Compile Include="Interfaces\Server\IServerAccessor.cs" />
     <Compile Include="Interfaces\Server\IServerImagesAccessor.cs" />
     <Compile Include="Interfaces\Server\IServerManagementLegacyAccessor.cs" />
+    <Compile Include="Interfaces\Snapshot\ISnapshotAccessor.cs" />
     <Compile Include="Interfaces\Tagging\ITaggingAccessor.cs" />
     <Compile Include="KnownApiUri.cs" />
     <Compile Include="Network20\ComputeApiClientNetworkExtensions.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Server\ServerAccessor.cs" />
     <Compile Include="Server\ServerImagesAccessor.cs" />
     <Compile Include="Server\ServerManagementLegacyAccessor.cs" />
+    <Compile Include="Snapshot\SnapshotAccessor.cs" />
     <Compile Include="StatusExtensions.cs" />
     <Compile Include="Tagging\TaggingAccessor.cs" />
     <Compile Include="Utilities\PageableRequestExtensions.cs" />

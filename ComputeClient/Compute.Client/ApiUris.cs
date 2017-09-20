@@ -18,13 +18,13 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.5 prefix. </summary>
         public const string MCP2_5_PREFIX = "caas/2.5/";
 
-		/// <summary>	The MCP 2.6 prefix. </summary>
-		public const string MCP2_6_PREFIX = "caas/2.6/";
+        /// <summary>	The MCP 2.6 prefix. </summary>
+        public const string MCP2_6_PREFIX = "caas/2.6/";
 
-		/// <summary>
-		/// The path (relative to the base API URL) of the My Account action.
-		/// </summary>
-		public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
+        /// <summary>
+        /// The path (relative to the base API URL) of the My Account action.
+        /// </summary>
+        public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
 
         /// <summary>	Accounts the given organisation identifier. </summary>
         /// <param name="orgId">	The org Id. </param>
@@ -42,51 +42,51 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/accountWithPhoneNumber", orgId), UriKind.Relative);
         }
 
-		/// <summary>	Create user action.</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	The <see cref="Uri"/>. </returns>
-		public static Uri CreateUser(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/createUser", orgId), UriKind.Relative);
-		}
+        /// <summary>	Create user action.</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	The <see cref="Uri"/>. </returns>
+        public static Uri CreateUser(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/createUser", orgId), UriKind.Relative);
+        }
 
-		/// <summary>	Edit user action.</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	The <see cref="Uri"/>. </returns>
-		public static Uri EditUser(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/editUser", orgId), UriKind.Relative);
-		}
+        /// <summary>	Edit user action.</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	The <see cref="Uri"/>. </returns>
+        public static Uri EditUser(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/editUser", orgId), UriKind.Relative);
+        }
 
-		/// <summary>	Set user roles action.</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	The <see cref="Uri"/>. </returns>
-		public static Uri SetUserRoles(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/setUserRoles", orgId), UriKind.Relative);
-		}
+        /// <summary>	Set user roles action.</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	The <see cref="Uri"/>. </returns>
+        public static Uri SetUserRoles(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/setUserRoles", orgId), UriKind.Relative);
+        }
 
-		/// <summary>	Change password action.</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	The <see cref="Uri"/>. </returns>
-		public static Uri ChangeUserPassword(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/changeUserPassword", orgId), UriKind.Relative);
-		}
+        /// <summary>	Change password action.</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	The <see cref="Uri"/>. </returns>
+        public static Uri ChangeUserPassword(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/changeUserPassword", orgId), UriKind.Relative);
+        }
 
-		/// <summary>	Delete user action.</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	The <see cref="Uri"/>. </returns>
-		public static Uri DeleteUser(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/deleteUser", orgId), UriKind.Relative);
-		}
+        /// <summary>	Delete user action.</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	The <see cref="Uri"/>. </returns>
+        public static Uri DeleteUser(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_5_PREFIX + "{0}/user/deleteUser", orgId), UriKind.Relative);
+        }
 
-		/// <summary>The path (relative to the base API URL) to update My Account action.</summary>
-		/// <param name="orgId">The org Id.</param>
-		/// <param name="username">The username.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri UpdateAdministrator(Guid orgId, string username)
+        /// <summary>The path (relative to the base API URL) to update My Account action.</summary>
+        /// <param name="orgId">The org Id.</param>
+        /// <param name="username">The username.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri UpdateAdministrator(Guid orgId, string username)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/account/{1}", orgId, username), UriKind.Relative);
         }
@@ -670,21 +670,21 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server", orgId), UriKind.Relative);
         }
 
-		/// <summary>	Gets server snapshots windows. </summary>
-		/// <remarks>	Anthony, 6/17/2015. </remarks>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <returns>	The MCP 2 servers. </returns>
-		public static Uri GetSnapshotWindow(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/infrastructure/snapshotWindow", orgId), UriKind.Relative);
-		}
+        /// <summary>	Gets server snapshots windows. </summary>
+        /// <remarks>	Anthony, 6/17/2015. </remarks>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>	The MCP 2 servers. </returns>
+        public static Uri GetSnapshotWindow(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/infrastructure/snapshotWindow", orgId), UriKind.Relative);
+        }
 
-		/// <summary>	Gets MCP 2 server. </summary>
-		/// <remarks>	Anthony, 6/17/2015. </remarks>
-		/// <param name="orgId">	The organization Id. </param>
-		/// <param name="serverId">	The server Id. </param>
-		/// <returns>	The MCP 2 servers. </returns>
-		public static Uri GetMcp2Server(Guid orgId, Guid serverId)
+        /// <summary>	Gets MCP 2 server. </summary>
+        /// <remarks>	Anthony, 6/17/2015. </remarks>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <param name="serverId">	The server Id. </param>
+        /// <returns>	The MCP 2 servers. </returns>
+        public static Uri GetMcp2Server(Guid orgId, Guid serverId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/server/{1}", orgId, serverId), UriKind.Relative);
         }
@@ -2463,42 +2463,42 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/cloneServer", orgId), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request for set nic connectivity.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri SetNicConnectivity(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for set nic connectivity.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri SetNicConnectivity(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/setNicConnectivity", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for enable snapshot service.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri EnableSnapshotService(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for enable snapshot service.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri EnableSnapshotService(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/enableSnapshotService", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri DisableSnapshotService(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request for disable snapshot service.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DisableSnapshotService(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/disableSnapshotService", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Returns the relative URI of the REST request to initiate manual snapshot.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri InitiateManualSnapshot(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request to initiate manual snapshot.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri InitiateManualSnapshot(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
-		public static Uri ChangeNicNetworkAdapter(Guid orgId)
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
+        public static Uri ChangeNicNetworkAdapter(Guid orgId)
         {
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }
@@ -2566,7 +2566,7 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri(string.Format(MCP2_5_PREFIX + "{0}/server/removeIsoFile", orgId), UriKind.Relative);
         }
-        
+
         /// <summary>Returns the relative URI of the REST request for removing Flp file.</summary>
         /// <param name="orgId">The organization id.</param>
         /// <returns>The <see cref="Uri"/>.</returns>
@@ -2669,6 +2669,16 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri DeleteSslOffloadProfile(Guid orgId)
         {
             return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/deleteSslOffloadProfile", UriKind.Relative);
+        }
+
+        /// <summary>	Gets MCP 2 servers. </summary>
+        /// <remarks>	Anthony, 6/17/2015. </remarks>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <param name="serverId">	The Server Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListSnapshots(Guid orgId, Guid serverId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
         }
     }
 }

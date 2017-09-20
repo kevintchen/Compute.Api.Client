@@ -90,5 +90,10 @@ namespace DD.CBU.Compute.Api.Client.Interfaces
         /// Gets the Consistency groups.
         /// </summary>
         IConsistencyGroupAccessor ConsistencyGroups { get; }
+
+        /// <summary>
+        /// Gets the Snapshot Accessor.
+        /// </summary>
+        ISnapshotAccessor Snapshot { get; }
     }
 }

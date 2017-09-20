@@ -211,6 +211,7 @@ namespace DD.CBU.Compute.Api.Client
             ConsistencyGroups = new ConsistencyGroupAccessor(WebApi);
             ConsistencyGroups = new ConsistencyGroupAccessor(WebApi);
 		    Ssl = new SslAccessor(WebApi);
+		    Snapshot = new SnapshotAccessor(WebApi);
 		}
 
 		#endregion
@@ -378,6 +379,12 @@ namespace DD.CBU.Compute.Api.Client
         /// Gets the SSL.
         /// </summary>
         public ISslAccessor Ssl { get; private set; }
+
+
+        /// <summary>
+        /// Gets the Snapshot Accessor.
+        /// </summary>
+        public ISnapshotAccessor Snapshot { get; private set; }
 
         #endregion Instance data
 
