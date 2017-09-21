@@ -44,8 +44,38 @@
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(Guid serverId, SnapshotListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
+            if (serverId == Guid.Empty)
+            {
+                throw new ArgumentNullException("serverId");
+            }
             var response = await _apiClient.GetAsync<snapshots>(
                 ApiUris.ListSnapshots(_apiClient.OrganizationId, serverId),
+                pagingOptions,
+                filteringOptions);
+
+            return new PagedResponse<SnapshotType>
+            {
+                items = response.snapshot,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?) null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?) null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?) null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?) null
+            };
+        }
+
+        /// <summary>The get mcp 2 deployed servers.</summary>
+        /// <param name="filteringOptions">The filtering options.</param>
+        /// <param name="pagingOptions">The paging options.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(SnapshotListOptions filteringOptions, IPageableRequest pagingOptions = null)
+        {
+            if (filteringOptions == null || filteringOptions.ServerId == null || filteringOptions.ServerId == Guid.Empty)
+            {
+                throw new ArgumentNullException("serverId");
+            }
+
+            var response = await _apiClient.GetAsync<snapshots>(
+                ApiUris.ListSnapshots(_apiClient.OrganizationId, filteringOptions.ServerId.Value),
                 pagingOptions,
                 filteringOptions);
 

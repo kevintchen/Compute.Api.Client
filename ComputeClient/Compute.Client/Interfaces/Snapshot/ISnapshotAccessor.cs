@@ -24,5 +24,11 @@
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(Guid serverId, SnapshotListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+
+        /// <summary>The get mcp 2 deployed servers.</summary>
+        /// <param name="filteringOptions">The filtering options.</param>
+        /// <param name="pagingOptions">The paging options.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(SnapshotListOptions filteringOptions, IPageableRequest pagingOptions = null);
     }
 }
