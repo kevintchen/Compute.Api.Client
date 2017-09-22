@@ -181,9 +181,9 @@ namespace DD.CBU.Compute.Api.Client.Network20
         {
             return
                 await
-                    _apiClient.PostAsync<IdType, ResponseType>(
+                    _apiClient.PostAsync<deleteSslDomainCertificateIdType, ResponseType>(
                         ApiUris.DeleteSslDomainCertificate(_apiClient.OrganizationId),
-                        new IdType {id = sslDomainCertificateId.ToString()});
+                        new deleteSslDomainCertificateIdType { id = sslDomainCertificateId.ToString()});
         }
 
         /// <summary>
@@ -195,9 +195,9 @@ namespace DD.CBU.Compute.Api.Client.Network20
         {
             return
                 await
-                    _apiClient.PostAsync<IdType, ResponseType>(
+                    _apiClient.PostAsync<deleteSslCertificateChainIdType, ResponseType>(
                         ApiUris.DeleteSslCertificateChain(_apiClient.OrganizationId),
-                        new IdType {id = sslCertificateChainId.ToString()});
+                        new deleteSslCertificateChainIdType { id = sslCertificateChainId.ToString()});
 
         }
 
@@ -210,9 +210,9 @@ namespace DD.CBU.Compute.Api.Client.Network20
         {
             return
                 await
-                    _apiClient.PostAsync<IdType, ResponseType>(
+                    _apiClient.PostAsync<deleteSslOffloadProfileIdType, ResponseType>(
                         ApiUris.DeleteSslOffloadProfile(_apiClient.OrganizationId),
-                        new IdType {id = sslOffloadProfileId.ToString()});
+                        new deleteSslOffloadProfileIdType { id = sslOffloadProfileId.ToString()});
         }
     }
 }
