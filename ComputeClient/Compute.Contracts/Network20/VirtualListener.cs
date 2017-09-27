@@ -558,6 +558,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string datacenterIdField;
 
+        private IdAndNameType sslOffloadProfileField;
+
         /// <remarks/>
         public string networkDomainId
         {
@@ -723,6 +725,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.datacenterIdField; }
             set { this.datacenterIdField = value; }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public IdAndNameType sslOffloadProfile
+        {
+            get { return this.sslOffloadProfileField; }
+            set { this.sslOffloadProfileField = value; }
         }
     }
 
