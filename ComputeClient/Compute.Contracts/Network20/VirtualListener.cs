@@ -712,6 +712,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        public IdAndNameType sslOffloadProfile
+        {
+            get { return this.sslOffloadProfileField; }
+            set { this.sslOffloadProfileField = value; }
+        }
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id
         {
@@ -725,14 +732,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.datacenterIdField; }
             set { this.datacenterIdField = value; }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public IdAndNameType sslOffloadProfile
-        {
-            get { return this.sslOffloadProfileField; }
-            set { this.sslOffloadProfileField = value; }
         }
     }
 
