@@ -80,6 +80,13 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Network20
         Task<ResponseType> CreateSslOffloadProfile(createSslOffloadProfile sslOffloadProfile);
 
         /// <summary>
+        /// Edit an SSL Offload Profile on a Network Domain
+        /// </summary>
+        /// <param name="sslOffloadProfile">Details regarding the SSL Offload Profile</param>
+        /// <returns>Response Data</returns>
+        Task<ResponseType> EditSslOffloadProfile(editSslOffloadProfile sslOffloadProfile);
+
+        /// <summary>
         /// Deletes SSL Domain Certificate.
         /// </summary>
         /// <param name="sslDomainCertificateId">The SSL Domain Certificate id.</param>

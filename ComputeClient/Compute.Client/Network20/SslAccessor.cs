@@ -173,6 +173,19 @@ namespace DD.CBU.Compute.Api.Client.Network20
         }
 
         /// <summary>
+        /// Edit an SSL Offload Profile on a Network Domain
+        /// </summary>
+        /// <param name="sslOffloadProfile">Details regarding the SSL Offload Profile</param>
+        /// <returns>Response Data</returns>
+        public async Task<ResponseType> EditSslOffloadProfile(editSslOffloadProfile sslOffloadProfile)
+        {
+            return
+                await
+                    _apiClient.PostAsync<editSslOffloadProfile, ResponseType>(
+                        ApiUris.EditSslOffloadProfile(_apiClient.OrganizationId), sslOffloadProfile);
+        }
+
+        /// <summary>
         /// Deletes SSL Domain Certificate.
         /// </summary>
         /// <param name="sslDomainCertificateId">The SSL Domain Certificate id.</param>

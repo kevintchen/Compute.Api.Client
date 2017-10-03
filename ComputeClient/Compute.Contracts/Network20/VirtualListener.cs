@@ -128,6 +128,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string optimizationProfileField;
 
+        private string sslOffloadProfileIdField;
+
         private string[] iruleIdField;
 
         /// <remarks/>
@@ -259,6 +261,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             get { return this.iruleIdField; }
             set { this.iruleIdField = value; }
         }
+
+        /// <remarks/>
+        public string sslOffloadProfileId
+        {
+            get { return this.sslOffloadProfileIdField; }
+            set { this.sslOffloadProfileIdField = value; }
+        }
     }
 
     /// <remarks/>
@@ -296,6 +305,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         private string[] iruleIdField;
 
         private string idField;
+
+        private string sslOffloadProfileIdField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
@@ -389,6 +400,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.iruleIdField; }
             set { this.iruleIdField = value; }
+        }
+
+        /// <remarks/>
+        public string sslOffloadProfileId
+        {
+            get { return this.sslOffloadProfileIdField; }
+            set { this.sslOffloadProfileIdField = value; }
         }
 
         /// <remarks/>

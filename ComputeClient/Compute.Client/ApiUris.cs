@@ -2645,6 +2645,14 @@ namespace DD.CBU.Compute.Api.Client
         }
 
         /// <summary>
+        /// Edit SSL Offload Profile on a Network Domain owned by the organization Id in the URL.
+        /// </summary>
+        public static Uri EditSslOffloadProfile(Guid orgId)
+        {
+            return new Uri($"{MCP2_6_PREFIX}/{orgId}/networkDomainVip/editSslOffloadProfile", UriKind.Relative);
+        }
+
+        /// <summary>
         /// Deletes SSL Domain Certificate.
         /// </summary>
         public static Uri DeleteSslDomainCertificate(Guid orgId)
