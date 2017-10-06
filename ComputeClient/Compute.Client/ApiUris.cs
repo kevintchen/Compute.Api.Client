@@ -107,6 +107,14 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/account/{1}?primary", orgId, username), UriKind.Relative);
         }
 
+         /// <summary>The path (relative to the base API URL) to Create Snapshot Preview Server.</summary>
+        /// <param name="orgId">The org Id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri CreateSnapShotPreviewServer(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/createSnapshotPreviewServer", orgId), UriKind.Relative);
+        }
+
         /// <summary>The path (relative to the base API URL) delete sub administrator action.</summary>
         /// <param name="orgId">The org Id.</param>
         /// <param name="username">The username.</param>

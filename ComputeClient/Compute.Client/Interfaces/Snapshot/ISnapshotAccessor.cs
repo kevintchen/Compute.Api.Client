@@ -6,6 +6,8 @@
     using Contracts.General;
     using Contracts.Requests;
     using Contracts.Requests.Snapshot;
+    using Contracts.Snapshot;
+    using Contracts.Network20;
 
     /// <summary>
     /// The ServerAccessor interface.
@@ -30,5 +32,10 @@
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(SnapshotListOptions filteringOptions, IPageableRequest pagingOptions = null);
+
+         /// <summary>The Create Snapshot Preview Server.</summary>
+        /// <param name="request">The Create Snapshot Preview Server Request</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<ResponseType> CreateSnapshotPreviewServer(CreateSnapshotPreviewServerType request);
     }
 }

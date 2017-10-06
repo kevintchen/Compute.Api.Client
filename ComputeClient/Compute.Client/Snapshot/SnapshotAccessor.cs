@@ -6,8 +6,10 @@
     using Contracts.General;
     using Contracts.Requests;
     using Contracts.Requests.Snapshot;
+    using Contracts.Snapshot;
     using Interfaces;
     using Interfaces.Server20;
+    using Contracts.Network20;
 
     /// <summary>
     /// The server 2.0 accessor.
@@ -87,6 +89,14 @@
                 pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?) null,
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?) null
             };
+        }
+
+        /// <summary>The Create Snapshot Preview Server.</summary>
+        /// <param name="request">The Create Snapshot Preview Server Request</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> CreateSnapshotPreviewServer(CreateSnapshotPreviewServerType request)
+        {
+            return await _apiClient.PostAsync<CreateSnapshotPreviewServerType, ResponseType>(ApiUris.CreateSnapShotPreviewServer(_apiClient.OrganizationId), request);
         }
     }
 }
