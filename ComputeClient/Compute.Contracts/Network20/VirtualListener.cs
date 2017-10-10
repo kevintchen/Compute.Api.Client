@@ -255,18 +255,18 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
+        public string sslOffloadProfileId
+        {
+            get { return this.sslOffloadProfileIdField; }
+            set { this.sslOffloadProfileIdField = value; }
+        }
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("iruleId")]
         public string[] iruleId
         {
             get { return this.iruleIdField; }
             set { this.iruleIdField = value; }
-        }
-
-        /// <remarks/>
-        public string sslOffloadProfileId
-        {
-            get { return this.sslOffloadProfileIdField; }
-            set { this.sslOffloadProfileIdField = value; }
         }
     }
 
@@ -395,19 +395,19 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("iruleId", IsNullable = true)]
-        public string[] iruleId
-        {
-            get { return this.iruleIdField; }
-            set { this.iruleIdField = value; }
-        }
-
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public string sslOffloadProfileId
         {
             get { return this.sslOffloadProfileIdField; }
             set { this.sslOffloadProfileIdField = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("iruleId", IsNullable = true)]
+        public string[] iruleId
+        {
+            get { return this.iruleIdField; }
+            set { this.iruleIdField = value; }
         }
 
         /// <remarks/>
