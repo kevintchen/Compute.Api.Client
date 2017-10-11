@@ -60,9 +60,11 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string networkAdapterField;
 
-        // private bool connectedField;
+        private bool connectedField;
 
-        private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
+		private bool connectedFieldSpecified;
+
+		private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
@@ -87,18 +89,92 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.networkAdapterField; }
             set { this.networkAdapterField = value; }
-        }
+		}
 
         /// <remarks/>
-        //public bool connected
-        //{
-        //    get { return this.connectedField; }
-        //    set { this.connectedField = value; }
-        //}
-    }
+        public bool connected
+		{
+			get { return this.connectedField; }
+			set { this.connectedField = value; }
+		}
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+		/// <remarks/>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		public bool connectedSpecified
+		{
+			get
+			{
+				return this.connectedFieldSpecified;
+			}
+			set
+			{
+				this.connectedFieldSpecified = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+	[System.SerializableAttribute()]
+	[System.Diagnostics.DebuggerStepThroughAttribute()]
+	[System.ComponentModel.DesignerCategoryAttribute("code")]
+	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+	[System.Xml.Serialization.XmlRootAttribute("addNewNic", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+	public partial class NewConnectedNicType
+	{
+
+		private string itemField;
+
+		private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
+
+		private string networkAdapterField;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
+		[System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
+		[System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+		public string Item
+		{
+			get
+			{
+				return this.itemField;
+			}
+			set
+			{
+				this.itemField = value;
+			}
+		}
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlIgnoreAttribute()]
+		public PrivateIpv4OrVlanIdChoiceType ItemElementName
+		{
+			get
+			{
+				return this.itemElementNameField;
+			}
+			set
+			{
+				this.itemElementNameField = value;
+			}
+		}
+
+		/// <remarks/>
+		public string networkAdapter
+		{
+			get
+			{
+				return this.networkAdapterField;
+			}
+			set
+			{
+				this.networkAdapterField = value;
+			}
+		}
+	}
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
     public enum PrivateIpv4OrVlanIdChoiceType
@@ -111,8 +187,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         vlanId,
     }
 
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+
+	/// <remarks/>
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]

@@ -189,14 +189,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 new CleanServerType { id = serverId.ToString() });
         }
 
-        /// <summary>Adds an additional NIC to a server.</summary>
-        /// <param name="serverId">The server id.</param>
-        /// <param name="vlanId">The VLAN id</param>
-        /// <param name="privateIpv4">The Private IP v4 address</param>
-        /// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
-        /// <param name="connected">The NIC connection state</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null)
+		/// <summary>Adds an additional NIC to a server.</summary>
+		/// <param name="serverId">The server id.</param>
+		/// <param name="vlanId">The VLAN id</param>
+		/// <param name="privateIpv4">The Private IP v4 address</param>
+		/// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
+		/// <param name="connected">The NIC connection state</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		[Obsolete("use AddNic(AddNicType addNicType) instead.")]
+		public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null)
         {
             if (vlanId == null && string.IsNullOrEmpty(privateIpv4))
             {
@@ -233,11 +234,19 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
 
-        /// <summary>Exchange Nic Vlans.</summary>
-        /// <param name="nicId1">nicId1</param>
-        /// <param name="nicId2">nicId2</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
+		/// <summary>Adds an additional NIC to a server.</summary>
+		/// <param name="addNicType">The server id.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> AddNic(AddNicType addNicType)
+	    {
+			return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
+		}
+
+	    /// <summary>Exchange Nic Vlans.</summary>
+		/// <param name="nicId1">nicId1</param>
+		/// <param name="nicId2">nicId2</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
         {
             if (string.IsNullOrWhiteSpace(nicId1))
             {
