@@ -98,5 +98,13 @@
         {
             return await _apiClient.PostAsync<CreateSnapshotPreviewServerType, ResponseType>(ApiUris.CreateSnapShotPreviewServer(_apiClient.OrganizationId), request);
         }
+
+        /// <summary>The Migrate Snapshot Preview Server.</summary>
+        /// <param name="request">The Migrate Snapshot Preview Server Request</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> MigrateSnapshotPreviewServer(ServerIdType request)
+        {
+            return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.MigrateSnapShotPreviewServer(_apiClient.OrganizationId), request);
+        }
     }
 }

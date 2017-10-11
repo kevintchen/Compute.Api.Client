@@ -33,9 +33,14 @@
         /// <returns>The <see cref="Task"/>.</returns>
         Task<PagedResponse<SnapshotType>> GetSnapshotsPaginated(SnapshotListOptions filteringOptions, IPageableRequest pagingOptions = null);
 
-         /// <summary>The Create Snapshot Preview Server.</summary>
+        /// <summary>The Create Snapshot Preview Server.</summary>
         /// <param name="request">The Create Snapshot Preview Server Request</param>
         /// <returns>The <see cref="Task"/>.</returns>
         Task<ResponseType> CreateSnapshotPreviewServer(CreateSnapshotPreviewServerType request);
+
+        /// <summary>The Migrate Snapshot Preview Server.</summary>
+        /// <param name="request">The Migrate Snapshot Preview Server Request</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<ResponseType> MigrateSnapshotPreviewServer(ServerIdType request);
     }
 }
