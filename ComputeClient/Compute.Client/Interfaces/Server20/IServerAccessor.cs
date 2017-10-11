@@ -102,6 +102,11 @@
 	    /// <param name="connected">The NIC Connection state</param>
 	    /// <returns>	A standard CaaS response </returns>
 	    Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null);
+		
+		/// <summary>Adds an additional NIC to a server.</summary>
+		/// <param name="addNicType">The server id.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		Task<ResponseType> AddNic(AddNicType addNicType);
 
 		/// <summary>Exchange Nic Vlans.</summary>
 		/// <param name="nicId1">nicId1</param>
