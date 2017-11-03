@@ -189,20 +189,22 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 new CleanServerType { id = serverId.ToString() });
         }
 
-        /// <summary>Adds an additional NIC to a server.</summary>
-        /// <param name="serverId">The server id.</param>
-        /// <param name="vlanId">The VLAN id</param>
-        /// <param name="privateIpv4">The Private IP v4 address</param>
-        /// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null)
+		/// <summary>Adds an additional NIC to a server.</summary>
+		/// <param name="serverId">The server id.</param>
+		/// <param name="vlanId">The VLAN id</param>
+		/// <param name="privateIpv4">The Private IP v4 address</param>
+		/// <param name="networkAdapter">The optional network adapter type (E1000 or VMXNET3)</param>
+		/// <param name="connected">The NIC connection state</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		[Obsolete("use AddNic(AddNicType addNicType) instead.")]
+		public async Task<ResponseType> AddNic(Guid serverId, Guid? vlanId, string privateIpv4, string networkAdapter = null, bool? connected = null)
         {
             if (vlanId == null && string.IsNullOrEmpty(privateIpv4))
             {
                 throw new ArgumentNullException("vlanId");
             }
 
-            var nic = new VlanIdOrPrivateIpType
+            var nic = new NewNicType
             {
                 networkAdapter = networkAdapter
             };
@@ -218,6 +220,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
                 nic.vlanId = vlanId.ToString();
             }
 
+            //if (connected != null)
+            //{
+            //    nic.connected = connected.Value;
+            //}
+
             AddNicType addNicType = new AddNicType
             {
                 serverId = serverId.ToString(),
@@ -227,11 +234,19 @@ namespace DD.CBU.Compute.Api.Client.Server20
             return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
         }
 
-        /// <summary>Exchange Nic Vlans.</summary>
-        /// <param name="nicId1">nicId1</param>
-        /// <param name="nicId2">nicId2</param>
-        /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
+		/// <summary>Adds an additional NIC to a server.</summary>
+		/// <param name="addNicType">The server id.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> AddNic(AddNicType addNicType)
+	    {
+			return await _apiClient.PostAsync<AddNicType, ResponseType>(ApiUris.AddNic(_apiClient.OrganizationId), addNicType);
+		}
+
+	    /// <summary>Exchange Nic Vlans.</summary>
+		/// <param name="nicId1">nicId1</param>
+		/// <param name="nicId2">nicId2</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<ResponseType> ExchangeNicVlans(string nicId1, string nicId2)
         {
             if (string.IsNullOrWhiteSpace(nicId1))
             {
@@ -430,5 +445,45 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<IdType, ResponseType>(ApiUris.RemoveFlpFile(_apiClient.OrganizationId), id);
         }
-    }
+
+		/// <summary>
+		/// Set Nic Connectivity
+		/// </summary>
+		/// <param name="setNicConnectivityType">Nic Connectivity Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> SetNicConnectivity(SetNicConnectivityType setNicConnectivityType)
+		{
+			return await _apiClient.PostAsync<SetNicConnectivityType, ResponseType>(ApiUris.SetNicConnectivity(_apiClient.OrganizationId), setNicConnectivityType);
+		}
+
+		/// <summary>
+		/// Enable snapshot service
+		/// </summary>
+		/// <param name="enableSnapshotServiceType">Enable Snapshot Service Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> EnableSnapshotService(EnableSnapshotServiceType enableSnapshotServiceType)
+		{
+			return await _apiClient.PostAsync<EnableSnapshotServiceType, ResponseType>(ApiUris.EnableSnapshotService(_apiClient.OrganizationId), enableSnapshotServiceType);
+		}
+
+		/// <summary>
+		/// Disable snapshot service
+		/// </summary>
+		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType)
+		{
+			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), serverIdType);
+		}
+
+		/// <summary>
+		/// Initiate manual snapshot
+		/// </summary>
+		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType)
+	    {
+			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.InitiateManualSnapshot(_apiClient.OrganizationId), serverIdType);
+		}
+	}
 }

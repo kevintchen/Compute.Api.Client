@@ -122,5 +122,27 @@
 				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
 			};
 		}
+
+		/// <summary>The get snap shot windows.</summary>
+		/// <param name="filteringOptions">The filtering options.</param>
+		/// <param name="pagingOptions">The paging options.</param>
+		/// <returns>The <see cref="Task"/>.</returns>
+		public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+		{
+
+			snapshotWindows response = await _apiClient.GetAsync<snapshotWindows>(
+			ApiUris.GetSnapshotWindow(_apiClient.OrganizationId),
+			pagingOptions,
+			filteringOptions);
+
+			return new PagedResponse<SnapshotWindowType>
+			{
+				items = response.snapshotWindow,
+				totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+				pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+				pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+				pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+			};
+		}
 	}
 }

@@ -75,5 +75,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
 		/// The <see cref="Task"/>.
 		/// </returns>
 		Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
-	}
+
+	    /// <summary>The get snap shot windows.</summary>
+	    /// <param name="filteringOptions">The filtering options.</param>
+	    /// <param name="pagingOptions">The paging options.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(
+		    SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+    }
 }
