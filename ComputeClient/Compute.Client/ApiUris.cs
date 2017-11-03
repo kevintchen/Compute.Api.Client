@@ -2535,6 +2535,14 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>
         /// Returns the account details of the current user.
         /// </summary>
+        public static Uri GetMyUser09()
+        {
+            return new Uri($"{MCP1_0_PREFIX}/myaccount", UriKind.Relative);
+        }
+
+        /// <summary>
+        /// Returns the account details of the current user.
+        /// </summary>
         public static Uri GetMyUser()
         {
             return new Uri($"{MCP2_6_PREFIX}/user/myUser", UriKind.Relative);

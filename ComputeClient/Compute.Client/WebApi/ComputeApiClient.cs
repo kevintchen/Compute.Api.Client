@@ -396,6 +396,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
+        [Obsolete("This method is obsolete; use 'LoginAsync' instead")]
         public async Task<IAccount> Login()
 		{
 			return await WebApi.LoginAsync();
