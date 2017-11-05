@@ -2508,10 +2508,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
         }
 
-        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
-        /// <param name="orgId">	The org Id. </param>
-        /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
-        public static Uri ChangeNicNetworkAdapter(Guid orgId)
+		/// <summary>Returns the relative URI of the REST request to delete manual snapshot.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri DeleteManualSnapshot(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/deleteManualSnapshot", orgId), UriKind.Relative);
+		}
+
+		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
+		/// <param name="orgId">	The org Id. </param>
+		/// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
+		public static Uri ChangeNicNetworkAdapter(Guid orgId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }

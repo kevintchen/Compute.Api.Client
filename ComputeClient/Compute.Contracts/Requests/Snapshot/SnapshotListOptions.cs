@@ -22,10 +22,15 @@
         /// </summary>
         public const string StartTimeField = "startTime";
 
-        /// <summary>
-        /// The "state" field name.
-        /// </summary>
-        public const string StateField = "state";
+		/// <summary>
+		/// The "expiryTime" field name.
+		/// </summary>
+		public const string ExpiryTimeField = "expiryTime";
+
+		/// <summary>
+		/// The "state" field name.
+		/// </summary>
+		public const string StateField = "state";
 
         /// <summary>
         /// The "type" field name.
@@ -50,10 +55,28 @@
             set { SetFilter(StartTimeField, FilterOperator.GreaterThan, value); }
         }
 
-        /// <summary>
-        /// Gets or sets the State filter.
-        /// </summary>
-        public string State
+		/// <summary>
+		/// Gets or sets the ExpiryTimeBefore filter.
+		/// </summary>
+		public DateTimeOffset? ExpiryTimeBefore
+		{
+			get { return GetFilter<DateTimeOffset?>(ExpiryTimeField, FilterOperator.LessThan); }
+			set { SetFilter(ExpiryTimeField, FilterOperator.LessThan, value); }
+		}
+
+		/// <summary>
+		/// Gets or sets the ExpiryTimeAfter filter.
+		/// </summary>
+		public DateTimeOffset? ExpiryTimeAfter
+		{
+			get { return GetFilter<DateTimeOffset?>(ExpiryTimeField, FilterOperator.GreaterThan); }
+			set { SetFilter(ExpiryTimeField, FilterOperator.GreaterThan, value); }
+		}
+
+		/// <summary>
+		/// Gets or sets the State filter.
+		/// </summary>
+		public string State
         {
             get { return GetFilter<string>(StateField); }
             set { SetFilter(StateField, value); }

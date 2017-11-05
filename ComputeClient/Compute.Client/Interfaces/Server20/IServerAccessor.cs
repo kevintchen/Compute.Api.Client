@@ -233,5 +233,12 @@
 		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType);
+
+		/// <summary>
+		/// Delete manual snapshot
+		/// </summary>
+		/// <param name="id">Snapshot Id to delete manual snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> DeleteManualSnapshot(IdType id);
 	}
 }

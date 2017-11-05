@@ -680,9 +680,16 @@ public partial class SnapshotType {
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool endTimeSpecified;
-    
-    /// <remarks/>
-    public string type;
+
+	/// <remarks/>
+	public System.DateTime expiryTime;
+
+	/// <remarks/>
+	[System.Xml.Serialization.XmlIgnoreAttribute()]
+	public bool expiryTimeSpecified;
+
+	/// <remarks/>
+	public string type;
     
     /// <remarks/>
     public string consistencyLevel;
