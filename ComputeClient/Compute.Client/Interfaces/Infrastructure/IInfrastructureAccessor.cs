@@ -59,28 +59,36 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// </returns>
         Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string dataCenterId, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
 
-		/// <summary>
-		/// The get os images for a data center
-		/// </summary>
-		/// <param name="dataCenterIds">
-		/// Data center id
-		/// </param>
-		/// <param name="pagingOptions">
-		/// The paging options.
-		/// </param>
-		/// <param name="filterOptions">
-		/// The Filter options
-		/// </param>
-		/// <returns>
-		/// The <see cref="Task"/>.
-		/// </returns>
-		Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
+        /// <summary>
+        /// The get os images for a data center
+        /// </summary>
+        /// <param name="dataCenterIds">
+        /// Data center id
+        /// </param>
+        /// <param name="pagingOptions">
+        /// The paging options.
+        /// </param>
+        /// <param name="filterOptions">
+        /// The Filter options
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
 
-	    /// <summary>The get snap shot windows.</summary>
-	    /// <param name="filteringOptions">The filtering options.</param>
-	    /// <param name="pagingOptions">The paging options.</param>
-	    /// <returns>The <see cref="Task"/>.</returns>
-	    Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(
-		    SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+        /// <summary>The get snap shot windows.</summary>
+        /// <param name="filteringOptions">The filtering options.</param>
+        /// <param name="pagingOptions">The paging options.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(
+            SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null);
+
+        /// <summary>
+        /// List all the geographic regions
+        /// </summary>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <param name="filterOptions">Filtering options</param>
+        /// <returns>Geo Regions</returns>
+        Task<PagedResponse<GeographicRegionType>> ListGeographicRegions(IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
     }
 }

@@ -109,6 +109,7 @@
     <Compile Include="Image20\ImageExportsInProgress.cs" />
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
+    <Compile Include="Infrastructure\GeographicRegionType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />

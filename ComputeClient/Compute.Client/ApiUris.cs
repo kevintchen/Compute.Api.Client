@@ -2709,13 +2709,20 @@ namespace DD.CBU.Compute.Api.Client
         }
 
         /// <summary>	Gets MCP 2 servers. </summary>
-        /// <remarks>	Anthony, 6/17/2015. </remarks>
         /// <param name="orgId">	The organization Id. </param>
         /// <param name="serverId">	The Server Id. </param>
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ListSnapshots(Guid orgId, Guid serverId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
+        }
+
+        /// <summary> List Geographic Regions. </summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ListGeographicRegion(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
         }
     }
 }
