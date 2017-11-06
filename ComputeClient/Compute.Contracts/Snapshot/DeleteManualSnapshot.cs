@@ -13,7 +13,7 @@ namespace DD.CBU.Compute.Api.Contracts.Snapshot
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
 	[System.Xml.Serialization.XmlRootAttribute("deleteManualSnapshot", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-	public partial class IdType
+	public partial class DeleteManualSnapshotType
 	{
 		/// <remarks/>
 		[System.Xml.Serialization.XmlAttributeAttribute()]

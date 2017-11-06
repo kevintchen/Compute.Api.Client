@@ -1,4 +1,5 @@
 ﻿using DD.CBU.Compute.Api.Contracts.Server;
+using DD.CBU.Compute.Api.Contracts.Snapshot;
 
 namespace DD.CBU.Compute.Api.Client.Server20
 {
@@ -491,9 +492,9 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		/// </summary>
 		/// <param name="id">Snapshot Id to delete manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> DeleteManualSnapshot(Contracts.Snapshot.IdType id)
+		public async Task<ResponseType> DeleteManualSnapshot(DeleteManualSnapshotType id)
 		{
-			return await _apiClient.PostAsync<Contracts.Snapshot.IdType, ResponseType>(ApiUris.DeleteManualSnapshot(_apiClient.OrganizationId), id);
+			return await _apiClient.PostAsync<DeleteManualSnapshotType, ResponseType>(ApiUris.DeleteManualSnapshot(_apiClient.OrganizationId), id);
 		}
 	}
 }
