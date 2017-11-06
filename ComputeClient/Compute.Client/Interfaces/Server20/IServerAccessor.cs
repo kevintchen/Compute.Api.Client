@@ -239,6 +239,6 @@
 		/// </summary>
 		/// <param name="id">Snapshot Id to delete manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> DeleteManualSnapshot(IdType id);
+		Task<ResponseType> DeleteManualSnapshot(Contracts.Snapshot.IdType id);
 	}
 }
