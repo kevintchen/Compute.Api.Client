@@ -44,6 +44,7 @@ public partial class GeographicRegionType {
     public string state;
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlAttributeAttribute()]
     public bool isHome;
     
     /// <remarks/>

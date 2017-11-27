@@ -668,21 +668,21 @@ public partial class SnapshotServerConfigTypeGuestOperatingSystem {
 public partial class SnapshotType {
     
     /// <remarks/>
-    public System.DateTime startTime;
+    public System.DateTime? startTime;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool startTimeSpecified;
     
     /// <remarks/>
-    public System.DateTime endTime;
+    public System.DateTime? endTime;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool endTimeSpecified;
 
 	/// <remarks/>
-	public System.DateTime expiryTime;
+	public System.DateTime? expiryTime;
 
 	/// <remarks/>
 	[System.Xml.Serialization.XmlIgnoreAttribute()]
