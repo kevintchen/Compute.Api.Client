@@ -234,6 +234,7 @@
     <Compile Include="Requests\FilterOperator.cs" />
     <Compile Include="Requests\FilterableRequest.cs" />
     <Compile Include="Requests\IFilterableRequest.cs" />
+    <Compile Include="Requests\Infrastructure\ListGeographicRegionOptions.cs" />
     <Compile Include="Requests\Infrastructure\SnapshotWindowListOptions.cs" />
     <Compile Include="Requests\Infrastructure\OperatingSystemListOptions.cs" />
     <Compile Include="Requests\Infrastructure\DataCenterListOptions.cs" />

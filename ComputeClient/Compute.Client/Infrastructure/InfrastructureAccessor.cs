@@ -151,7 +151,7 @@
         /// <param name="pagingOptions">Paging options</param>
         /// <param name="filterOptions">Filtering options</param>
         /// <returns>Geo Regions</returns>
-        public async Task<PagedResponse<GeographicRegionType>> ListGeographicRegions(IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+        public async Task<PagedResponse<GeographicRegionType>> ListGeographicRegions(IPageableRequest pagingOptions = null, ListGeographicRegionOptions filterOptions = null)
         {
             var response = await _apiClient.GetAsync<geographicRegions>(
               ApiUris.ListGeographicRegion(_apiClient.OrganizationId),
