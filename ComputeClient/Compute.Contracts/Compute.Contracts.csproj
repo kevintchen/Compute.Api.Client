@@ -119,6 +119,7 @@
     <Compile Include="Network20\ImageControllerOverride.cs" />
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
     <Compile Include="Backup\BackupClientDetailsType.cs" />
