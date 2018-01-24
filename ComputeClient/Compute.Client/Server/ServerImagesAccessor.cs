@@ -1,4 +1,7 @@
-﻿namespace DD.CBU.Compute.Api.Client.Server
+﻿using System;
+using DD.CBU.Compute.Api.Contracts.Network20;
+
+namespace DD.CBU.Compute.Api.Client.Server
 {
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
@@ -166,32 +169,66 @@
                 ApiUris.CopyCustomerServerImage(_apiClient.OrganizationId))).imageCopy;
         }
 
-        /// <summary>
-        /// The remove customer server image.
-        /// </summary>
-        /// <param name="imageId">
-        /// The image Id.
-        /// </param>
-        /// <returns>
-        /// The <see cref="Task"/>.
-        /// </returns>
-        public async Task<Status> RemoveCustomerServerImage(string imageId)
+		/// <summary>
+		/// The remove customer server image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image Id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		[Obsolete("Use IServerImagesAccessor.DeleteCustomerImage instead")]
+		public async Task<Status> RemoveCustomerServerImage(string imageId)
 		{
 			return await _apiClient.GetAsync<Status>(ApiUris.RemoveCustomerServerImage(_apiClient.OrganizationId, imageId));
 		}
 
-	    /// <summary>
-	    /// The clean failed customer server image.
-	    /// </summary>
-	    /// <param name="imageId">
-	    /// The image id.
-	    /// </param>
-	    /// <returns>
-	    /// The <see cref="Task"/>.
-	    /// </returns>
-	    public async Task<Status> CleanFailedCustomerServerImage(string imageId)
+		/// <summary>
+		/// The clean failed customer server image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		[Obsolete("Use IServerImagesAccessor.CleanCustomerImage instead")]
+		public async Task<Status> CleanFailedCustomerServerImage(string imageId)
         {
             return await _apiClient.GetAsync<Status>(ApiUris.CleanFailedCustomerServerImage(_apiClient.OrganizationId, imageId));
         }
-    }
+
+		/// <summary>
+		/// The clean failed customer server image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> CleanCustomerImage(IdType imageId)
+		{
+			return
+				await
+					_apiClient.PostAsync<IdType, ResponseType>(ApiUris.CleanCustomerImage(_apiClient.OrganizationId), imageId);
+		}
+
+		/// <summary>
+		/// The delete customer image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		public async Task<ResponseType> DeleteCustomerImage(IdType imageId)
+		{
+			return
+				await
+					_apiClient.PostAsync<IdType, ResponseType>(ApiUris.DeleteCustomerImage(_apiClient.OrganizationId), imageId);
+		}
+	}
 }

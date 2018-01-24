@@ -1,4 +1,6 @@
-﻿namespace DD.CBU.Compute.Api.Client.Interfaces.Server
+﻿using DD.CBU.Compute.Api.Contracts.Network20;
+
+namespace DD.CBU.Compute.Api.Client.Interfaces.Server
 {
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
@@ -114,5 +116,27 @@
 	    /// The <see cref="Task"/>.
 	    /// </returns>
 	    Task<Status> CleanFailedCustomerServerImage(string imageid);
-    }
+
+		/// <summary>
+		/// The clean failed customer server image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> CleanCustomerImage(IdType imageId);
+
+		/// <summary>
+		/// The delete customer image.
+		/// </summary>
+		/// <param name="imageId">
+		/// The image id.
+		/// </param>
+		/// <returns>
+		/// The <see cref="Task"/>.
+		/// </returns>
+		Task<ResponseType> DeleteCustomerImage(IdType imageId);
+	}
 }
