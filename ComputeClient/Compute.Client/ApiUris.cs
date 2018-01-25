@@ -388,7 +388,7 @@ namespace DD.CBU.Compute.Api.Client
 		public static Uri CleanCustomerImage(Guid orgId)
 		{
 			return new Uri(
-				string.Format(MCP1_0_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
+				string.Format(MCP2_6_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
 		}
 
 		/// <summary>Gets the relative URI for the CaaS API action that deletes a customer image.</summary>
@@ -397,7 +397,7 @@ namespace DD.CBU.Compute.Api.Client
 		public static Uri DeleteCustomerImage(Guid orgId)
 		{
 			return new Uri(
-				string.Format(MCP1_0_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
+				string.Format(MCP2_6_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
 		}
 
 		/// <summary>Gets the relative URI for the CaaS API action that copies customer source image.</summary>
