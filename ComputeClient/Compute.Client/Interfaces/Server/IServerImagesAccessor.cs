@@ -7,6 +7,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server
 
 	using DD.CBU.Compute.Api.Contracts.General;
 	using DD.CBU.Compute.Api.Contracts.Image;
+	using Contracts.Image20;
 
 	/// <summary>
 	/// The ServerImagesAccessor interface.
@@ -126,7 +127,7 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<ResponseType> CleanCustomerImage(IdType imageId);
+		Task<ResponseType> CleanCustomerImage(CleanCustomerImageIdType imageId);
 
 		/// <summary>
 		/// The delete customer image.
@@ -137,6 +138,6 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		Task<ResponseType> DeleteCustomerImage(IdType imageId);
+		Task<ResponseType> DeleteCustomerImage(DeleteCustomerImageIdType imageId);
 	}
 }

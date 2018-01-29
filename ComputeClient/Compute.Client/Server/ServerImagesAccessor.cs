@@ -10,6 +10,7 @@ namespace DD.CBU.Compute.Api.Client.Server
 	using DD.CBU.Compute.Api.Client.Interfaces.Server;
 	using DD.CBU.Compute.Api.Contracts.General;
 	using DD.CBU.Compute.Api.Contracts.Image;
+	using Contracts.Image20;
 
 	/// <summary>
 	/// The server images accessor.
@@ -208,11 +209,11 @@ namespace DD.CBU.Compute.Api.Client.Server
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		public async Task<ResponseType> CleanCustomerImage(IdType imageId)
+		public async Task<ResponseType> CleanCustomerImage(CleanCustomerImageIdType imageId)
 		{
 			return
 				await
-					_apiClient.PostAsync<IdType, ResponseType>(ApiUris.CleanCustomerImage(_apiClient.OrganizationId), imageId);
+					_apiClient.PostAsync<CleanCustomerImageIdType, ResponseType>(ApiUris.CleanCustomerImage(_apiClient.OrganizationId), imageId);
 		}
 
 		/// <summary>
@@ -224,11 +225,11 @@ namespace DD.CBU.Compute.Api.Client.Server
 		/// <returns>
 		/// The <see cref="Task"/>.
 		/// </returns>
-		public async Task<ResponseType> DeleteCustomerImage(IdType imageId)
+		public async Task<ResponseType> DeleteCustomerImage(DeleteCustomerImageIdType imageId)
 		{
 			return
 				await
-					_apiClient.PostAsync<IdType, ResponseType>(ApiUris.DeleteCustomerImage(_apiClient.OrganizationId), imageId);
+					_apiClient.PostAsync<DeleteCustomerImageIdType, ResponseType>(ApiUris.DeleteCustomerImage(_apiClient.OrganizationId), imageId);
 		}
 	}
 }
