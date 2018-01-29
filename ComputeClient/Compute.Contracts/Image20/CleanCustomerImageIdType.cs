@@ -1,5 +1,5 @@
 ﻿namespace DD.CBU.Compute.Api.Contracts.Image20
-{
+{ 
 	/// <remarks/>
 	[System.SerializableAttribute()]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
