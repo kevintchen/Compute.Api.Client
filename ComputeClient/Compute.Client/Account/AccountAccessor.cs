@@ -389,7 +389,7 @@ namespace DD.CBU.Compute.Api.Client.Account
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<ResponseType> SetTwoFactorAuthentication(setTwoFactorAuthentication status)
         {
-            return await _apiClient.PostAsync<setTwoFactorAuthentication, ResponseType>(ApiUris.TwoFactorAuthenicationStatus(_apiClient.OrganizationId), status);
+            return await _apiClient.PostAsync<setTwoFactorAuthentication, ResponseType>(ApiUris.SetTwoFactorAuthenication(_apiClient.OrganizationId), status);
         }
 
         /// <summary>
