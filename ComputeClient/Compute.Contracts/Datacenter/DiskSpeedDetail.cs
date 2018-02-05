@@ -1,79 +1,73 @@
-﻿using System.Xml.Schema;
+﻿using System;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace DD.CBU.Compute.Api.Contracts.Datacenter
 {
-	/// <summary>
-	///		Represents detailed information about a disk speed specification.
-	/// </summary>
-	public class DiskSpeedDetail
-		: IDiskSpeedDetail
-	{
-		/// <summary>
-		///		Create a new <see cref="DiskSpeedDetail"/>.
-		/// </summary>
-		public DiskSpeedDetail()
-		{
-		}
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class VariableIopLimitsType
+    {
 
-		/// <summary>
-		///		Is the disk speed available at the parent data centre?
-		/// </summary>
-		[XmlAttribute("available", Form = XmlSchemaForm.Qualified)]
-		public bool IsAvailable
-		{
-			get;
-			set;
-		}
+        /// <remarks/>
+        public int minDiskIops;
 
-		/// <summary>
-		///		Is the disk speed the default disk speed at the parent data centre?
-		/// </summary>
-		[XmlAttribute("default", Form = XmlSchemaForm.Qualified)]
-		public bool IsDefault
-		{
-			get;
-			set;
-		}
+        /// <remarks/>
+        public int maxDiskIops;
 
-		/// <summary>
-		///		The disk speed Id.
-		/// </summary>
-		[XmlAttribute("id", Form = XmlSchemaForm.Qualified)]
-		public string Id
-		{
-			get;
-			set;
-		}
+        /// <remarks/>
+        public int minIopsPerGb;
 
-		/// <summary>
-		///		A display name for the disk speed.
-		/// </summary>
-		[XmlElement("displayName")]
-		public string DisplayName
-		{
-			get;
-			set;
-		}
+        /// <remarks/>
+        public int maxIopsPerGb;
+    }
 
-		/// <summary>
-		///		An abbreviated name for the disk speed.
-		/// </summary>
-		[XmlElement("abbreviation")]
-		public string Abbreviation
-		{
-			get;
-			set;
-		}
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class DiskSpeedDetail : IDiskSpeedDetail
+    {
+        /// <remarks/>
+        [XmlElement("displayName")]
+        public string DisplayName { get; }
 
-		/// <summary>
-		///		A description of the disk speed.
-		/// </summary>
-		[XmlElement("description")]
-		public string Description
-		{
-			get;
-			set;
-		}
-	}
+        /// <remarks/>
+        [XmlElement("abbreviation")]
+        public string Abbreviation { get; }
+
+        /// <remarks/>
+        [XmlElement("description")]
+        public string Description { get; }
+
+        /// <remarks/>
+        [XmlElement("unavailableReason")]
+        public string UnavailableReason { get; }
+
+        /// <remarks/>
+        [XmlElement("variableIopLimits")]
+        public VariableIopLimitsType VariableIopLimits { get; }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("id")]
+        public string Id { get; }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("default")]
+        public bool IsDefault { get; }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("available")]
+        public bool IsAvailable { get; }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("variableIops")]
+        public bool IsVariableIops { get; }
+    }
 }
