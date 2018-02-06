@@ -55,6 +55,28 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class VariableIopLimitsType
+    {
+
+        /// <remarks/>
+        public int minDiskIops;
+
+        /// <remarks/>
+        public int maxDiskIops;
+
+        /// <remarks/>
+        public int minIopsPerGb;
+
+        /// <remarks/>
+        public int maxIopsPerGb;
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
     public partial class DiskSpeedType
     {
 
@@ -71,6 +93,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         public string unavailableReason;
 
         /// <remarks/>
+        public VariableIopLimitsType variableIopLimits;
+
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id;
 
@@ -81,6 +106,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool available;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool variableIops;
     }
 
     /// <remarks/>

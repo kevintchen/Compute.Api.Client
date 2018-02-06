@@ -18,6 +18,9 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.6 prefix. </summary>
         public const string MCP2_6_PREFIX = "caas/2.6/";
 
+        /// <summary>	The MCP 2.7 prefix. </summary>
+        public const string MCP2_7_PREFIX = "caas/2.7/";
+
         /// <summary>
         /// The path (relative to the base API URL) of the My Account action.
         /// </summary>
@@ -278,7 +281,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The relative action Uri.</returns>
         public static Uri DataCentres(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/infrastructure/datacenter", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/datacenter", orgId), UriKind.Relative);
         }
 
         /// <summary>Get the relative URI for the CaaS API action that retrieves a list of all data centres available for use by the specified organisation.</summary>
