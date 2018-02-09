@@ -130,7 +130,7 @@
         /// <param name="filteringOptions">The filtering options.</param>
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(Guid datacenterId, string servicePlan, SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(string datacenterId, string servicePlan, SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
 
             snapshotWindows response = await _apiClient.GetAsync<snapshotWindows>(

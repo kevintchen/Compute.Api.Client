@@ -710,7 +710,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <param name="datacenterId">The Daacenter Id.</param>
         /// <param name="servicePlan">The Service Plan.</param>
         /// <returns>	The MCP 2 servers. </returns>
-        public static Uri GetSnapshotWindow(Guid orgId, Guid datacenterId, string servicePlan)
+        public static Uri GetSnapshotWindow(Guid orgId, string datacenterId, string servicePlan)
         {
             return new Uri((MCP2_7_PREFIX + $"{orgId}/infrastructure/snapshotWindow?datacenterId={datacenterId}&servicePlan={servicePlan}"), UriKind.Relative);
         }
