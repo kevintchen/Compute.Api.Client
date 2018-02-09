@@ -558,6 +558,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string osUnitsGroupId;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool supportsGuestOsCustomization;
 
         /// <remarks/>
@@ -608,8 +612,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         [System.Xml.Serialization.XmlAttributeAttribute("default")]
         public bool isDefault;
     }
-
-
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
