@@ -1,5 +1,6 @@
 ﻿namespace DD.CBU.Compute.Api.Client.Infrastructure
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using DD.CBU.Compute.Api.Client.Interfaces.Infrastructure;
@@ -124,14 +125,16 @@
         }
 
         /// <summary>The get snap shot windows.</summary>
+        /// <param name="datacenterId">The Daacenter Id.</param>
+        /// <param name="servicePlan">The Service Plan.</param>
         /// <param name="filteringOptions">The filtering options.</param>
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(Guid datacenterId, string servicePlan, SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
 
             snapshotWindows response = await _apiClient.GetAsync<snapshotWindows>(
-            ApiUris.GetSnapshotWindow(_apiClient.OrganizationId),
+            ApiUris.GetSnapshotWindow(_apiClient.OrganizationId, datacenterId, servicePlan),
             pagingOptions,
             filteringOptions);
 

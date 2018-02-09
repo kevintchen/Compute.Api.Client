@@ -27,8 +27,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
 		private string idField;
 
-		private string datacenterIdField;
-
 		private DayOfWeekType dayOfWeekField;
 
 		private string startHourField;
@@ -48,20 +46,6 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 			set
 			{
 				this.idField = value;
-			}
-		}
-
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string datacenterId
-		{
-			get
-			{
-				return this.datacenterIdField;
-			}
-			set
-			{
-				this.datacenterIdField = value;
 			}
 		}
 
