@@ -79,14 +79,13 @@
         /// <summary>
         /// Get Operating systems supported at the data center level
         /// </summary>
-        /// <param name="dataCenterId">Data center id</param>
         /// <param name="pagingOptions">Paging options</param>
         /// <param name="filterOptions">Filtering options</param>
         /// <returns>Operating Systems</returns>
-        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string dataCenterId, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
         {
             var response = await _apiClient.GetAsync<operatingSystems>(
-              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId, dataCenterId),
+              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId),
               pagingOptions,
               filterOptions);
 
@@ -101,27 +100,22 @@
         }
 
         /// <summary>
-        /// Get Operating systems supported at the data center level
+        /// The gets the operating system detail
         /// </summary>
-        /// <param name="dataCenterIds">Data center id</param>
-        /// <param name="pagingOptions">Paging options</param>
-        /// <param name="filterOptions">Filtering options</param>
-        /// <returns>Operating Systems</returns>
-        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+        /// <param name="operatingSystemId">
+        /// The Operating System Id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<OperatingSystemDetailType> GetOperatingSystem(string operatingSystemId)
         {
+            var filter = new OperatingSystemListOptions() { Id = operatingSystemId };
             var response = await _apiClient.GetAsync<operatingSystems>(
-              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId, dataCenterIds),
-              pagingOptions,
-              filterOptions);
-
-            return new PagedResponse<OperatingSystemDetailType>
-            {
-                items = response.operatingSystem,
-                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
-                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
-                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
-                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
-            };
+             ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId),
+             null,
+             filter);
+            return response?.operatingSystem[0];
         }
 
         /// <summary>The get snap shot windows.</summary>

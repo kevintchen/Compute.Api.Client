@@ -45,9 +45,6 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// <summary>
         /// The get os images for a data center
         /// </summary>
-        /// <param name="dataCenterId">
-        /// Data center id
-        /// </param>
         /// <param name="pagingOptions">
         /// The paging options.
         /// </param>
@@ -57,24 +54,18 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string dataCenterId, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
+        Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
 
         /// <summary>
-        /// The get os images for a data center
+        /// The gets the operating system detail
         /// </summary>
-        /// <param name="dataCenterIds">
-        /// Data center id
-        /// </param>
-        /// <param name="pagingOptions">
-        /// The paging options.
-        /// </param>
-        /// <param name="filterOptions">
-        /// The Filter options
+        /// <param name="operatingSystemId">
+        /// The Operating System Id.
         /// </param>
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null);
+        Task<OperatingSystemDetailType> GetOperatingSystem(string operatingSystemId);
 
         /// <summary>The get snap shot windows.</summary>
         /// <param name="datacenterId">The Daacenter Id.</param>

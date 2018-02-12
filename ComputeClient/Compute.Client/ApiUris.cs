@@ -2054,32 +2054,11 @@ namespace DD.CBU.Compute.Api.Client
 
         /// <summary>	Get MCP 2 operating systems</summary>
         /// <param name="orgId">	The organization Id. </param>
-        /// <param name="dataCenterId">	The data center Id. </param>
         /// <returns>	Url endpoint </returns>
-        public static Uri GetMcp2OperatingSystems(Guid orgId, string dataCenterId)
+        public static Uri GetMcp2OperatingSystems(Guid orgId)
         {
             return
-                new Uri(
-                    string.Format(MCP2_7_PREFIX + "{0}/infrastructure/operatingSystem?datacenterId={1}", orgId,
-                        dataCenterId), UriKind.Relative);
-        }
-
-        /// <summary>	Get MCP 2 operating systems</summary>
-        /// <param name="orgId">	The organization Id. </param>
-        /// <param name="dataCenterIds">	The data center Id. </param>
-        /// <returns>	Url endpoint </returns>
-        public static Uri GetMcp2OperatingSystems(Guid orgId, string[] dataCenterIds)
-        {
-            StringBuilder uri = new StringBuilder();
-            foreach (var dc in dataCenterIds)
-            {
-                uri.Append($"datacenterId={dc}&");
-            }
-
-            return
-                new Uri(
-                    string.Format(MCP2_6_PREFIX + "{0}/infrastructure/operatingSystem?{1}", orgId,
-                        uri), UriKind.Relative);
+                new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/operatingSystem", orgId), UriKind.Relative);
         }
 
         /// <summary>	Create security group</summary>

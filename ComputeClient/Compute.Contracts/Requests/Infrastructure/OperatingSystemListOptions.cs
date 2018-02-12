@@ -21,7 +21,7 @@
         public const string FamilyField = "family";
 
 		/// <summary>
-		/// The "DatacenterId" field name.
+		/// The "OsUnitsGroupId" field name.
 		/// </summary>
 		public const string OsUnitsGroupIdField = "osUnitsGroupId";
 
