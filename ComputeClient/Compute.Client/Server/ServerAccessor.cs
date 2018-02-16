@@ -550,32 +550,5 @@
 				await
 					_apiClient.PostAsync<Status>(ApiUris.NotifyPrivateIpChange(_apiClient.OrganizationId, serverId), poststring);
 		}
-
-        /// <summary>
-		/// Modify server disk iops.
-		/// </summary>
-		/// <param name="serverId">
-		/// The server id.
-		/// </param>
-		/// <param name="diskId">
-		/// The SCSI disk Id.
-		/// </param>
-		/// <param name="sizeInGb">
-		/// Size In GB.
-		/// </param>
-		/// <returns>
-		/// The status of the deployment.
-		/// </returns>		
-		public async Task<Status> ChangeServerDiskIops(string serverId, string diskId, string sizeInGb)
-		{
-			return
-				await
-				_apiClient.PostAsync<ChangeDiskSize, Status>(
-					ApiUris.ChangeServerDiskSize(_apiClient.OrganizationId, serverId, diskId),
-					new ChangeDiskSize
-					{
-						newSizeGb = sizeInGb
-					});
-		}
 	}
 }

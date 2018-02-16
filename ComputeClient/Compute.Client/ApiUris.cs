@@ -2746,9 +2746,17 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>Returns the relative URI of the REST request for change disk size.</summary>
         /// <param name="orgId">The organization Id. </param>
         /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri ExpandSikSize(Guid orgId)
+        public static Uri ExpandDiskSize(Guid orgId)
         {
             return new Uri($"{MCP2_7_PREFIX}{orgId}/server/expandDisk", UriKind.Relative);
+        }
+        
+        /// <summary>Returns the relative URI of the REST request for change disk speed with iops.</summary>
+        /// <param name="orgId">The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ChangeDikSpeed(Guid orgId)
+        {
+            return new Uri($"{MCP2_7_PREFIX}{orgId}/server/changeDiskSpeed", UriKind.Relative);
         }
     }
 }

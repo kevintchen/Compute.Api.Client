@@ -252,5 +252,10 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 	    /// <param name="changeDisk">The change disk size.</param>
 	    /// <returns>The <see cref="Task"/>.</returns>
 	    Task<ResponseType> ExpandDiskSize(ExpandDiskType changeDisk);
+
+	    /// <summary>The change disk speed and iops.</summary>
+	    /// <param name="changeDiskSpeed">The change disk speed.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> ChangeDiskSpeed(ChangeDiskSpeedType changeDiskSpeed);
 	}
 }

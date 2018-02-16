@@ -510,7 +510,15 @@ namespace DD.CBU.Compute.Api.Client.Server20
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task<ResponseType> ExpandDiskSize(ExpandDiskType changeDisk)
         {
-            return await _apiClient.PostAsync<ExpandDiskType, ResponseType>(ApiUris.ExpandSikSize(_apiClient.OrganizationId), changeDisk);
+            return await _apiClient.PostAsync<ExpandDiskType, ResponseType>(ApiUris.ExpandDiskSize(_apiClient.OrganizationId), changeDisk);
+        }
+        
+        /// <summary>The change disk speed and iops.</summary>
+        /// <param name="changeDiskSpeed">The change disk speed.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ChangeDiskSpeed(ChangeDiskSpeedType changeDiskSpeed)
+        {
+            return await _apiClient.PostAsync<ChangeDiskSpeedType, ResponseType>(ApiUris.ChangeDikSpeed(_apiClient.OrganizationId), changeDiskSpeed);
         }
 	}
 }

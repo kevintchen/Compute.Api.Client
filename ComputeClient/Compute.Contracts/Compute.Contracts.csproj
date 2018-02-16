@@ -282,6 +282,7 @@
     <Compile Include="Server10\AntiAffinityRuleTypeServerSummary.cs" />
     <Compile Include="Server\Artifact.cs" />
     <Compile Include="Server\ChangeDiskIopsType.cs" />
+    <Compile Include="Server\ChangeDiskSpeedType.cs" />
     <Compile Include="Server\ClientStatusType.cs" />
     <Compile Include="Server\CloneServerType.cs" />
     <Compile Include="Server\CreateAntiAffinityRule.cs" />
