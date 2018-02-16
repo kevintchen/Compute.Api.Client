@@ -442,7 +442,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -450,35 +450,21 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class OperatingSystemType
     {
 
-        private string idField;
-
-        private string displayNameField;
-
-        private string familyField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
-        {
-            get { return this.idField; }
-            set { this.idField = value; }
-        }
+        public string displayName;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string displayName
-        {
-            get { return this.displayNameField; }
-            set { this.displayNameField = value; }
-        }
+        public string family;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string family
-        {
-            get { return this.familyField; }
-            set { this.familyField = value; }
-        }
+        public string osUnitsGroupId;
     }
 
     /// <remarks/>
