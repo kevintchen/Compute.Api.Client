@@ -504,5 +504,13 @@ namespace DD.CBU.Compute.Api.Client.Server20
         {
             return await _apiClient.PostAsync<ChangeDiskIopsType, ResponseType>(ApiUris.ChangeDiskIops(_apiClient.OrganizationId), diskIops);
         }
+        
+        /// <summary>The change disk size.</summary>
+        /// <param name="changeDisk">The change disk size.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ExpandDiskSize(ExpandDiskType changeDisk)
+        {
+            return await _apiClient.PostAsync<ExpandDiskType, ResponseType>(ApiUris.ExpandSikSize(_apiClient.OrganizationId), changeDisk);
+        }
 	}
 }
