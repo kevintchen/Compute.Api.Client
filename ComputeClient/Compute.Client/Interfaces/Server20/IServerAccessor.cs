@@ -242,5 +242,10 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="id">Snapshot Id to delete manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> DeleteManualSnapshot(DeleteManualSnapshotType id);
+
+	    /// <summary>The change disk iops.</summary>
+	    /// <param name="diskIops">The change disk iops.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> ChangeDiskIops(ChangeDiskIopsType diskIops);
 	}
 }

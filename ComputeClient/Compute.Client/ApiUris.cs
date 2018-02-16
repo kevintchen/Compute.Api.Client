@@ -385,28 +385,28 @@ namespace DD.CBU.Compute.Api.Client
                 string.Format(MCP1_0_PREFIX + "{0}/image/{1}?clean", orgId, imageId), UriKind.Relative);
         }
 
-		/// <summary>Gets the relative URI for the CaaS API action that clean a failed customer image.</summary>
-		/// <param name="orgId">The organization id</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri CleanCustomerImage(Guid orgId)
-		{
-			return new Uri(
-				string.Format(MCP2_6_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
-		}
+        /// <summary>Gets the relative URI for the CaaS API action that clean a failed customer image.</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri CleanCustomerImage(Guid orgId)
+        {
+            return new Uri(
+                string.Format(MCP2_6_PREFIX + "{0}/image/cleanCustomerImage", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Gets the relative URI for the CaaS API action that deletes a customer image.</summary>
-		/// <param name="orgId">The organization id</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri DeleteCustomerImage(Guid orgId)
-		{
-			return new Uri(
-				string.Format(MCP2_6_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
-		}
+        /// <summary>Gets the relative URI for the CaaS API action that deletes a customer image.</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DeleteCustomerImage(Guid orgId)
+        {
+            return new Uri(
+                string.Format(MCP2_6_PREFIX + "{0}/image/deleteCustomerImage", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Gets the relative URI for the CaaS API action that copies customer source image.</summary>
-		/// <param name="orgId">The organization id</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri CopyCustomerServerImage(Guid orgId)
+        /// <summary>Gets the relative URI for the CaaS API action that copies customer source image.</summary>
+        /// <param name="orgId">The organization id</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri CopyCustomerServerImage(Guid orgId)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/copyCustomerImage", orgId), UriKind.Relative);
         }
@@ -2510,18 +2510,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/initiateManualSnapshot", orgId), UriKind.Relative);
         }
 
-		/// <summary>Returns the relative URI of the REST request to delete manual snapshot.</summary>
-		/// <param name="orgId">The organization id.</param>
-		/// <returns>The <see cref="Uri"/>.</returns>
-		public static Uri DeleteManualSnapshot(Guid orgId)
-		{
-			return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/deleteManualSnapshot", orgId), UriKind.Relative);
-		}
+        /// <summary>Returns the relative URI of the REST request to delete manual snapshot.</summary>
+        /// <param name="orgId">The organization id.</param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri DeleteManualSnapshot(Guid orgId)
+        {
+            return new Uri(string.Format(MCP2_6_PREFIX + "{0}/snapshot/deleteManualSnapshot", orgId), UriKind.Relative);
+        }
 
-		/// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
-		/// <param name="orgId">	The org Id. </param>
-		/// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
-		public static Uri ChangeNicNetworkAdapter(Guid orgId)
+        /// <summary>Change the Network Adaptor of a NIC on a Cloud Server</summary>
+        /// <param name="orgId">	The org Id. </param>
+        /// <returns>	An URI for Change the Network Adaptor of a NIC api. </returns>
+        public static Uri ChangeNicNetworkAdapter(Guid orgId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/server/changeNetworkAdapter", orgId), UriKind.Relative);
         }
@@ -2733,6 +2733,14 @@ namespace DD.CBU.Compute.Api.Client
         public static Uri SetTwoFactorAuthenication(Guid orgId)
         {
             return new Uri(string.Format(MCP2_6_PREFIX + "{0}/organization/setTwoFactorAuthentication", orgId), UriKind.Relative);
+        }
+
+        /// <summary>Returns the relative URI of the REST request for change disk iops.</summary>
+        /// <param name="orgId">The organization Id. </param>
+        /// <returns>The <see cref="Uri"/>.</returns>
+        public static Uri ChangeDiskIops(Guid orgId)
+        {
+            return new Uri($"{MCP2_7_PREFIX}{orgId}/server/changeDiskIops", UriKind.Relative);
         }
     }
 }

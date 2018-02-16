@@ -496,5 +496,13 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<DeleteManualSnapshotType, ResponseType>(ApiUris.DeleteManualSnapshot(_apiClient.OrganizationId), id);
 		}
+
+        /// <summary>The change disk iops.</summary>
+        /// <param name="diskIops">The change disk iops.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ChangeDiskIops(ChangeDiskIopsType diskIops)
+        {
+            return await _apiClient.PostAsync<ChangeDiskIopsType, ResponseType>(ApiUris.ChangeDiskIops(_apiClient.OrganizationId), diskIops);
+        }
 	}
 }
