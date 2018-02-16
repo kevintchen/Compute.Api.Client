@@ -66,6 +66,16 @@
         /// The "operatingSystemId" field name.
         /// </summary>
         public const string OperatingSystemIdField = "operatingSystemId";
+        
+        /// <summary>
+        /// The "operatingSystemFamily" field name.
+        /// </summary>
+        public const string OperatingSystemFamilyField = "operatingSystemFamily";
+        
+        /// <summary>
+        /// The "osUnitsGroupId" field name.
+        /// </summary>
+        public const string OsUnitsGroupIdField = "osUnitsGroupId";
 
         /// <summary>
         /// The "ipv6" field name.
@@ -202,6 +212,24 @@
         {
             get { return GetFilter<Guid?>(OperatingSystemIdField); }
             set { SetFilter(OperatingSystemIdField, value); }
+        }
+        
+        /// <summary>
+        /// Gets or sets the OperatingSystemFamily filter.
+        /// </summary>
+        public string OperatingSystemFamily
+        {
+            get { return GetFilter<string>(OperatingSystemFamilyField); }
+            set { SetFilter(OperatingSystemFamilyField, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the OsUnitsGroupId filter.
+        /// </summary>
+        public string OsUnitsGroupId
+        {
+            get { return GetFilter<string>(OsUnitsGroupIdField); }
+            set { SetFilter(OsUnitsGroupIdField, value); }
         }
 
         /// <summary>
