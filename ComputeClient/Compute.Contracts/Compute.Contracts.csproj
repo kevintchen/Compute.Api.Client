@@ -112,6 +112,7 @@
     <Compile Include="Image20\MoveCustomerImageType.cs" />
     <Compile Include="Image20\CleanCustomerImageIdType.cs" />
     <Compile Include="Infrastructure\GeographicRegionType.cs" />
+    <Compile Include="Infrastructure\OsUnitsGroupType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="Requests\FilterOperator.cs" />
     <Compile Include="Requests\FilterableRequest.cs" />
     <Compile Include="Requests\IFilterableRequest.cs" />
+    <Compile Include="Requests\Infrastructure\ListOsUnitsGroupOptions.cs" />
     <Compile Include="Requests\Infrastructure\ListGeographicRegionOptions.cs" />
     <Compile Include="Requests\Infrastructure\SnapshotWindowListOptions.cs" />
     <Compile Include="Requests\Infrastructure\OperatingSystemListOptions.cs" />

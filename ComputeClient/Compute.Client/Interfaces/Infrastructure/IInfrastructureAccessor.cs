@@ -8,11 +8,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
     using DD.CBU.Compute.Api.Contracts.Network20;
     using DD.CBU.Compute.Api.Contracts.Requests;
     using DD.CBU.Compute.Api.Contracts.Requests.Infrastructure;
+    using Contracts.Infrastructure;
 
     /// <summary>
-	/// The AccountAccessor interface.
-	/// </summary>
-	public interface IInfrastructureAccessor
+    /// The AccountAccessor interface.
+    /// </summary>
+    public interface IInfrastructureAccessor
     {
         /// <summary>
         /// The get data centers with maintenance statuses.
@@ -82,5 +83,20 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Infrastructure
         /// <param name="filterOptions">Filtering options</param>
         /// <returns>Geo Regions</returns>
         Task<PagedResponse<GeographicRegionType>> ListGeographicRegions(IPageableRequest pagingOptions = null, ListGeographicRegionOptions filterOptions = null);
+
+        /// <summary>
+        /// List all Os Units Groups
+        /// </summary>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <param name="filterOptions">Filtering options</param>
+        /// <returns>Geo Regions</returns>
+        Task<PagedResponse<OsUnitsGroupType>> ListOsUnitsGroups(IPageableRequest pagingOptions = null, ListOsUnitsGroupOptions filterOptions = null);
+
+        /// <summary>
+        /// The Get Os Units Group
+        /// </summary>
+        /// <param name="osUnitsGroupId">The OS units group id</param>
+        /// <returns>Geo Regions</returns>
+        Task<OsUnitsGroupType> GetOsUnitsGroup(string osUnitsGroupId);
     }
 }

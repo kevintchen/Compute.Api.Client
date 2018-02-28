@@ -2747,13 +2747,30 @@ namespace DD.CBU.Compute.Api.Client
         {
             return new Uri($"{MCP2_7_PREFIX}{orgId}/server/expandDisk", UriKind.Relative);
         }
-        
+
         /// <summary>Returns the relative URI of the REST request for change disk speed with iops.</summary>
         /// <param name="orgId">The organization Id. </param>
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ChangeDikSpeed(Guid orgId)
         {
             return new Uri($"{MCP2_7_PREFIX}{orgId}/server/changeDiskSpeed", UriKind.Relative);
+        }
+
+        /// <summary>	List Os Units groups</summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <returns>	Url endpoint </returns>
+        public static Uri ListOsUnitsGroup(Guid orgId)
+        {
+            return new Uri($"{MCP2_7_PREFIX}{orgId}/infrastructure/osUnitsGroup", UriKind.Relative);
+        }
+
+        /// <summary>	Get Os Units group</summary>
+        /// <param name="orgId">	The organization Id. </param>
+        /// <param name="osUnitsGroupId">	The Os Units Group Id. </param>
+        /// <returns>	Url endpoint </returns>
+        public static Uri GetOsUnitsGroup(Guid orgId, string osUnitsGroupId)
+        {
+            return new Uri($"{MCP2_7_PREFIX}{orgId}/infrastructure/osUnitsGroup/{osUnitsGroupId}", UriKind.Relative);
         }
     }
 }

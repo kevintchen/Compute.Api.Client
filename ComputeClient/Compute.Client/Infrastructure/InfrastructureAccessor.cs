@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using Contracts.Infrastructure;
     using DD.CBU.Compute.Api.Client.Interfaces.Infrastructure;
     using DD.CBU.Compute.Api.Contracts.Network20;
     using DD.CBU.Compute.Api.Contracts.Requests;
@@ -163,6 +164,39 @@
                 pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
+        }
+
+        /// <summary>
+        /// List all Os Units Groups
+        /// </summary>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <param name="filterOptions">Filtering options</param>
+        /// <returns>Geo Regions</returns>
+        public async Task<PagedResponse<OsUnitsGroupType>> ListOsUnitsGroups(IPageableRequest pagingOptions = null, ListOsUnitsGroupOptions filterOptions = null)
+        {
+            var response = await _apiClient.GetAsync<osUnitsGroups>(
+              ApiUris.ListOsUnitsGroup(_apiClient.OrganizationId),
+              pagingOptions,
+              filterOptions);
+
+            return new PagedResponse<OsUnitsGroupType>
+            {
+                items = response.osUnitsGroup,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
+
+        /// <summary>
+        /// The Get Os Units Group
+        /// </summary>
+        /// <param name="osUnitsGroupId">The OS units group id</param>
+        /// <returns>Geo Regions</returns>
+        public async Task<OsUnitsGroupType> GetOsUnitsGroup(string osUnitsGroupId)
+        {
+            return await _apiClient.GetAsync<OsUnitsGroupType>(ApiUris.GetOsUnitsGroup(_apiClient.OrganizationId, osUnitsGroupId));
         }
     }
 }
