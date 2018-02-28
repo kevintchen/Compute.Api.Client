@@ -35,6 +35,27 @@
         public string displayName;
     }
 
+    public partial class OsUnitsGroupType
+    {
+        /// Note, Os Units Group will have either cpuRange, noUsage or perCpu
+        /// <summary>	Gets or sets the Os Units Group Items. </summary>
+        /// <value>	The Os Units Group Items. </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public OsUnitsGroupTypeCpuRange[] cpuRange
+        {
+            get { return Items as OsUnitsGroupTypeCpuRange[]; }
+            set { Items = value; }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public OsUnitsGroupTypePerCpu[] perCpu
+        {
+            get { return Items as OsUnitsGroupTypePerCpu[]; }
+            set { Items = value; }
+        }
+    }
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
