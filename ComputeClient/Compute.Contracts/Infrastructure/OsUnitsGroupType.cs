@@ -49,10 +49,10 @@
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public OsUnitsGroupTypePerCpu[] perCpu
+        public OsUnitsGroupTypePerCpu perCpu
         {
-            get { return Items as OsUnitsGroupTypePerCpu[]; }
-            set { Items = value; }
+            get { return Items[0] as OsUnitsGroupTypePerCpu; }
+            set { Items[0] = value; }
         }
     }
 
