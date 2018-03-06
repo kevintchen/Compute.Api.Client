@@ -82,15 +82,35 @@
         /// </summary>
         public const string DrsEligibleField = "drsEligible";
 
-		/// <summary>
+        /// <summary>
+        /// The "deploymentMode" field name.
+        /// </summary>
+        public const string DeploymentModeField = "deploymentMode";
+
+        /// <summary>
 		/// The "deploymentMode" field name.
 		/// </summary>
-		public const string DeploymentModeField = "deploymentMode";
+		public const string TagField = "tag.";
 
-		/// <summary>	
-		/// Identifies an individual Virtual Listener.
+        /// <summary>
+		/// The "deploymentMode" field name.
 		/// </summary>
-		public Guid? Id
+		public const string TagIdField = "tagId.";
+
+        /// <summary>
+		/// The "deploymentMode" field name.
+		/// </summary>
+        public Guid? TagKeyId { get; set; }
+
+        /// <summary>
+		/// The "deploymentMode" field name.
+		/// </summary>
+        public string TagKeyName { get; set; }
+
+        /// <summary>	
+        /// Identifies an individual Virtual Listener.
+        /// </summary>
+        public Guid? Id
         {
             get { return GetFilter<Guid?>(IdField); }
             set { SetFilter(IdField, value); }
@@ -231,13 +251,30 @@
             set { SetFilter(DrsEligibleField, value); }
         }
 
-		/// <summary>
-		/// Gets or sets the deploymentMode filter.
-		/// </summary>
-		public string DeploymentMode
-		{
-			get { return GetFilter<string>(DeploymentModeField); }
-			set { SetFilter(DeploymentModeField, value); }
-		}
-	}
+        /// <summary>
+        /// Gets or sets the deploymentMode filter.
+        /// </summary>
+        public string DeploymentMode
+        {
+            get { return GetFilter<string>(DeploymentModeField); }
+            set { SetFilter(DeploymentModeField, value); }
+        }
+
+        /// <summary>	
+        /// Identifies Virtual Listeners by their name.
+        /// </summary>
+        public string TagValue
+        {
+            get
+            {
+                var tag = string.IsNullOrEmpty(TagKeyName) ? TagIdField + TagKeyId : TagField + TagKeyName;
+                return GetFilter<string>(tag);
+            }
+            set
+            {
+                var tag = string.IsNullOrEmpty(TagKeyName) ? TagIdField + TagKeyId : TagField + TagKeyName;
+                SetFilter(tag, value);
+            }
+        }
+    }
 }
