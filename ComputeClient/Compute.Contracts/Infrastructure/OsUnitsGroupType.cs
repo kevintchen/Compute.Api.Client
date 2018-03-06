@@ -1,4 +1,6 @@
-﻿namespace DD.CBU.Compute.Api.Contracts.Infrastructure
+﻿using System.Linq;
+
+namespace DD.CBU.Compute.Api.Contracts.Infrastructure
 {
 
     /// <remarks/>
@@ -41,19 +43,12 @@
         /// <summary>	Gets or sets the Os Units Group Items. </summary>
         /// <value>	The Os Units Group Items. </value>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public OsUnitsGroupTypeCpuRange[] cpuRange
-        {
-            get { return Items as OsUnitsGroupTypeCpuRange[]; }
-            set { Items = value; }
-        }
-
+        public OsUnitsGroupTypeCpuRange[] cpuRange => Items?.OfType<OsUnitsGroupTypeCpuRange>().ToArray();
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public OsUnitsGroupTypePerCpu perCpu
-        {
-            get { return Items[0] as OsUnitsGroupTypePerCpu; }
-            set { Items[0] = value; }
-        }
+        public OsUnitsGroupTypePerCpu perCpu => Items?.OfType<OsUnitsGroupTypePerCpu>().ToArray()[0];
+        
     }
 
     /// <remarks/>
