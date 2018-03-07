@@ -18,7 +18,7 @@
         /// <summary>
         /// The "isHome" field name.
         /// </summary>
-        public const string IsHomeField = "family";
+        public const string IsHomeField = "isHome";
 
 		/// <summary>
         /// The "state" field name.
@@ -46,7 +46,7 @@
         /// <summary>
         /// Gets or sets the is home filter.
         /// </summary>
-        public bool Family
+        public bool? IsHome
         {
             get { return GetFilter<bool>(IsHomeField); }
             set { SetFilter(IsHomeField, value); }
