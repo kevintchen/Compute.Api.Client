@@ -46,9 +46,9 @@
         /// <summary>
         /// Gets or sets the is home filter.
         /// </summary>
-        public bool Family
+        public bool? IsHome
         {
-            get { return GetFilter<bool>(IsHomeField); }
+            get { return GetFilter<bool?>(IsHomeField); }
             set { SetFilter(IsHomeField, value); }
         }
 
