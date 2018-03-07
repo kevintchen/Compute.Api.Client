@@ -43,11 +43,25 @@ namespace DD.CBU.Compute.Api.Contracts.Infrastructure
         /// <summary>	Gets or sets the Os Units Group Items. </summary>
         /// <value>	The Os Units Group Items. </value>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public OsUnitsGroupTypeCpuRange[] cpuRange { get { return Items != null && Items is OsUnitsGroupTypeCpuRange[] ? Items.OfType<OsUnitsGroupTypeCpuRange>().ToArray() : null; } }
+        public OsUnitsGroupTypeCpuRange[] cpuRange
+        {
+            get
+            {
+                var ranges = Items.OfType<OsUnitsGroupTypeCpuRange>().ToArray();
+                return ranges != null && ranges.Count() > 0 ? ranges : null;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public OsUnitsGroupTypePerCpu perCpu { get { return Items != null && Items is OsUnitsGroupTypePerCpu[] ? Items?.OfType<OsUnitsGroupTypePerCpu>().ToArray()[0] : null; } }
+        public OsUnitsGroupTypePerCpu perCpu
+        {
+            get
+            {
+                var perCpu = Items?.OfType<OsUnitsGroupTypePerCpu>().ToArray();
+                return perCpu != null && perCpu.Count() > 0 ? perCpu[0] : null;
+            }
+        }
     }
 
     /// <remarks/>
