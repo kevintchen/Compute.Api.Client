@@ -19,6 +19,7 @@ namespace DD.CBU.Compute.Api.Contracts.Infrastructure
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("osUnitsGroup", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
     public partial class OsUnitsGroupType
     {
 
