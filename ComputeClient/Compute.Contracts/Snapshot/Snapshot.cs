@@ -240,6 +240,10 @@ public partial class SnapshotServerConfigTypeScsiControllerDisk {
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool scsiIdSpecified;
+
+	/// <remarks/>
+	[System.Xml.Serialization.XmlAttributeAttribute()]
+	public int iops;
 }
 
 /// <remarks/>
@@ -348,6 +352,10 @@ public partial class SnapshotServerConfigTypeSataControllerDisk {
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
     public int sataId;
+
+	/// <remarks/>
+	[System.Xml.Serialization.XmlAttributeAttribute()]
+	public int iops;
 }
 
 /// <remarks/>
@@ -361,10 +369,10 @@ public partial class SnapshotServerConfigTypeIdeController {
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("device", typeof(SnapshotServerConfigTypeIdeControllerDevice))]
     [System.Xml.Serialization.XmlElementAttribute("disk", typeof(SnapshotServerConfigTypeIdeControllerDisk))]
-    public object[] Items;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
+	public object[] Items;
+
+	/// <remarks/>
+	[System.Xml.Serialization.XmlAttributeAttribute()]
     public string id;
     
     /// <remarks/>
@@ -383,6 +391,7 @@ public partial class SnapshotServerConfigTypeIdeController {
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool channelSpecified;
 }
+
 
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
@@ -468,6 +477,10 @@ public partial class SnapshotServerConfigTypeIdeControllerDisk {
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
     public bool slotSpecified;
+
+	/// <remarks/>
+	[System.Xml.Serialization.XmlAttributeAttribute()]
+	public int iops;
 }
 
 /// <remarks/>
