@@ -24,8 +24,11 @@
         /// <remarks/>
         public bool nicsConnected;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("tagById")] public ApplyTagByIdType[] tagById;
+		/// <remarks/>
+		public bool preserveMacAddresses;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("tagById")] public ApplyTagByIdType[] tagById;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("tag")] public ApplyTagType[] tag;
