@@ -1,5 +1,5 @@
 ﻿namespace DD.CBU.Compute.Api.Contracts.Snapshot
-{
+{ 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
