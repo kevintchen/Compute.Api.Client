@@ -1958,12 +1958,22 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageDetailed?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
 
-        /// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
-        /// <param name="orgId">The organization id.</param>
-        /// <param name="startDate">The Start Date</param>
-        /// <param name="endDate">The End Date</param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
+		/// <summary>Returns the relative URI of the REST request for OS Units Usage Report.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <param name="startDate">The Start Date</param>
+		/// <param name="endDate">The End Date</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri OsUnitsUsageReportReport(Guid orgId, DateTime startDate, DateTime endDate)
+		{
+			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/report/osUnitsUsageReport?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
+		}
+
+		/// <summary>Returns the relative URI of the REST request for software units usage report.</summary>
+		/// <param name="orgId">The organization id.</param>
+		/// <param name="startDate">The Start Date</param>
+		/// <param name="endDate">The End Date</param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri SoftwareUnitsReport(Guid orgId, DateTime startDate, DateTime endDate)
         {
             return new Uri(string.Format(MCP1_0_PREFIX + "{0}/report/usageSoftwareUnits?startDate={1:yyyy-MM-dd}&endDate={2:yyyy-MM-dd}", orgId, startDate, endDate), UriKind.Relative);
         }
