@@ -85,8 +85,12 @@
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public int sizeGb;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
+		public int iops;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlAttributeAttribute()]
         public string speed;
 
         /// <remarks/>

@@ -51,9 +51,9 @@
 		/// <summary>
 		/// Gets or sets the Start Hour filter.
 		/// </summary>
-		public int StartHour
+		public int? StartHour
 		{
-            get { return GetFilter<int>(StartHourField); }
+            get { return GetFilter<int?>(StartHourField); }
             set { SetFilter(StartHourField, value); }
         }
 
@@ -69,9 +69,9 @@
 		/// <summary>
 		/// Gets or sets Slots Available filter.
 		/// </summary>
-		public bool SlotsAvailable
+		public bool? SlotsAvailable
 		{
-			get { return GetFilter<bool>(SlotsAvailableField); }
+			get { return GetFilter<bool?>(SlotsAvailableField); }
 			set { SetFilter(SlotsAvailableField, value); }
 		}
 	}

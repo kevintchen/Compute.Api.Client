@@ -102,6 +102,7 @@
     <Compile Include="EntityStatus.cs" />
     <Compile Include="General\IdType.cs" />
     <Compile Include="Generic\IEntityStatusV2.cs" />
+    <Compile Include="Image20\DeleteCustomerImageIdType.cs" />
     <Compile Include="Image20\CopyImageType.cs" />
     <Compile Include="Image20\ExportImageType.cs" />
     <Compile Include="Image20\HistoricalImageExports.cs" />
@@ -109,7 +110,9 @@
     <Compile Include="Image20\ImageExportsInProgress.cs" />
     <Compile Include="Image20\ImportImageType.cs" />
     <Compile Include="Image20\MoveCustomerImageType.cs" />
+    <Compile Include="Image20\CleanCustomerImageIdType.cs" />
     <Compile Include="Infrastructure\GeographicRegionType.cs" />
+    <Compile Include="Infrastructure\OsUnitsGroupType.cs" />
     <Compile Include="Network20\FirewallOverride.cs" />
     <Compile Include="Network20\ImageController.cs" />
     <Compile Include="Network20\IpAddressList.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Network20\ImageControllerOverride.cs" />
     <Compile Include="Network20\ServerControllerOverride.cs" />
     <Compile Include="Network20\Tag.cs" />
+    <Compile Include="Organization\SetTwoFactorAuthentication.cs" />
     <Compile Include="Organization\TwoFactorAuthentication.cs" />
     <Compile Include="Backup\AlertingType.cs" />
     <Compile Include="Backup\BackupClientDetailsType.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="Requests\FilterOperator.cs" />
     <Compile Include="Requests\FilterableRequest.cs" />
     <Compile Include="Requests\IFilterableRequest.cs" />
+    <Compile Include="Requests\Infrastructure\ListOsUnitsGroupOptions.cs" />
     <Compile Include="Requests\Infrastructure\ListGeographicRegionOptions.cs" />
     <Compile Include="Requests\Infrastructure\SnapshotWindowListOptions.cs" />
     <Compile Include="Requests\Infrastructure\OperatingSystemListOptions.cs" />
@@ -278,6 +283,8 @@
     <Compile Include="Server10\AntiAffinityRuleType.cs" />
     <Compile Include="Server10\AntiAffinityRuleTypeServerSummary.cs" />
     <Compile Include="Server\Artifact.cs" />
+    <Compile Include="Server\ChangeDiskIopsType.cs" />
+    <Compile Include="Server\ChangeDiskSpeedType.cs" />
     <Compile Include="Server\ClientStatusType.cs" />
     <Compile Include="Server\CloneServerType.cs" />
     <Compile Include="Server\CreateAntiAffinityRule.cs" />
@@ -293,6 +300,7 @@
     <Compile Include="Server\DiskSpeedType.cs" />
     <Compile Include="Server\DiskType.cs" />
     <Compile Include="Server\DiskWithSpeedType.cs" />
+    <Compile Include="Server\ExpandDiskType.cs" />
     <Compile Include="Server\ServerIdType.cs" />
     <Compile Include="Server\MachineSpecificationType.cs" />
     <Compile Include="Server\MachineStatusType.cs" />

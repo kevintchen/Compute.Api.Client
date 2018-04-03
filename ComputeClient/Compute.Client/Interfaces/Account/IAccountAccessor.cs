@@ -163,7 +163,13 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Account
         /// <summary>The set two factor authentication status.</summary>
         /// <param name="status">The status.</param>
         /// <returns>The <see cref="Task"/>.</returns>
+        [Obsolete("Use SetTwoFactorAuthentication methods")]
         Task<Status> SetTwoFactorAuthenticationStatus(TwoFactorAuthentication status);
+
+	    /// <summary>The set two factor authentication status.</summary>
+	    /// <param name="status">The status.</param>
+	    /// <returns>The <see cref="Task"/>.</returns>
+	    Task<ResponseType> SetTwoFactorAuthentication(setTwoFactorAuthentication status);
 
         /// <summary>
         /// Get the list of accounts for current org using 2.x API.

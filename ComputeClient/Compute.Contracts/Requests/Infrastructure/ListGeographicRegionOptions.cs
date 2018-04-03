@@ -48,7 +48,7 @@
         /// </summary>
         public bool? IsHome
         {
-            get { return GetFilter<bool>(IsHomeField); }
+            get { return GetFilter<bool?>(IsHomeField); }
             set { SetFilter(IsHomeField, value); }
         }
 

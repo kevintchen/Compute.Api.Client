@@ -496,5 +496,29 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		{
 			return await _apiClient.PostAsync<DeleteManualSnapshotType, ResponseType>(ApiUris.DeleteManualSnapshot(_apiClient.OrganizationId), id);
 		}
+
+        /// <summary>The change disk iops.</summary>
+        /// <param name="diskIops">The change disk iops.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ChangeDiskIops(ChangeDiskIopsType diskIops)
+        {
+            return await _apiClient.PostAsync<ChangeDiskIopsType, ResponseType>(ApiUris.ChangeDiskIops(_apiClient.OrganizationId), diskIops);
+        }
+        
+        /// <summary>The change disk size.</summary>
+        /// <param name="changeDisk">The change disk size.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ExpandDiskSize(ExpandDiskType changeDisk)
+        {
+            return await _apiClient.PostAsync<ExpandDiskType, ResponseType>(ApiUris.ExpandDiskSize(_apiClient.OrganizationId), changeDisk);
+        }
+        
+        /// <summary>The change disk speed and iops.</summary>
+        /// <param name="changeDiskSpeed">The change disk speed.</param>
+        /// <returns>The <see cref="Task"/>.</returns>
+        public async Task<ResponseType> ChangeDiskSpeed(ChangeDiskSpeedType changeDiskSpeed)
+        {
+            return await _apiClient.PostAsync<ChangeDiskSpeedType, ResponseType>(ApiUris.ChangeDikSpeed(_apiClient.OrganizationId), changeDiskSpeed);
+        }
 	}
 }

@@ -1,5 +1,5 @@
 ﻿namespace DD.CBU.Compute.Api.Contracts.Snapshot
-{
+{ 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
@@ -24,8 +24,11 @@
         /// <remarks/>
         public bool nicsConnected;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("tagById")] public ApplyTagByIdType[] tagById;
+		/// <remarks/>
+		public bool preserveMacAddresses;
+
+		/// <remarks/>
+		[System.Xml.Serialization.XmlElementAttribute("tagById")] public ApplyTagByIdType[] tagById;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("tag")] public ApplyTagType[] tag;

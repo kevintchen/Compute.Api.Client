@@ -1,7 +1,9 @@
 ﻿namespace DD.CBU.Compute.Api.Client.Infrastructure
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using Contracts.Infrastructure;
     using DD.CBU.Compute.Api.Client.Interfaces.Infrastructure;
     using DD.CBU.Compute.Api.Contracts.Network20;
     using DD.CBU.Compute.Api.Contracts.Requests;
@@ -78,14 +80,13 @@
         /// <summary>
         /// Get Operating systems supported at the data center level
         /// </summary>
-        /// <param name="dataCenterId">Data center id</param>
         /// <param name="pagingOptions">Paging options</param>
         /// <param name="filterOptions">Filtering options</param>
         /// <returns>Operating Systems</returns>
-        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string dataCenterId, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
         {
             var response = await _apiClient.GetAsync<operatingSystems>(
-              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId, dataCenterId),
+              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId),
               pagingOptions,
               filterOptions);
 
@@ -100,38 +101,35 @@
         }
 
         /// <summary>
-        /// Get Operating systems supported at the data center level
+        /// The gets the operating system detail
         /// </summary>
-        /// <param name="dataCenterIds">Data center id</param>
-        /// <param name="pagingOptions">Paging options</param>
-        /// <param name="filterOptions">Filtering options</param>
-        /// <returns>Operating Systems</returns>
-        public async Task<PagedResponse<OperatingSystemDetailType>> GetOperatingSystems(string[] dataCenterIds, IPageableRequest pagingOptions = null, OperatingSystemListOptions filterOptions = null)
+        /// <param name="operatingSystemId">
+        /// The Operating System Id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        public async Task<OperatingSystemDetailType> GetOperatingSystem(string operatingSystemId)
         {
+            var filter = new OperatingSystemListOptions() { Id = operatingSystemId };
             var response = await _apiClient.GetAsync<operatingSystems>(
-              ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId, dataCenterIds),
-              pagingOptions,
-              filterOptions);
-
-            return new PagedResponse<OperatingSystemDetailType>
-            {
-                items = response.operatingSystem,
-                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
-                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
-                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
-                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
-            };
+             ApiUris.GetMcp2OperatingSystems(_apiClient.OrganizationId),
+             null,
+             filter);
+            return response?.operatingSystem[0];
         }
 
         /// <summary>The get snap shot windows.</summary>
+        /// <param name="datacenterId">The Daacenter Id.</param>
+        /// <param name="servicePlan">The Service Plan.</param>
         /// <param name="filteringOptions">The filtering options.</param>
         /// <param name="pagingOptions">The paging options.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
+        public async Task<PagedResponse<SnapshotWindowType>> GetSnapshotWindowPaginated(string datacenterId, string servicePlan, SnapshotWindowListOptions filteringOptions = null, IPageableRequest pagingOptions = null)
         {
 
             snapshotWindows response = await _apiClient.GetAsync<snapshotWindows>(
-            ApiUris.GetSnapshotWindow(_apiClient.OrganizationId),
+            ApiUris.GetSnapshotWindow(_apiClient.OrganizationId, datacenterId, servicePlan),
             pagingOptions,
             filteringOptions);
 
@@ -166,6 +164,39 @@
                 pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
                 pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
             };
+        }
+
+        /// <summary>
+        /// List all Os Units Groups
+        /// </summary>
+        /// <param name="pagingOptions">Paging options</param>
+        /// <param name="filterOptions">Filtering options</param>
+        /// <returns>Geo Regions</returns>
+        public async Task<PagedResponse<OsUnitsGroupType>> ListOsUnitsGroups(IPageableRequest pagingOptions = null, ListOsUnitsGroupOptions filterOptions = null)
+        {
+            var response = await _apiClient.GetAsync<osUnitsGroups>(
+              ApiUris.ListOsUnitsGroup(_apiClient.OrganizationId),
+              pagingOptions,
+              filterOptions);
+
+            return new PagedResponse<OsUnitsGroupType>
+            {
+                items = response.osUnitsGroup,
+                totalCount = response.totalCountSpecified ? response.totalCount : (int?)null,
+                pageCount = response.pageCountSpecified ? response.pageCount : (int?)null,
+                pageNumber = response.pageNumberSpecified ? response.pageNumber : (int?)null,
+                pageSize = response.pageSizeSpecified ? response.pageSize : (int?)null
+            };
+        }
+
+        /// <summary>
+        /// The Get Os Units Group
+        /// </summary>
+        /// <param name="osUnitsGroupId">The OS units group id</param>
+        /// <returns>Geo Regions</returns>
+        public async Task<OsUnitsGroupType> GetOsUnitsGroup(string osUnitsGroupId)
+        {
+            return await _apiClient.GetAsync<OsUnitsGroupType>(ApiUris.GetOsUnitsGroup(_apiClient.OrganizationId, osUnitsGroupId));
         }
     }
 }
