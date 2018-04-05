@@ -34,9 +34,6 @@
         [System.Xml.Serialization.XmlElementAttribute("tag")] public ApplyTagType[] tag;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()] public string snapshotServerId;
-
-        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()] public string snapshotId;
     }
 
