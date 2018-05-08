@@ -2774,7 +2774,7 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri($"{MCP2_7_PREFIX}{orgId}/infrastructure/osUnitsGroup", UriKind.Relative);
         }
 
-        /// <summary>	Get Os Units group</summary>
+        /// <summary>	Get Os Units group</summary> 
         /// <param name="orgId">	The organization Id. </param>
         /// <param name="osUnitsGroupId">	The Os Units Group Id. </param>
         /// <returns>	Url endpoint </returns>
