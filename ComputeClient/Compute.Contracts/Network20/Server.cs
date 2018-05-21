@@ -62,9 +62,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private bool connectedField;
 
-		private bool connectedFieldSpecified;
+        private bool connectedFieldSpecified;
 
-		private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
+        private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
@@ -89,92 +89,92 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         {
             get { return this.networkAdapterField; }
             set { this.networkAdapterField = value; }
-		}
+        }
 
         /// <remarks/>
         public bool connected
-		{
-			get { return this.connectedField; }
-			set { this.connectedField = value; }
-		}
+        {
+            get { return this.connectedField; }
+            set { this.connectedField = value; }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		public bool connectedSpecified
-		{
-			get
-			{
-				return this.connectedFieldSpecified;
-			}
-			set
-			{
-				this.connectedFieldSpecified = value;
-			}
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool connectedSpecified
+        {
+            get
+            {
+                return this.connectedFieldSpecified;
+            }
+            set
+            {
+                this.connectedFieldSpecified = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute("addNewNic", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-	public partial class NewConnectedNicType
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("addNewNic", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class NewConnectedNicType
+    {
 
-		private string itemField;
+        private string itemField;
 
-		private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
+        private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
 
-		private string networkAdapterField;
+        private string networkAdapterField;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
-		[System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
-		[System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
-		public string Item
-		{
-			get
-			{
-				return this.itemField;
-			}
-			set
-			{
-				this.itemField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
+        [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlIgnoreAttribute()]
-		public PrivateIpv4OrVlanIdChoiceType ItemElementName
-		{
-			get
-			{
-				return this.itemElementNameField;
-			}
-			set
-			{
-				this.itemElementNameField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public PrivateIpv4OrVlanIdChoiceType ItemElementName
+        {
+            get
+            {
+                return this.itemElementNameField;
+            }
+            set
+            {
+                this.itemElementNameField = value;
+            }
+        }
 
-		/// <remarks/>
-		public string networkAdapter
-		{
-			get
-			{
-				return this.networkAdapterField;
-			}
-			set
-			{
-				this.networkAdapterField = value;
-			}
-		}
-	}
+        /// <remarks/>
+        public string networkAdapter
+        {
+            get
+            {
+                return this.networkAdapterField;
+            }
+            set
+            {
+                this.networkAdapterField = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types", IncludeInSchema = false)]
     public enum PrivateIpv4OrVlanIdChoiceType
@@ -188,8 +188,8 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -215,10 +215,10 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string networkAdapterField;
 
-		private bool connectedField;
+        private bool connectedField;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string id
         {
             get { return this.idField; }
@@ -289,14 +289,14 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.networkAdapterField = value; }
         }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public bool connected
-		{
-			get { return this.connectedField; }
-			set { this.connectedField = value; }
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool connected
+        {
+            get { return this.connectedField; }
+            set { this.connectedField = value; }
+        }
+    }
 
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
@@ -333,13 +333,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private ServerTypeMonitoring monitoringField;
 
-		private SnapshotServiceType snapshotServiceField;
+        private SnapshotServiceType snapshotServiceField;
 
-		private string[] softwareLabelField;
+        private string[] softwareLabelField;
 
-		private ServerSourceType sourceField;
+        private ServerSourceType sourceField;
 
-		private string sourceImageIdField;
+        private string sourceImageIdField;
 
         private System.DateTime createTimeField;
 
@@ -349,9 +349,9 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         private string stateField;
 
-		private string deploymentModeField;
+        private string deploymentModeField;
 
-		private ProgressType progressField;
+        private ProgressType progressField;
 
         private VirtualHardwareType virtualHardwareField;
 
@@ -460,47 +460,47 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             set { this.monitoringField = value; }
         }
 
-		/// <remarks/>
-		public SnapshotServiceType snapshotService
-		{
-			get
-			{
-				return this.snapshotServiceField;
-			}
-			set
-			{
-				this.snapshotServiceField = value;
-			}
-		}
+        /// <remarks/>
+        public SnapshotServiceType snapshotService
+        {
+            get
+            {
+                return this.snapshotServiceField;
+            }
+            set
+            {
+                this.snapshotServiceField = value;
+            }
+        }
 
-		/// <remarks/>
-		public ServerSourceType source
-		{
-			get
-			{
-				return this.sourceField;
-			}
-			set
-			{
-				this.sourceField = value;
-			}
-		}
+        /// <remarks/>
+        public ServerSourceType source
+        {
+            get
+            {
+                return this.sourceField;
+            }
+            set
+            {
+                this.sourceField = value;
+            }
+        }
 
-		/// <remarks/>
-		public string deploymentMode
-		{
-			get
-			{
-				return this.deploymentModeField;
-			}
-			set
-			{
-				this.deploymentModeField = value;
-			}
-		}
+        /// <remarks/>
+        public string deploymentMode
+        {
+            get
+            {
+                return this.deploymentModeField;
+            }
+            set
+            {
+                this.deploymentModeField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlElementAttribute("softwareLabel")]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("softwareLabel")]
         public string[] softwareLabel
         {
             get { return this.softwareLabelField; }
@@ -871,165 +871,165 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class SnapshotServiceType
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class SnapshotServiceType
+    {
 
-		private SnapshotServiceTypeWindow windowField;
+        private SnapshotServiceTypeWindow windowField;
 
-		private string servicePlanField;
+        private string servicePlanField;
 
-		private string stateField;
+        private string stateField;
 
-		private bool manualSnapshotInProgressField;
+        private bool manualSnapshotInProgressField;
 
-		/// <remarks/>
-		public SnapshotServiceTypeWindow window
-		{
-			get
-			{
-				return this.windowField;
-			}
-			set
-			{
-				this.windowField = value;
-			}
-		}
+        /// <remarks/>
+        public SnapshotServiceTypeWindow window
+        {
+            get
+            {
+                return this.windowField;
+            }
+            set
+            {
+                this.windowField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string servicePlan
-		{
-			get
-			{
-				return this.servicePlanField;
-			}
-			set
-			{
-				this.servicePlanField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string servicePlan
+        {
+            get
+            {
+                return this.servicePlanField;
+            }
+            set
+            {
+                this.servicePlanField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string state
-		{
-			get
-			{
-				return this.stateField;
-			}
-			set
-			{
-				this.stateField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string state
+        {
+            get
+            {
+                return this.stateField;
+            }
+            set
+            {
+                this.stateField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public bool manualSnapshotInProgress
-		{
-			get
-			{
-				return this.manualSnapshotInProgressField;
-			}
-			set
-			{
-				this.manualSnapshotInProgressField = value;
-			}
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool manualSnapshotInProgress
+        {
+            get
+            {
+                return this.manualSnapshotInProgressField;
+            }
+            set
+            {
+                this.manualSnapshotInProgressField = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class SnapshotServiceTypeWindow
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class SnapshotServiceTypeWindow
+    {
 
-		private string dayOfWeekField;
+        private string dayOfWeekField;
 
-		private int startHourField;
+        private int startHourField;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string dayOfWeek
-		{
-			get
-			{
-				return this.dayOfWeekField;
-			}
-			set
-			{
-				this.dayOfWeekField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string dayOfWeek
+        {
+            get
+            {
+                return this.dayOfWeekField;
+            }
+            set
+            {
+                this.dayOfWeekField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public int startHour
-		{
-			get
-			{
-				return this.startHourField;
-			}
-			set
-			{
-				this.startHourField = value;
-			}
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int startHour
+        {
+            get
+            {
+                return this.startHourField;
+            }
+            set
+            {
+                this.startHourField = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	public partial class ServerSourceType
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    public partial class ServerSourceType
+    {
 
-		private string typeField;
+        private string typeField;
 
-		private string valueField;
+        private string valueField;
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string type
-		{
-			get
-			{
-				return this.typeField;
-			}
-			set
-			{
-				this.typeField = value;
-			}
-		}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
 
-		/// <remarks/>
-		[System.Xml.Serialization.XmlAttributeAttribute()]
-		public string value
-		{
-			get
-			{
-				return this.valueField;
-			}
-			set
-			{
-				this.valueField = value;
-			}
-		}
-	}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1444,49 +1444,49 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
         }
     }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-	[System.SerializableAttribute()]
-	[System.Diagnostics.DebuggerStepThroughAttribute()]
-	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	[System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
-	[System.Xml.Serialization.XmlRootAttribute("exchangeNicVlans", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
-	public partial class ExchangeNicVlansType
-	{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "urn:didata.com:api:cloud:types")]
+    [System.Xml.Serialization.XmlRootAttribute("exchangeNicVlans", Namespace = "urn:didata.com:api:cloud:types", IsNullable = false)]
+    public partial class ExchangeNicVlansType
+    {
 
-		private string nicId1Field;
+        private string nicId1Field;
 
-		private string nicId2Field;
+        private string nicId2Field;
 
-		/// <remarks/>
-		public string nicId1
-		{
-			get
-			{
-				return this.nicId1Field;
-			}
-			set
-			{
-				this.nicId1Field = value;
-			}
-		}
+        /// <remarks/>
+        public string nicId1
+        {
+            get
+            {
+                return this.nicId1Field;
+            }
+            set
+            {
+                this.nicId1Field = value;
+            }
+        }
 
-		/// <remarks/>
-		public string nicId2
-		{
-			get
-			{
-				return this.nicId2Field;
-			}
-			set
-			{
-				this.nicId2Field = value;
-			}
-		}
-	}
+        /// <remarks/>
+        public string nicId2
+        {
+            get
+            {
+                return this.nicId2Field;
+            }
+            set
+            {
+                this.nicId2Field = value;
+            }
+        }
+    }
 
-	/// <remarks/>
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2383,6 +2383,13 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
 
         /// <remarks/>
         public string speed;
+
+        /// <remarks/>
+        public int iops;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool iopsSpecified;
     }
 
     /// <remarks/>
@@ -2549,7 +2556,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
