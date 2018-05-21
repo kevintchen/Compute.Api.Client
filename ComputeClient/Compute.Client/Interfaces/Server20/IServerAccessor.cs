@@ -232,9 +232,9 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <summary>
 		/// Initiate manual snapshot
 		/// </summary>
-		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
+		/// <param name="initiateManualSnapshotType">Server Id and description to initiate manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType);
+		Task<ResponseType> InitiateManualSnapshot(InitiateManualSnapshotType initiateManualSnapshotType);
 
 		/// <summary>
 		/// Delete manual snapshot
@@ -257,5 +257,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 	    /// <param name="changeDiskSpeed">The change disk speed.</param>
 	    /// <returns>The <see cref="Task"/>.</returns>
 	    Task<ResponseType> ChangeDiskSpeed(ChangeDiskSpeedType changeDiskSpeed);
+
+		/// <summary>
+		/// Change snapshot service plan
+		/// </summary>
+		/// <param name="changeSnapshotServicePlanType">Change Snapshot Service Plan Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> ChangeSnapshotServicePlan(ChangeSnapshotServicePlanType changeSnapshotServicePlanType);
 	}
 }
