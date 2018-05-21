@@ -468,6 +468,16 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		}
 
 		/// <summary>
+		/// Change snapshot service plan
+		/// </summary>
+		/// <param name="changeSnapshotServicePlanType">Change Snapshot Service Plan Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> ChangeSnapshotServicePlan(ChangeSnapshotServicePlanType changeSnapshotServicePlanType)
+		{
+			return await _apiClient.PostAsync<ChangeSnapshotServicePlanType, ResponseType>(ApiUris.ChangeSnapshotServicePlan(_apiClient.OrganizationId), changeSnapshotServicePlanType);
+		}
+
+		/// <summary>
 		/// Disable snapshot service
 		/// </summary>
 		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
@@ -480,11 +490,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		/// <summary>
 		/// Initiate manual snapshot
 		/// </summary>
-		/// <param name="serverIdType">Server Id to initiate manual snapshot.</param>
+		/// <param name="initiateManualSnapshotType">Server Id and description to initiate manual snapshot.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> InitiateManualSnapshot(ServerIdType serverIdType)
+		public async Task<ResponseType> InitiateManualSnapshot(InitiateManualSnapshotType initiateManualSnapshotType)
 	    {
-			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.InitiateManualSnapshot(_apiClient.OrganizationId), serverIdType);
+			return await _apiClient.PostAsync<InitiateManualSnapshotType, ResponseType>(ApiUris.InitiateManualSnapshot(_apiClient.OrganizationId), initiateManualSnapshotType);
 		}
 
 		/// <summary>
