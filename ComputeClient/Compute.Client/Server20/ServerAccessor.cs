@@ -478,6 +478,16 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		}
 
 		/// <summary>
+		/// Edit Snapshot Metadata
+		/// </summary>
+		/// <param name="editSnapshotMetadataType">Edit Snapshot Metadata Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> EditSnapshotMetadata(EditSnapshotMetadataType editSnapshotMetadataType)
+		{
+			return await _apiClient.PostAsync<EditSnapshotMetadataType, ResponseType>(ApiUris.EditSnapshotMetadata(_apiClient.OrganizationId), editSnapshotMetadataType);
+		}
+
+		/// <summary>
 		/// Disable snapshot service
 		/// </summary>
 		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>

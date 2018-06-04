@@ -703,9 +703,12 @@ public partial class SnapshotType {
 
 	/// <remarks/>
 	public string type;
-    
-    /// <remarks/>
-    public string consistencyLevel;
+
+	/// <remarks/>
+	public string description;
+
+	/// <remarks/>
+	public string consistencyLevel;
     
     /// <remarks/>
     public SnapshotServerConfigType serverConfig;

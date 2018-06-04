@@ -264,5 +264,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="changeSnapshotServicePlanType">Change Snapshot Service Plan Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> ChangeSnapshotServicePlan(ChangeSnapshotServicePlanType changeSnapshotServicePlanType);
+
+		/// <summary>
+		/// Edit Snapshot Metadata
+		/// </summary>
+		/// <param name="editSnapshotMetadataType">Edit Snapshot Metadata Type.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> EditSnapshotMetadata(EditSnapshotMetadataType editSnapshotMetadataType);
 	}
 }
