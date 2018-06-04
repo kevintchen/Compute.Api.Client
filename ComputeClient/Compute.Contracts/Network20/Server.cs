@@ -56,61 +56,25 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class NewNicType
     {
 
-        private string itemField;
-
-        private string networkAdapterField;
-
-        private bool connectedField;
-
-        private bool connectedFieldSpecified;
-
-        private PrivateIpv4OrVlanIdChoiceType itemElementNameField;
-
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("privateIpv4", typeof(string))]
         [System.Xml.Serialization.XmlElementAttribute("vlanId", typeof(string))]
         [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
-        public string Item
-        {
-            get { return this.itemField; }
-            set { this.itemField = value; }
-        }
+        public string Item;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public PrivateIpv4OrVlanIdChoiceType ItemElementName
-        {
-            get { return this.itemElementNameField; }
-            set { this.itemElementNameField = value; }
-        }
+        public PrivateIpv4OrVlanIdChoiceType ItemElementName;
 
         /// <remarks/>
-        public string networkAdapter
-        {
-            get { return this.networkAdapterField; }
-            set { this.networkAdapterField = value; }
-        }
+        public string networkAdapter;
 
         /// <remarks/>
-        public bool connected
-        {
-            get { return this.connectedField; }
-            set { this.connectedField = value; }
-        }
+        public bool connected;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool connectedSpecified
-        {
-            get
-            {
-                return this.connectedFieldSpecified;
-            }
-            set
-            {
-                this.connectedFieldSpecified = value;
-            }
-        }
+        public bool connectedSpecified;
     }
 
     /// <remarks/>
@@ -1199,7 +1163,7 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     }
 
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1207,55 +1171,25 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DeployServerTypeCpu
     {
 
-        private string speedField;
-
-        private uint countField;
-
-        private bool countFieldSpecified;
-
-        private uint coresPerSocketField;
-
-        private bool coresPerSocketFieldSpecified;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string speed;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string speed
-        {
-            get { return this.speedField; }
-            set { this.speedField = value; }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public uint count
-        {
-            get { return this.countField; }
-            set { this.countField = value; }
-        }
+        public uint count;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool countSpecified
-        {
-            get { return this.countFieldSpecified; }
-            set { this.countFieldSpecified = value; }
-        }
+        public bool countSpecified;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public uint coresPerSocket
-        {
-            get { return this.coresPerSocketField; }
-            set { this.coresPerSocketField = value; }
-        }
+        public uint coresPerSocket;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool coresPerSocketSpecified
-        {
-            get { return this.coresPerSocketFieldSpecified; }
-            set { this.coresPerSocketFieldSpecified = value; }
-        }
+        public bool coresPerSocketSpecified;
     }
 
     /// <remarks/>
@@ -1313,34 +1247,16 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DeployServerTypeNetworkInfo
     {
 
-        private NewNicType primaryNicField;
-
-        private NewNicType[] additionalNicField;
-
-        private string networkDomainIdField;
-
         /// <remarks/>
-        public NewNicType primaryNic
-        {
-            get { return this.primaryNicField; }
-            set { this.primaryNicField = value; }
-        }
+        public NewNicType primaryNic;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("additionalNic")]
-        public NewNicType[] additionalNic
-        {
-            get { return this.additionalNicField; }
-            set { this.additionalNicField = value; }
-        }
+        public NewNicType[] additionalNic;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string networkDomainId
-        {
-            get { return this.networkDomainIdField; }
-            set { this.networkDomainIdField = value; }
-        }
+        public string networkDomainId;
     }
 
     /// <remarks/>
@@ -1352,25 +1268,21 @@ namespace DD.CBU.Compute.Api.Contracts.Network20
     public partial class DeployServerTypeDisk
     {
 
-        private string idField;
-
-        private string speedField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string id;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
-        {
-            get { return this.idField; }
-            set { this.idField = value; }
-        }
+        public string speed;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string speed
-        {
-            get { return this.speedField; }
-            set { this.speedField = value; }
-        }
+        public int iops;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool iopsSpecified;
     }
 
     /// <remarks/>
