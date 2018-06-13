@@ -37,10 +37,20 @@
         /// </summary>
         public const string TypeField = "type";
 
-        /// <summary>
-        /// Gets or sets the StartTimeBefore filter.
-        /// </summary>
-        public DateTimeOffset? StartTimeBefore
+		/// <summary>
+		/// The "indexState" field name.
+		/// </summary>
+		public const string IndexStateField = "indexState";
+
+		/// <summary>
+		/// The "description" field name.
+		/// </summary>
+		public const string DescriptionField = "description";
+
+		/// <summary>
+		/// Gets or sets the StartTimeBefore filter.
+		/// </summary>
+		public DateTimeOffset? StartTimeBefore
         {
             get { return GetFilter<DateTimeOffset?>(StartTimeField, FilterOperator.LessThan); }
             set { SetFilter(StartTimeField, FilterOperator.LessThan, value); }
@@ -108,5 +118,23 @@
             get { return GetFilter<string>(TypeField); }
             set { SetFilter(TypeField, value); }
         }
-    }
+
+		/// <summary>
+		/// Gets or sets the IndexState filter.
+		/// </summary>
+		public string IndexState
+		{
+			get { return GetFilter<string>(IndexStateField); }
+			set { SetFilter(IndexStateField, value); }
+		}
+
+		/// <summary>
+		/// Gets or sets the Description filter.
+		/// </summary>
+		public string Description
+		{
+			get { return GetFilter<string>(DescriptionField); }
+			set { SetFilter(DescriptionField, value); }
+		}
+	}
 }
