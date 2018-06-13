@@ -709,9 +709,12 @@ public partial class SnapshotType {
 
 	/// <remarks/>
 	public string consistencyLevel;
-    
-    /// <remarks/>
-    public SnapshotServerConfigType serverConfig;
+
+	/// <remarks/>
+	public string indexState;
+
+	/// <remarks/>
+	public SnapshotServerConfigType serverConfig;
     
     /// <remarks/>
     public string state;

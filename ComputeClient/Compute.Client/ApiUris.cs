@@ -2742,10 +2742,18 @@ namespace DD.CBU.Compute.Api.Client
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/snapshot?serverId={1}", orgId, serverId), UriKind.Relative);
         }
 
-        /// <summary> List Geographic Regions. </summary>
-        /// <param name="orgId">	The organization Id. </param>
-        /// <returns>The <see cref="Uri"/>.</returns>
-        public static Uri ListGeographicRegion(Guid orgId)
+		/// <summary> Restore From Snapshot. </summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri RestoreFromSnapshot(Guid orgId)
+		{
+			return new Uri(string.Format(MCP2_7_PREFIX + "{0}/snapshot/restoreFromSnapshot", orgId), UriKind.Relative);
+		}
+
+		/// <summary> List Geographic Regions. </summary>
+		/// <param name="orgId">	The organization Id. </param>
+		/// <returns>The <see cref="Uri"/>.</returns>
+		public static Uri ListGeographicRegion(Guid orgId)
         {
             return new Uri(string.Format(MCP2_7_PREFIX + "{0}/infrastructure/geographicRegion", orgId), UriKind.Relative);
         }

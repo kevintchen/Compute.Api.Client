@@ -498,6 +498,16 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		}
 
 		/// <summary>
+		/// Restore From Snapshot.
+		/// </summary>
+		/// <param name="restoreFromSnapshotType">Restore a file or folder from snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		public async Task<ResponseType> RestoreFromSnapshot(RestoreFromSnapshotType restoreFromSnapshotType)
+		{
+			return await _apiClient.PostAsync<RestoreFromSnapshotType, ResponseType>(ApiUris.RestoreFromSnapshot(_apiClient.OrganizationId), restoreFromSnapshotType);
+		}
+
+		/// <summary>
 		/// Initiate manual snapshot
 		/// </summary>
 		/// <param name="initiateManualSnapshotType">Server Id and description to initiate manual snapshot.</param>

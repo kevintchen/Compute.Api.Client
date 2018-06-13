@@ -271,5 +271,12 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <param name="editSnapshotMetadataType">Edit Snapshot Metadata Type.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
 		Task<ResponseType> EditSnapshotMetadata(EditSnapshotMetadataType editSnapshotMetadataType);
+
+		/// <summary>
+		/// Restore From Snapshot.
+		/// </summary>
+		/// <param name="restoreFromSnapshotType">Restore a file or folder from snapshot.</param>
+		/// <returns>The <see cref="ResponseType"/></returns>
+		Task<ResponseType> RestoreFromSnapshot(RestoreFromSnapshotType restoreFromSnapshotType);
 	}
 }

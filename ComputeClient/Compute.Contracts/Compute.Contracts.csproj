@@ -362,6 +362,7 @@
     <Compile Include="Server\SoftwareLabelType.cs" />
     <Compile Include="Snapshot\CreateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\DeleteManualSnapshot.cs" />
+    <Compile Include="Snapshot\RestoreFromSnapshotType.cs" />
     <Compile Include="Snapshot\Snapshot.cs" />
     <Compile Include="Software\SoftwareLabels.cs" />
     <Compile Include="Network20\HealthMonitor.cs" />
