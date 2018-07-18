@@ -490,11 +490,11 @@ namespace DD.CBU.Compute.Api.Client.Server20
 		/// <summary>
 		/// Disable snapshot service
 		/// </summary>
-		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
+		/// <param name="disableSnapshotServiceTypeType">Server Id to disable the snapshot service.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		public async Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType)
+		public async Task<ResponseType> DisableSnapshotService(DisableSnapshotServiceType disableSnapshotServiceTypeType)
 		{
-			return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), serverIdType);
+			return await _apiClient.PostAsync<DisableSnapshotServiceType, ResponseType>(ApiUris.DisableSnapshotService(_apiClient.OrganizationId), disableSnapshotServiceTypeType);
 		}
 
 		/// <summary>

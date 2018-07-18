@@ -102,9 +102,9 @@
         /// <summary>The Migrate Snapshot Preview Server.</summary>
         /// <param name="request">The Migrate Snapshot Preview Server Request</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task<ResponseType> MigrateSnapshotPreviewServer(ServerIdType request)
+        public async Task<ResponseType> MigrateSnapshotPreviewServer(MigrateSnapshotPreviewServerType request)
         {
-            return await _apiClient.PostAsync<ServerIdType, ResponseType>(ApiUris.MigrateSnapShotPreviewServer(_apiClient.OrganizationId), request);
+            return await _apiClient.PostAsync<MigrateSnapshotPreviewServerType, ResponseType>(ApiUris.MigrateSnapShotPreviewServer(_apiClient.OrganizationId), request);
         }
     }
 }

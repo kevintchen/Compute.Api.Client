@@ -303,8 +303,6 @@
     <Compile Include="Server\DiskWithSpeedType.cs" />
     <Compile Include="Server\ExpandDiskType.cs" />
     <Compile Include="Server\ChangeSnapshotServicePlanType.cs" />
-    <Compile Include="Server\InitiateManualSnapshotType.cs" />
-    <Compile Include="Server\ServerIdType.cs" />
     <Compile Include="Server\MachineSpecificationType.cs" />
     <Compile Include="Server\MachineStatusType.cs" />
     <Compile Include="Server\NewAntiAffinityRule.cs" />
@@ -362,6 +360,9 @@
     <Compile Include="Server\SoftwareLabelType.cs" />
     <Compile Include="Snapshot\CreateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\DeleteManualSnapshot.cs" />
+    <Compile Include="Snapshot\DisableSnapshotServiceType.cs" />
+    <Compile Include="Snapshot\InitiateManualSnapshotType.cs" />
+    <Compile Include="Snapshot\MigrateSnapshotPreviewServerType.cs" />
     <Compile Include="Snapshot\RestoreFromSnapshotType.cs" />
     <Compile Include="Snapshot\Snapshot.cs" />
     <Compile Include="Software\SoftwareLabels.cs" />

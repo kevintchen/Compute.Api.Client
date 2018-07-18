@@ -225,9 +225,9 @@ namespace DD.CBU.Compute.Api.Client.Interfaces.Server20
 		/// <summary>
 		/// Disable snapshot service
 		/// </summary>
-		/// <param name="serverIdType">Server Id to disable the snapshot service.</param>
+		/// <param name="disableSnapshotServiceType">Server Id to disable the snapshot service.</param>
 		/// <returns>The <see cref="ResponseType"/></returns>
-		Task<ResponseType> DisableSnapshotService(ServerIdType serverIdType);
+		Task<ResponseType> DisableSnapshotService(DisableSnapshotServiceType disableSnapshotServiceType);
 
 		/// <summary>
 		/// Initiate manual snapshot

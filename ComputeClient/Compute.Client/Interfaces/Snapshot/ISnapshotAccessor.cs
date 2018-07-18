@@ -41,6 +41,6 @@
         /// <summary>The Migrate Snapshot Preview Server.</summary>
         /// <param name="request">The Migrate Snapshot Preview Server Request</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        Task<ResponseType> MigrateSnapshotPreviewServer(ServerIdType request);
+        Task<ResponseType> MigrateSnapshotPreviewServer(MigrateSnapshotPreviewServerType request);
     }
 }
