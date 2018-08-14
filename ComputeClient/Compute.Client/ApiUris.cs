@@ -18,10 +18,13 @@ namespace DD.CBU.Compute.Api.Client
         /// <summary>	The MCP 2.7 prefix. </summary>
         public const string MCP2_7_PREFIX = "caas/2.7/";
 
-        /// <summary>
-        /// The path (relative to the base API URL) of the My Account action.
-        /// </summary>
-        public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
+		/// <summary>	The MCP 2.8 prefix. </summary>
+		public const string MCP2_8_PREFIX = "caas/2.8/";
+
+		/// <summary>
+		/// The path (relative to the base API URL) of the My Account action.
+		/// </summary>
+		public static Uri MyAccount = new Uri(MCP1_0_PREFIX + "myaccount", UriKind.Relative);
 
         /// <summary>	Accounts the given organisation identifier. </summary>
         /// <param name="orgId">	The org Id. </param>
@@ -246,7 +249,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>	The <see cref="Uri"/>. </returns>
         public static Uri CreateNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/deployNetworkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/deployNetworkDomain", orgId), UriKind.Relative);
         }
 
         /// <summary>The modify network domain.</summary>
