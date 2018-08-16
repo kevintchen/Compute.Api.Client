@@ -257,7 +257,7 @@ namespace DD.CBU.Compute.Api.Client
         /// <returns>The <see cref="Uri"/>.</returns>
         public static Uri ModifyNetworkDomain(Guid orgId)
         {
-            return new Uri(string.Format(MCP2_7_PREFIX + "{0}/network/editNetworkDomain", orgId), UriKind.Relative);
+            return new Uri(string.Format(MCP2_8_PREFIX + "{0}/network/editNetworkDomain", orgId), UriKind.Relative);
         }
 
         /// <summary>	Deletes the network domain described by orgId. </summary>
